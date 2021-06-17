@@ -22,11 +22,14 @@ int lex(char *c, char *s) {
 
     for(int i=0; i<min_len; i++) {
         if(tolower(c[i])>tolower(s[i])){
-            return 0;
+          return 0;
+        }
+        else if(tolower(c[i])<tolower(s[i])) {
+          return 1;
         }
     }
 
-    return 1;
+    return 0; //sono uguali o c/s subset s/c
 }
 
 int main() {

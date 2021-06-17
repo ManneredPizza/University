@@ -5,7 +5,6 @@ void inserimento(char *str) {
     printf("Inserire una stringa: ");
     if(fgets(str, BUFSIZ, stdin)==NULL) {
         printf("errore inserimento \n");
-        return -1;
     }
 
     //correzione sostituzione \n con \0

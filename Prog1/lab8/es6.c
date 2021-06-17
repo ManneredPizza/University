@@ -2,20 +2,6 @@
 #include <string.h>
 #include <ctype.h>
 
-void inserimento(char *str) {
-    printf("Inserire una stringa: ");
-    if(fgets(str, BUFSIZ, stdin)==NULL) {
-        printf("errore inserimento \n");
-    }
-
-    //correzione sostituzione \n con \0
-    /*int i=0;
-    for(; str[i]!='\n';i++)
-    str[i]='\0';*/
-
-    return;
-}
-
 void single_clean(char *s, char *t, char c) {
     int len = strlen(s)-1;
 
@@ -31,8 +17,8 @@ void single_clean(char *s, char *t, char c) {
 }
 
 void clean(char *s, char *t, char *c) {
-    int len = strlen(c)-1;
-    int len2 = strlen(s)-1;
+    int len = strlen(c);
+    int len2 = strlen(s);
 
     for(int i=0; i<len; i++) {
         for(int j=0; j<len2; j++) {
@@ -47,18 +33,13 @@ void clean(char *s, char *t, char *c) {
 }
 
 
-int main() {
-    char str[BUFSIZ], t[BUFSIZ], c[BUFSIZ];
+int main(int argc, char *argv[]) {
+    char t[BUFSIZ];
 
-    inserimento(str);
-    printf("Inserisci il carattere da eliminare: \n");
-    inserimento(c);
-    printf("%s \n", str);
-    clean(str, t, c);
+    clean(argv[1], t, argv[2]);
 
     printf("%s \n", t);
 
     return 0;
 }
-
 
