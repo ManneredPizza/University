@@ -7,7 +7,7 @@ typedef struct {
     double y;
 } Vett;
 
-typedef struct {
+typedef struct{
     Vett v[3];
 } Tri;
 
@@ -71,6 +71,26 @@ double area(Tri *t) {
     return sqrt(s*(s-l[0])*(s-l[1])*(s-l[2]));
 }
 
+void ordina(int lung, double j[lung][2]) {
+    int fin=0;
+    int temp;
+
+    while(!fin) {
+        fin = 1;
+        for(int i=0; i<lung-1; i++) {
+            if(j[i][1] > j[i+1][1]) {
+                temp = j[i+1][1];
+                j[i+1][1] = j[i][1];
+                j[i][1] = temp;
+                temp = j[i+1][0];
+                j[i+1][0] = j[i][0];
+                j[i][0] = temp;
+                fin = 0;
+            }
+        }
+    }
+}
+
 int main(int argc, char *argv[])  {
     if(argc < 2) {
         //return -1;
@@ -93,8 +113,7 @@ int main(int argc, char *argv[])  {
     if(fgets(row_s, BUFSIZ, fp)) {
         row = atoi(row_s);
     }
-
-    Tri t[row];
+    Tri t[3];
 
     int i=0, j=0, k=0, l=0;
     int primo = 0;
@@ -131,21 +150,37 @@ int main(int argc, char *argv[])  {
     printf("Numero triangoli: %u \n", row);
 
     for(i=0; i<row; i++) {
-        if(!degenere(&t[i])) {
+        if(degenere(&t[i])) {
             degeneri++;
         }
-        else {
+    }
+
+    double area_ord[row-degeneri][2];
+
+    int u=0;
+    for(i=0; i<row; i++) {
+        if(degenere(&t[i])) {
+            area_ord[u][0] = u;
+            area_ord[u][1] = area(&t[i]);
             somma_area += area(&t[i]);
             numero_aree++;
             if(area(&t[i]) < area_min) {
                 area_min = area(&t[i]);
                 indice = i;
             }
+            u++;
         }
     }
+
+    ordina(row-degeneri, area_ord);
+
     printf("Numero triangoli degeneri: %u \n", degeneri);
     printf("Media aritmetica aree: %lf \n", somma_area/numero_aree);
     printf("Triangolo area minima (riga %u): (%lf, %lf), (%lf, %lf), (%lf, %lf) \n", indice+2, t[indice].v[0].x, t[indice].v[0].y, t[indice].v[1].x, t[indice].v[1].y, t[indice].v[2].x, t[indice].v[2].y);
 
+    printf("Triangoli in ordine di area: \n");
+    for(int sa=0; sa<row-degeneri; sa++) {
+       printf("(%lf, %lf), (%lf, %lf), (%lf, %lf) di area: %lf \n", t[(int)area_ord[sa][0]].v[0].x, t[(int)area_ord[sa][0]].v[0].y, t[(int)area_ord[sa][0]].v[1].x, t[(int)area_ord[sa][0]].v[1].y, t[(int)area_ord[sa][0]].v[2].x, t[(int)area_ord[sa][0]].v[2].y, area_ord[sa][1]);
+    }
     return 0;
 }
