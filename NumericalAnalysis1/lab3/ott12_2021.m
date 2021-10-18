@@ -3160,3 +3160,6 @@ x =
 
   10.000000000000000
 
+y1 = polyval(p, x);
+y2 = polyval(p1, x);
+plot(x,y1,x,y2)
