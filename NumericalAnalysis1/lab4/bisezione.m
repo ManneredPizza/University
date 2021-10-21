@@ -7,7 +7,7 @@ x(1)=a; x(2)=b; fa=f(a); fb=f(b);
 %del vettore x e' "it+2"
 
 if fa*fb>0, disp('Intervallo non accettabile'); return; end;
-N=ceil((log(b-a)-log(epsilon))/log(2)); 
+N=ceil((log(b-a)-log(epsilon))/log(2)); %(b-a)/2^n < eps
 %ceil(x) e' il primo numero intero maggiore di x
 for k=3:N+2 %il procedimento e' ripetuto N volte
    x(k)=(a+b)/2; fxk=f(x(k));
