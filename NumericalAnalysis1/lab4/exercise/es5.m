@@ -22,5 +22,8 @@ toll = 1e-6;
 err1 = abs(fzero(sc1,0)-alpha1);
 err2 = abs(fzero(sc2,-1/2)-alpha2);
 
+plot(alpha1*ones(1,9),[-4:4],[-4:4],f(alpha1)*ones(1,9));
+plot(alpha2*ones(1,9),[-4:4],[-4:4],f(alpha2)*ones(1,9));
+
 fprintf("La prima intersezione è in x: %16.12f con errore: %8.5e in %3d iterazioni \n", alpha1, err1, it1);
 fprintf("La seconda intersezione è in x: %16.12f con errore: %8.5e in %3d iterazioni \n", alpha2, err2, it2);
