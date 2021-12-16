@@ -6,3 +6,4 @@ z=1:0.01:5;
 py=z.^4;
 pz=polyval(a,z);
 errore=norm(py-pz,inf);
+plot(z,pz,'b--',x,y,'r*')
