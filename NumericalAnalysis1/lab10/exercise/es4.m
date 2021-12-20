@@ -9,7 +9,7 @@ z = linspace(0,pi,401);
 s1 = interp1(x,f(x),z);
 s3 = spline(x,f(x),z);
 
-eta = cos(1:2:23)*pi/24;
+eta = cos((1:2:23)*pi/24);
 
 p = lagr_vet(eta,f(eta),z);
 
