@@ -28,7 +28,7 @@ def drawBif(l0,lSamples=0):
             if(i>round(upper*0.9)):
                 xs.append(l)
                 ys.append(xNew)
-                ax.plot([l],[xNew], marker=",", color='k', picker=True, pickradius=5)
+                ax.plot([l],[xNew], marker=".", color='k', picker=True, pickradius=5, markersize=0.5)
             x0 = xNew
     ed = time.time()
     ax.title.set_text('Biforcazione da l='+str(l0)+' a l=4, tempo esecuzione='+str(ed-st))
