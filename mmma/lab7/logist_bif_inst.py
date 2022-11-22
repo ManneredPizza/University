@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
 N = 1000
 lmax = 4
@@ -59,6 +60,31 @@ def newton(g,gder,x0,l,n):
     except:
         return 'err'
 
+#normale implementazione del quicksort
+def partition(array, low, high):
+    pivot = array[high]
+    i = low - 1
+
+    for j in range(low, high):
+        if array[j] <= pivot:
+            i = i + 1
+            #swap
+            (array[i], array[j]) = (array[j], array[i])
+  
+    (array[i + 1], array[high]) = (array[high], array[i + 1])
+  
+    return i + 1  
+
+def quick_sort(array, low, high):
+    if low < high:
+        pi = partition(array, low, high)
+  
+        # ricorsivo a sx
+        quick_sort(array, low, pi - 1)
+  
+        # ricorsivo a dx
+        quick_sort(array, pi + 1, high)
+
 # delete_duplicates (
 #   vect = vettore di numeri di cui vogliamo elidere i duplicati
 #   margin = margine di distanza tra due numeri perché vengano considerati uguali [grana]
@@ -67,20 +93,28 @@ def newton(g,gder,x0,l,n):
 # versione con grana di list(set(vect))
 # serve per non aumentare in modo esponenziale i punti di partenza di newton
 # se no ogni volta newton trova più zeri ma in realtà sono lo stesso con errore numerico
-def delete_duplicates(vect,margin):
+def delete_duplicates(vect,margin,k=0):
     result = [vect[0]]
-    # O(n^2) -> da sistemare assolutamente
-    # Soluzione da implementare è quicksort per ordinare l'array -> O(n*logn)
+    # Quicksort per ordinare l'array -> O(n*logn)
     # Poi passo 1 volta per l'array, fisso il primo elemento, e lo confronto con i successivi
     # se è vicino non li considero, se non lo è, lo aggiungo ai valori da considerare e lo fisso
-    # vado avanti così fino a fine array -> O(1)
-    for v in vect:
-        accept = 1
-        for r in result:
-            if abs(v-r) < margin:
-                accept = 0
-        if accept == 1:
-            result.append(v)
+    # vado avanti così fino a fine array -> O(n)
+    # algoristmo finale O(nlogn)
+    if k==0:
+        quick_sort(vect, 0, len(vect)-1)
+        for v in vect:
+            if abs(v-result[-1]) > margin:
+                result.append(v)
+
+    # O(n^2), da test di velocità non cambia pressoché nulla vista l'esigua quantità di dati
+    else:
+        for v in vect:
+            accept = 1
+            for r in result:
+                if abs(v-r) <= margin:
+                    accept = 0
+            if accept == 1:
+                result.append(v)
     return result
 
 # change_situation (
@@ -106,7 +140,7 @@ def change_situation(l,n,start):
             zer.append(newton(fzer,fzerder,s,l,n))
             if(zer[-1] == 'err'):
                 zer.pop(-1)
-        zer = delete_duplicates(list(set(zer)),1e-3)
+        zer = delete_duplicates(list(set(zer)),1e-3,0)
         for y in zer:
             #print("n={0} x={1} fnder(x)={2}".format(n,y,fder(l,y,n)))
             if(abs(fder(l,y,n))<1):
@@ -115,6 +149,7 @@ def change_situation(l,n,start):
         start = zer
     return 1
 
+t = time.time()
 fig = plt.figure(figsize=(16,8))
 ax = fig.add_subplot(111)
 n = 1
@@ -148,7 +183,7 @@ for l in ls:
         instables.extend(new_instables)
             
     
-    zer = delete_duplicates(list(set(zer)),1e-3)
+    zer = delete_duplicates(list(set(zer)),1e-3,0)
     count_stab = 0
 
     for y in zer:
@@ -175,8 +210,10 @@ for l in ls:
         # raddoppio il numero di composizioni con sè stesso
         n = 2*n
         # per aumentare la qualità vicino ai punti di biforcazione aumento la concentrazione di lambda in quell'intorno
-        lss = np.linspace(l,l+2*lmax/N,500)
-        #LO SI POTREBBE METTERE IN UNA FUNZIONE
+        if n==16:
+            break
+        #INIZIA RAFFINAMENTO
+        lss = np.linspace(l,l+4*lmax/N,500)
         #rallenta di parecchio, anche perché sono 500 elementi aggiuntivi, ma rende la qualità nei punti di biforcazione decisamente più alta
         for l_2 in lss:
             zer = []
@@ -194,16 +231,15 @@ for l in ls:
                     zer.append(f(l_2,zer[-1],1))
             # se c'è almeno uno stabile
             for y in zer:
-                ax.plot([l_2], [y], marker=",", color='k', markersize=1)
+                ax.plot([l_2], [y], marker=".", color='k', markersize=0.2)
             exzeros=zer[-1]
         
         exzeros=0.9
+        #FINISCE RAFFINAMENTO
     else:
         # faccio partire newton dall'ultimo zero trovato
         exzeros=zer[-1]
             
-        
-    
-    if n==32:
-        break
+print(time.time()-t)
+plt.savefig('quick_full_16.png')
 plt.show()
