@@ -1,9 +1,9 @@
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import cm
-plt.rcParams['text.usetex'] = True
 
+N=500
+t = 2*math.pi*0.2
 
 def f(theta, Omega, epsilon):
     return (theta+Omega+np.dot(epsilon,np.sin(theta)))%(2*math.pi)
@@ -13,29 +13,24 @@ def F(theta, Omega, epsilon, N):
     else:
         return F(theta+Omega+np.dot(epsilon,np.sin(theta)), Omega, epsilon, N-1)
 
-N=500
 Om = np.linspace(0,1,100)
-
-
-fig, ax = plt.subplots(subplot_kw={"projection": "3d"}, figsize=(8,8))
-t = 2*math.pi*0.8
-
-
-epsy = np.linspace(0,2,100)
+epsy = np.linspace(0,5,100)
 Omx = np.dot(Om,2*math.pi)
 
 omega = np.ones((100,100))
 
+#vado a calcolare per ogni coppia di Omega ed epsilon, l'omega corrispondente
 for i in range(100):
     for j in range(100):
-        omega[i,j] *= (F(t, Omx[i], epsy[j], N)-t)/(2*math.pi*N)
-
+        omega[j,i] *= (F(t, Omx[i], epsy[j], N)-t)/(2*math.pi*N)
+        
+Omx = np.dot(1/(2*math.pi), Omx)
 Omx, epsy = np.meshgrid(Omx, epsy)
 
-ax.set_xlabel(r'$\Omega$')
-ax.set_ylabel(r'$\epsilon$')
-ax.set_zlabel(r'$\omega$')
+plt.xlabel('Omega')
+plt.ylabel('epsilon')
+lev = np.linspace(omega.min(), omega.max(), 100)
 
-#c'è qualche errore nell'ordine, ma il grafico è giusto
-ax.plot_surface(Omx, epsy, omega, cmap='viridis', edgecolor='none')
+plt.contourf(Omx, epsy, omega, levels = lev)
+plt.colorbar()
 plt.show()
