@@ -54,7 +54,7 @@ def onpick1(event):
 #ricreando lo stesso numero di lambda di prima ma tra l0 e 4
 #PRO: qualità costante più si va avanti
 #CONTRO: lento
-def onpick2(event):
+def onpick(event):
     thisline = event.artist
     xdata = thisline.get_xdata()
     ind = event.ind
@@ -62,6 +62,6 @@ def onpick2(event):
     drawBif(xdata[ind][0],lbase)
     plt.draw()
 
-fig.canvas.mpl_connect('pick_event', onpick2)
+fig.canvas.mpl_connect('pick_event', onpick)
 
 plt.show()
