@@ -7,6 +7,8 @@ lastX, lastY = 0, 0
 def F(xn, yn, eps):
     xSucc = (xn + yn + eps*math.sin(xn))%(2*math.pi)
     ySucc = (yn + eps*math.sin(xn))%(2*math.pi)
+    if ySucc > math.pi:
+        ySucc -= 2*math.pi
     return xSucc, ySucc
 
 eps = float(input('Inserisci il valore di espilon: '))
@@ -14,7 +16,7 @@ eps = float(input('Inserisci il valore di espilon: '))
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111)
 ax.set_xlim(0,2*math.pi)
-ax.set_ylim(0,2*math.pi)
+ax.set_ylim(-math.pi,math.pi)
 
 def draw20it(x0,y0):
     for i in range(20):
