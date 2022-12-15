@@ -24,12 +24,14 @@ ax.set_ylim(-math.pi,math.pi)
 
 
 #primo auto vett da 0,0
-x0 = np.linspace(0,1e-10,N)
+x0 = np.linspace(0,1e-35,N)
 y0 = np.dot(-1*v1[0],x0)
 
 for i in range(N):
     xp, yp = x0[i], y0[i]
-    for i in range(30):
+    #print("Start: ({0},{1})".format(xp,yp))
+    for i in range(80):
+        #print("({0},{1})".format(xp,yp))
         ax.plot(xp, yp, marker=".", color='k', markersize=0.5)
         xp, yp = F(xp, yp, eps)
 
@@ -40,7 +42,9 @@ y0 = np.dot(-1*v1[0],x0)
 
 for i in range(N):
     xp, yp = x0[i], y0[i]
+    # print("Start: ({0},{1})".format(xp,yp))
     for i in range(30):
+        # print("({0},{1})".format(xp,yp))
         ax.plot(xp, yp, marker=".", color='k', markersize=0.5)
         xp, yp = F(xp, yp, eps)
 
@@ -57,7 +61,9 @@ y0 = np.dot(-1*v2[0],x0)
 
 for i in range(N):
     xp, yp = x0[i], y0[i]
+    # print("Start: ({0},{1})".format(xp,yp))
     for i in range(30):
+        # print("({0},{1})".format(xp,yp))
         ax.plot(xp, yp, marker=".", color='r', markersize=0.5)
         xp, yp = Finv(xp, yp, eps)
 
