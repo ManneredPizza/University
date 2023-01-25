@@ -24,7 +24,7 @@ def magnetization(lattice):
     return M / (lattice.shape[0]*lattice.shape[1])
 
 def changeSpin(lattice, numberOfPointPerSide):
-    randomCoordinates =np.random.randint(0, numberOfPointPerSide-1, size=2, dtype=int)
+    randomCoordinates = np.random.randint(0, numberOfPointPerSide-1, size=2, dtype=int)
     lattice[randomCoordinates[0], randomCoordinates[1]] *= -1
     return lattice
 
@@ -33,8 +33,9 @@ def isNewConfigurationAccepted(oldLattice, newLattice, beta, J):
     if(deltaEnergy > 0):
         probability = math.exp(-beta*deltaEnergy)
         isAccepted = np.random.choice([0, 1], 1, p=[1-probability, probability])
-        return isAccepted[0]
-    return 1
+        #print('P: {0} e Accettato: {1}'.format(probability, isAccepted))
+        return isAccepted[0], probability
+    return 1, 2
 
 # def printLattice(lattice):
 #     ax.cla()
@@ -46,22 +47,44 @@ def isNewConfigurationAccepted(oldLattice, newLattice, beta, J):
 #                 ax.plot([i], [j], marker=".", markersize=10, color='r')
 #     plt.pause(0.01)
 
-temperatures = list(range(1,22))
+temperatures = np.linspace(1,20,200)
+#temperatures = [200]
 J = 1
-numberOfIterations = 100
+numberOfIterations = 500
 
-# fig = plt.figure(figsize=(8,8))
-# ax = fig.add_subplot(111)
+fig = plt.figure(figsize=(8,8))
+ax = fig.add_subplot(111)
+
+ax.set_xlabel('T')
+ax.set_ylabel('m')
+#ax.set_ylabel('Prob Media')
 
 for T in temperatures:
     lattice = construct(numberOfPointPerSide)
     # printLattice(lattice)
+    probMedia, num = 0, 0
     for _ in range(numberOfIterations):
+        #faccio una copia della vecchia lattice
         oldLattice = np.copy(lattice)
-        newLattice = np.copy(changeSpin(oldLattice, numberOfPointPerSide))
-        if(isNewConfigurationAccepted(oldLattice, newLattice, 1/T, J) == 0):
+        #cambio uno spin casualmente
+        lattice = changeSpin(lattice, numberOfPointPerSide)
+        isAccepted, prob = isNewConfigurationAccepted(oldLattice, lattice, 1/T, J)
+        if(not prob == 2):
+            probMedia += prob
+            num += 1
+        if(isAccepted == 0):
+            #se non va bene rimetto la vecchia lattice
+            lattice = np.copy(oldLattice)
             continue
-        lattice = np.copy(newLattice)
+        #se va bene si continua
         # printLattice(lattice)
-    print("Con la temperatura {0} la magetizzazione è {1}".format(T, magnetization(lattice)))
-    # plt.show()
+        
+
+    if(num > 0):
+        probMedia = probMedia / num
+
+
+    print("Con la temperatura {0} la magetizzazione è {1} accettati con probabilità media {2}".format(T, magnetization(lattice), probMedia))
+    ax.plot(T, magnetization(lattice), marker='.', color='k')
+    #ax.plot(T, probMedia, marker='.', color='k')
+plt.show()
