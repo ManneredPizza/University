@@ -41,27 +41,27 @@ def isNewConfigurationAccepted(oldLattice, newLattice, beta, J):
 #     for i in range(lattice.shape[0]):
 #         for j in range(lattice.shape[1]):
 #             if lattice[i,j] == 1:
-#                 ax.plot([i], [j], marker=".", color='k')
+#                 ax.plot([i], [j], marker=".", markersize=10, color='k')
 #             else:
-#                 ax.plot([i], [j], marker=".", color='r')
+#                 ax.plot([i], [j], marker=".", markersize=10, color='r')
 #     plt.pause(0.01)
 
-temperatures = list(range(1,210))
+temperatures = list(range(1,22))
 J = 1
 numberOfIterations = 100
 
-#fig = plt.figure(figsize=(8,8))
-#ax = fig.add_subplot(111)
+# fig = plt.figure(figsize=(8,8))
+# ax = fig.add_subplot(111)
 
 for T in temperatures:
     lattice = construct(numberOfPointPerSide)
-    #printLattice(lattice)
+    # printLattice(lattice)
     for _ in range(numberOfIterations):
         oldLattice = np.copy(lattice)
         newLattice = np.copy(changeSpin(oldLattice, numberOfPointPerSide))
         if(isNewConfigurationAccepted(oldLattice, newLattice, 1/T, J) == 0):
             continue
         lattice = np.copy(newLattice)
-        #printLattice(lattice)
+        # printLattice(lattice)
     print("Con la temperatura {0} la magetizzazione è {1}".format(T, magnetization(lattice)))
-    #plt.show()
+    # plt.show()
