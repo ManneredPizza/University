@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include "tabella.h"
 
-/* dichiarazione prototipi funzioni */
+/* prototipi funzioni */
 FILE *letturaDaTerminale(int argc, char *argv[]);
-void insericeOrdinato(tabella *t, int min, int partenza);
-void insertionSort(tabella *t);
+void selectionSort(tabella *t);
 
 int main(int argc, char *argv[]) {
-	/* parte dichiarativa */
 	tabella t;
+
 	FILE *fpNumeri;
 
 	fpNumeri = letturaDaTerminale(argc, argv);
@@ -18,7 +17,7 @@ int main(int argc, char *argv[]) {
 
 	letturaDaFile(fpNumeri, &t);
 
-	insertionSort(&t);
+	selectionSort(&t);
 
 	stampaTabella(t);
 
@@ -45,22 +44,13 @@ FILE *letturaDaTerminale(int argc, char *argv[]) {
 	return fpNumeri;
 }
 
-void insericeOrdinato(tabella *t, int min, int partenza) {
-	int i=partenza;
+void selectionSort(tabella *t) {
+	int i;
+	int maxI;
+	int j;
 
-	for( ; (i >= 0) && (t->V[i] > min); i--) {
-		t->V[i+1] = t->V[i];
-	}
-
-	t->V[i+1] = min;
-}
-
-void insertionSort(tabella *t) {
-	int j=1;
-	int x;
-	
-	for( ; j<t->length; j++) {
-		x = t->V[j];
-		insericeOrdinato(t, x, j-1);
+	for(i=t->length-1; i>0; i--) {
+		maxI = trovaIndiceMassimo(*t, i);
+		scambia(&(t->V[maxI]), &(t->V[i]));
 	}
 }
