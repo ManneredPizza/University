@@ -51,4 +51,8 @@ lista inslista(lista l, posizione p, libro newLibro);
 
 lista canclista(lista l, posizione *p);
 
+posizione cercaLista(lista l, libro fileLibri);
+
+void stampaLista(lista l);
+
 #endif

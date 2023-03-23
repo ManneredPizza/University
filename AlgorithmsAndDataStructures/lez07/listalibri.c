@@ -87,16 +87,36 @@ lista canclista(lista l, posizione *p) {
 	tempP = *p;
 	*p = tempP->succ;
 
-	(*p)->pred = *p;
+	(*p)->pred = tempP->pred;
+	tempP->pred->succ = *p;
 
+	/* e' inutile ma bello isolarlo prima di ucciderlo */
 	tempP->succ = tempP;
 	tempP->pred = tempP;
-
-	l->succ = *p;
 
 	free(tempP);
 
 	return l;
+}
+
+posizione cercaLista(lista l, libro fileLibri) {
+	posizione p;
+
+	if(listavuota(l)) {
+		fprintf(stderr, "La lista e' vuota [cerca]\n");
+		exit(EXIT_FAILURE);
+	}
+
+	p=l->succ;
+	while(!finelista(l, p)) {
+		if(strcmp(p->autoreTitolo, fileLibri) == 0)
+			return p;
+		p=succlista(l,p);
+
+	}
+
+	p = NULL;
+	return p;
 }
 
 void stampaLista(lista l) {
@@ -110,9 +130,12 @@ void stampaLista(lista l) {
 	p = primolista(l);
 	while(!finelista(l, p)) {
 		fprintf(stdout, "%s\n", p->autoreTitolo);
-		fprintf(stdout, "\t|\n");
-		fprintf(stdout, "\t|\n");
-		fprintf(stdout, "\tv\n");
+		if(succlista(l, p) != l) {
+			fprintf(stdout, "\t|\n");
+			fprintf(stdout, "\t|\n");
+			fprintf(stdout, "\tv\n");
+		}
+		p = succlista(l, p);
 	}
 
 	fprintf(stdout, "\n");
