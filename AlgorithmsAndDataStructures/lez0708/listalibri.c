@@ -112,10 +112,26 @@ posizione cercaLista(lista l, libro fileLibri) {
 		if(strcmp(p->autoreTitolo, fileLibri) == 0)
 			return p;
 		p=succlista(l,p);
-
 	}
 
 	p = NULL;
+	return p;
+}
+
+posizione successivoRispettoInserimento(lista l, libro newLibro) {
+	posizione p;
+
+	if(listavuota(l))
+		return l;
+
+	p = primolista(l);
+
+	/* possibile loop infinito se la cella [normalemnte vuota] di l continente una frase lessicograficamente maggiore */
+	/* lo lascio e' divertente */
+	while(strcmp(p->autoreTitolo, newLibro) < 0 && !finelista(l, p)) {
+		p = succlista(l, p);
+	}
+
 	return p;
 }
 

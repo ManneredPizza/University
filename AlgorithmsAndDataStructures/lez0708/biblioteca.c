@@ -1,20 +1,11 @@
 #include "listalibri.h"
 
-/*
-	TODO:
-	1. quando inserisce in prestiti non cancella dalla lista originale
-	2. scrivere funzione che mi restitusce posizione dell'elemento della lista subito successivo a quello che devo inserire
-	3. inserire tutti i restituiti nella lista originale nella posizione corretta
-
-	4. rivedere tutto con i cursori
-
-*/
-
 void interpretaLineaComando (int argc, char *argv[], char *fileLibri, char *filePrestiti);
 void creaListaDaFile(char *fileLibri, lista *l);
 void togliLista(char *autoreLibro, lista *l);
 void aggiungiLista(char *autoreLibro, lista *prest, lista *l);
 void movimenti(char *autoreLibro, lista *rest, lista *pres, lista *l);
+void inserisciRestitutiti(lista *rest, lista *l);
 
 int main(int argc, char *argv[]) {
 	char fileLibri[ROW_LENGTH];
@@ -28,26 +19,27 @@ int main(int argc, char *argv[]) {
 
 	creaListaDaFile(fileLibri, &autoreLibro);
 
-	/*stampaLista(autoreLibro);*/
-
 	movimenti(filePrestiti, &restituzione, &prestiti, &autoreLibro);
 
+	fprintf(stdout, "LIBRERIA DISPONIBILE\n");
 	stampaLista(autoreLibro);
 
+	fprintf(stdout, "LIBRERIA IN PRESTITO\n");
 	stampaLista(prestiti);
 
+	fprintf(stdout, "LIBRERIA IN RESTITUZIONE\n");
 	stampaLista(restituzione);
 
+	inserisciRestitutiti(&restituzione, &autoreLibro);
 
-	/* Creo la lista */
-		/* lista vuota */
-		/* leggo dal fileLibri */
-		/* creo un elemento della lista */
-	/* Stampo la lista */
+	fprintf(stdout, "LIBRERIA DISPONIBILE\n");
+	stampaLista(autoreLibro);
 
-	/* Effettuare prove cancellando o simili e poi stampare */
+	fprintf(stdout, "LIBRERIA IN PRESTITO\n");
+	stampaLista(prestiti);
 
-	/* capire come gestire il filePrestiti */
+	fprintf(stdout, "LIBRERIA IN RESTITUZIONE\n");
+	stampaLista(restituzione);
 
 	return EXIT_SUCCESS;
 }
@@ -75,6 +67,8 @@ void creaListaDaFile(char *fileLibri, lista *l) {
 	*l = crealista();
 
 	while(strcmp(fgets(riga, ROW_LENGTH, fpLista), "FINE\n") != 0) {
+		/* toglie il terminatore */
+		riga[strcspn(riga, "\n")] = 0;
 		*l = inslista(*l, *l, riga);
 	}
 }
@@ -85,6 +79,7 @@ void togliLista(char *autoreLibro, lista *l) {
 	p = cercaLista(*l, autoreLibro);
 
 	if(p == NULL) {
+		fprintf(stdout, "Err con movimento di %s\n", autoreLibro);
 		/*fprintf(stdout, "Libro %s non presente in lista\n", autoreLibro);*/
 		/* dovrei lanciare un errore ma all'inizio del file mi viene restituito un libro 
 		   essendo l'inizio io non ho una lista PRESTITI quindi avrei errore */
@@ -126,5 +121,25 @@ void movimenti(char *fileLibri, lista *rest, lista *pres, lista *l) {
 		else if(strcmp(azione, "PRESTITO") == 0) {
 			aggiungiLista(riga, pres, l);
 		}
+	}
+}
+
+void inserisciRestitutiti(lista *rest, lista *l) {
+	posizione inRest;
+	posizione p;
+	char autoreLibro[ROW_LENGTH];
+
+	if(listavuota(*rest)) {
+		fprintf(stdout, "Lista restituzione vuota\n");
+		exit(EXIT_FAILURE);
+	}
+
+	while(!listavuota(*rest)) {
+		inRest = primolista(*rest);
+		leggelista(*rest, inRest, autoreLibro);
+		p = successivoRispettoInserimento(*l, autoreLibro);
+
+		*l = inslista(*l, p, autoreLibro);
+		*rest = canclista(*rest, &inRest);
 	}
 }

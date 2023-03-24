@@ -53,6 +53,8 @@ lista canclista(lista l, posizione *p);
 
 posizione cercaLista(lista l, libro fileLibri);
 
+posizione successivoRispettoInserimento(lista l, libro newLibro);
+
 void stampaLista(lista l);
 
 #endif
