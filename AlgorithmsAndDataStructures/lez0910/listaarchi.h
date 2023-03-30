@@ -1,28 +1,28 @@
-#ifndef __LISTAARCHI_H
-#define __LISTAARCHI_H
+#ifndef __listaarchi_h
+#define __listaarchi_h
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROW_LENGTH 256
-
 #define TRUE  1
 #define FALSE 0
-typedef int boolean;
+#define boolean int
+
 
 typedef struct _arco arco;
 typedef arco* listaarchi;
 typedef arco* posarco;
 typedef int nodo;
 
-#define NO_ARC NULL
-#define NO_NODE 0
+#define NO_ARC   NULL
+#define NO_NODE     0
 
-
-struct _arco {
-	nodo orig, dest;
-	posarco succ, pred;
+struct _arco
+{
+  nodo    orig, dest;
+  posarco succ, pred;
 };
+
 
 listaarchi crealistaarchi ();
 
