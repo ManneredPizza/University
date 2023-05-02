@@ -13,7 +13,6 @@ void distruggeABR(ABR *pT) {
 	}
 
 	(*pT)->padre = EMPTY_TREE;
-	(*pT)->val = EMPTY_VALUE;
 	free(pT);
 	*pT = EMPTY_TREE;
 }
@@ -33,7 +32,7 @@ boolean memberABR(int i, ABR T) {
 }
 
 ABR newABR(int i, ABR padre) {
-	ABR T;
+	ABR T = creaABR();
 	T->val = i;
 	T->Ts = EMPTY_TREE;
 	T->Td = EMPTY_TREE;
@@ -78,13 +77,15 @@ nodo *argmaxABR (ABR T) {
 }
 
 ABR deleteABR(int i, ABR T) {
+	ABR n = creaABR();
+
 	if(!memberABR(i, T)) return T;
 
 	else if(T->val > i) {
-		return deleteABR(T->Ts);
+		return deleteABR(i, T->Ts);
 	}
 	else if(T->val < i) {
-		return deleteABR(T->Td);
+		return deleteABR(i, T->Td);
 	}
 	else {
 		if(ABRvuoto(T->Ts)) {
@@ -127,10 +128,11 @@ ABR deleteABR(int i, ABR T) {
 		}
 		else {
 			n = argmaxABR(T->Ts);
-		    T->val = n->val;
-		    n->padre = EMPTY_TREE;
-		    distruggeABR(&n);
+	    T->val = n->val;
+	    n->padre = EMPTY_TREE;
+	    distruggeABR(&n);
 		}
+		return T;
 	}
 }
 
