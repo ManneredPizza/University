@@ -4,17 +4,13 @@ ABR creaABR() {
 	return EMPTY_TREE;
 }
 
-void distruggeABR(ABR *pT) { 
-	if(!ABRvuoto((*pT)->Ts)) {
-		distruggeABR(&((*pT)->Ts));
-	}
-	if(!ABRvuoto((*pT)->Td)) {
-		distruggeABR(&((*pT)->Td));
-	}
-
-	(*pT)->padre = EMPTY_TREE;
-	free(pT);
-	*pT = EMPTY_TREE;
+void distruggeABR (ABR *pT) {
+  if (*pT != EMPTY_TREE) {
+    distruggeABR(&(*pT)->Ts);
+    distruggeABR(&(*pT)->Td);
+    free(*pT);
+    *pT = EMPTY_TREE;
+  }
 }
 
 boolean ABRvuoto(ABR T) {
@@ -128,9 +124,9 @@ ABR deleteABR(int i, ABR T) {
 		}
 		else {
 			n = argmaxABR(T->Ts);
-	    T->val = n->val;
-	    n->padre = EMPTY_TREE;
-	    distruggeABR(&n);
+            T->val = n->val;
+            n->padre = EMPTY_TREE;
+            distruggeABR(&n);
 		}
 		return T;
 	}
