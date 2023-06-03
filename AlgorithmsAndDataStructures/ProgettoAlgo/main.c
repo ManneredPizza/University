@@ -17,8 +17,11 @@ void letturaIngredientiDaFile(char *nomeFileIngredienti, tabella *ingredienti);
 void letturaClientiDaFile(char *nomeFileClienti, tabella *clienti, tabella *ingredienti, matrice *preferenze);
 /* funzioni relative alla classifica degli ingredienti */
 void inizializzaClassifica(matrice *classifica, int numeroIngredientiNominati, riga ingredientiNominati,  matrice preferenze);
-void ordinaClassifica(matrice *classifica, int numeroIngredientiNominati, tabella ingredienti);
+void ordinaClassifica(matrice *classifica, int numeroIngredientiNominati, tabella ingredienti, int ingredientiClienti); /* utile anche a esigenza */
 void calcolaOrdinePopolarita(matrice preferenze, tabella ingredienti);
+/* funzioni relative alla classifica per esigenza */
+void inizializzaClassificaRighe(matrice *classifica, int numeroClienti, matrice preferenze);
+void calcolaOrdineEsigenza(matrice preferenze, tabella clienti);
 
 int main(int argc, char *argv[]) {
     char nomeFileIngredienti[ROW_LENGTH];
@@ -42,7 +45,8 @@ int main(int argc, char *argv[]) {
     /* Ordine per popolarita */
     calcolaOrdinePopolarita(preferenze, ingredienti);
 
-    /*  */
+    /* Ordine esigenza clienti */
+    calcolaOrdineEsigenza(preferenze, clienti);
 
     return EXIT_SUCCESS;
 }
@@ -140,7 +144,7 @@ void letturaClientiDaFile(char *nomeFileClienti, tabella *clienti, tabella *ingr
     fclose(file);
 }
 
-void inizializzaClassifica(matrice *classifica, int numeroIngredientiNominati, riga ingredientiNominati, matrice preferenze) {
+void inizializzaClassificaColonne(matrice *classifica, int numeroIngredientiNominati, riga ingredientiNominati, matrice preferenze) {
     int i,j;
     if(numeroIngredientiNominati == 0) {
         fprintf(stderr, "Impossibile creare una classifica di 0 elementi\n");
@@ -168,14 +172,22 @@ void inizializzaClassifica(matrice *classifica, int numeroIngredientiNominati, r
     }
 }
 
-void ordinaClassifica(matrice *classifica, int numeroIngredientiNominati, tabella ingredienti) {
-    int i,j,k;
+void ordinaClassifica(matrice *classifica, int numeroIngredientiNominati, tabella ingredienti, int ingredientiClienti) {
+    int i,j,k,kmax;
     riga tempVal;
     matrice tempM;
 
+    if(ingredientiClienti==0) kmax = 4;
+    else if(ingredientiClienti==1) kmax = 3;
+    else {
+        fprintf(stderr, "ingredientiClienti può essere solo 0 o 1\n");
+        exit(EXIT_FAILURE);
+    }
+
+
     /* k serve per dire che se ordine per RICHIESTI deve tenere conto del cluster con uguale ESCLUSO
         mentre l'ordine per GRADITI deve tenere conto del cluster con stesso ESCLUSO e RICHIESTI */
-    for(k=0; k<4; k++) {
+    for(k=0; k<kmax; k++) {
         i = 0;
         j = 0;
         /* qui definisco i numeri che caratterizzano il cluster */
@@ -187,10 +199,10 @@ void ordinaClassifica(matrice *classifica, int numeroIngredientiNominati, tabell
                 /* ne ho più di uno nel cluster */
                 if(abs(i-j)>1) {
                     /* matrice temporanea: questo è il cluster */
-                    inizializzaMatrice(&tempM, 4, j-i);
+                    inizializzaMatrice(&tempM, kmax, j-i);
                     copiaColonnePorzioneMatrice(&tempM, 0, *classifica, i, j);
                     /* ordino la temporanea */
-                    if(k < 3)
+                    if(k < kmax-1)
                         heapSortCustom(&tempM, j-i, k+1);
                     else
                         heapSortCustomLex(&tempM, j-i, ingredienti);
@@ -205,9 +217,9 @@ void ordinaClassifica(matrice *classifica, int numeroIngredientiNominati, tabell
 
             /* arrivati all'ultimo passo ordino */
             if(j==numeroIngredientiNominati) {
-                inizializzaMatrice(&tempM, 4, j-i);
+                inizializzaMatrice(&tempM, kmax, j-i);
                 copiaColonnePorzioneMatrice(&tempM, 0, *classifica, i, j);
-                if(k < 3)
+                if(k < kmax-1)
                     heapSortCustom(&tempM, j-i, k+1);
                 else
                     heapSortCustomLex(&tempM, j-i, ingredienti);
@@ -228,10 +240,10 @@ void calcolaOrdinePopolarita(matrice preferenze, tabella ingredienti) {
     fprintf(stdout, "%d ingredienti\n", numeroIngredientiNominati);
 
     /* costruisco una matrice con il numero di volte che la ~colonna è stata valutata con una certa preferenza */
-    inizializzaClassifica(&classifica, numeroIngredientiNominati, ingredientiNominati, preferenze);
+    inizializzaClassificaColonne(&classifica, numeroIngredientiNominati, ingredientiNominati, preferenze);
 
     /* ordino per richieste e poi per graditi e poi per lessicografico */
-    ordinaClassifica(&classifica, numeroIngredientiNominati, ingredienti);
+    ordinaClassifica(&classifica, numeroIngredientiNominati, ingredienti, 0);
 
     /* stampo come da richiesta*/
     for(i=0; i<numeroIngredientiNominati; i++) {
@@ -244,7 +256,54 @@ void calcolaOrdinePopolarita(matrice preferenze, tabella ingredienti) {
     
 }
 
+void inizializzaClassificaRighe(matrice *classifica, int numeroClienti, matrice preferenze) {
+    int i,j;
+    if(numeroClienti == 0) {
+        fprintf(stderr, "Impossibile creare una classifica di 0 elementi\n");
+        exit(EXIT_FAILURE);
+    }
 
+    /* 3 è per riga elementi , riga conta forti, riga conta deboli */
+    inizializzaMatrice(classifica, 3, numeroClienti);
+
+    for(j=0; j<numeroClienti; j++)
+        classifica->mat[0][j] = j;
+
+    for(i=0; i<numeroClienti; i++) {
+        for(j=0; j<preferenze.rowLength; j++) {
+            /* metto i meno per usare l'asgoritmo di ordine asc */
+            if(preferenze.mat[i][j] == ESCLUSO || preferenze.mat[i][j] == RICHIESTO)
+                classifica->mat[1][i] = classifica->mat[1][i] + 1;
+            else if(preferenze.mat[i][j] == GRADITO)
+                classifica->mat[2][i] = classifica->mat[2][i] + 1;
+        }
+    }
+}
+
+void calcolaOrdineEsigenza(matrice preferenze, tabella clienti) {
+    matrice classifica;
+    int numeroClienti;
+    int i,j;
+
+    numeroClienti = preferenze.numberOfRows;
+
+    fprintf(stdout, "%d clienti\n", numeroClienti);
+
+    /* costruisco una matrice dove ogni colonna è un cliente con due righe sotto, numero vincoli forti e numero vincoli deboli */
+    inizializzaClassificaRighe(&classifica, numeroClienti, preferenze);
+
+    /* ordino per richieste e poi per graditi e poi per lessicografico */
+    ordinaClassifica(&classifica, numeroClienti, clienti, 1);
+
+    /* stampo come da richiesta*/
+    for(i=0; i<numeroClienti; i++) {
+        fprintf(stdout, "%s ", clienti.V[classifica.mat[0][i]]);
+        for(j=1; j<3; j++) {
+            fprintf(stdout, "%d ", abs(classifica.mat[j][i]));
+        }
+        fprintf(stdout, "\n");
+    }
+}
 
 
 
