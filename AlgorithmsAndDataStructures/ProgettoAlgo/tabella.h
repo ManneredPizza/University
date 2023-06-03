@@ -13,9 +13,9 @@ typedef struct _tabella tabella;
 
 void inizializzaTabella(tabella *t);
 
-void inserimentoElemento(char *elemento, tabella *t);
+void inserimentoElementoTabella(char *elemento, tabella *t);
 
-int trovaIndiceDaContenuto(char *elemento, tabella *t);
+int trovaIndiceDaContenutoTabella(char *elemento, tabella *t);
 
 void stampaTabella(tabella t);
 

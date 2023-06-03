@@ -5,13 +5,21 @@
 
 void inizializzaTabella(tabella *t) {
 	t->V = (char **)malloc(sizeof(char*));
+    if(t->V == NULL) {
+        fprintf(stderr, "Impossibile allocare memoria\n");
+        exit(EXIT_FAILURE);
+    }
 	t->V[0] = (char*)malloc((LUNGHEZZA_ELEMENTO + 1)*sizeof(char));
+    if(t->V[0] == NULL) {
+        fprintf(stderr, "Impossibile allocare memoria\n");
+        exit(EXIT_FAILURE);
+    }
 	t->maxLength = ROW_LENGTH;
 	t->length = 0;
 }
 
 
-void inserimentoElemento(char *elemento, tabella *t) {
+void inserimentoElementoTabella(char *elemento, tabella *t) {
     if(sprintf(t->V[t->length], "%s", elemento) > 0) {
         if(t->length == t->maxLength-1) {
             fprintf(stdout, "Max lunghezza raggiunta%d\n", ROW_LENGTH);
@@ -19,15 +27,23 @@ void inserimentoElemento(char *elemento, tabella *t) {
         }
         t->length++;
         t->V = (char **)realloc(t->V, sizeof(char*)*(t->length+1));
+        if(t->V == NULL) {
+            fprintf(stderr, "Impossibile allocare memoria\n");
+            exit(EXIT_FAILURE);
+        }
         t->V[t->length] = (char*)malloc((LUNGHEZZA_ELEMENTO + 1)*sizeof(char));
+        if(t->V[t->length] == NULL) {
+            fprintf(stderr, "Impossibile allocare memoria\n");
+            exit(EXIT_FAILURE);
+        }
     }
     else {
-        fprintf(stderr, "Impossibile inserire ingrediente vuoto\n", ROW_LENGTH);
+        fprintf(stderr, "Impossibile inserire ingrediente vuoto\n");
         exit(EXIT_FAILURE);
     }
 }
 
-int trovaIndiceDaContenuto(char *elemento, tabella *t) {
+int trovaIndiceDaContenutoTabella(char *elemento, tabella *t) {
     int i;
 
     for(i=0; i<t->length; i++) {
@@ -42,6 +58,6 @@ void stampaTabella(tabella t) {
 	int i;
 
 	for(i=0; i<t.length; i++) {
-		fprintf(stdout, "%s\n", t.V[i]);
+		fprintf(stdout, "%s\t", t.V[i]);
 	}
 }
