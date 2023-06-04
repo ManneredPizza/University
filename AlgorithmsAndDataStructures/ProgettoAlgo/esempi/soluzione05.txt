@@ -105,9 +105,9 @@ Marra 0 4
 Mancini 3 1
 Grassi 4 7
 Gasmi 4 11
-DeFreitas 5 1
+DeFilippis 5 1
 Amato 5 7
-DiRuzza 5 9
+DiRenna 5 9
 Mena 5 19
 Montanari 7 0
 Polidori 7 2
@@ -123,7 +123,7 @@ Ianne 9 4
 Moiano 9 4
 Valvano 9 5
 Cutillo 9 6
-DeAngelis 9 6
+D'Ottavio 9 6
 Ferrari 9 20
 Hajji 10 6
 Bonomo 10 16
@@ -158,8 +158,8 @@ Pepe 15 5
 Poni 15 10
 Rainesi 15 16
 Riccati 16 5
-Dorascenzi 16 20
-DelAguila 17 3
+Donnhauser 16 20
+DeSterlich 17 3
 Pracucci 17 9
 Baiano 17 16
 Rizzelli 17 20
@@ -168,12 +168,12 @@ Carpi 18 15
 Bernardi 18 18
 Fiore 18 20
 Focaccia 19 11
-DeSantis 20 0
+DeRosa 20 0
 Leone 20 18
-DeSterlich 20 20
+DeSimoni 20 20
 Angiuli 21 1
 Bonn 21 3
-DeBacco 21 9
+DalLago 21 9
 Huaman 21 9
 Bagnato 21 17
 Cecere 22 0
@@ -182,7 +182,7 @@ Sarpieri 22 9
 Botnariu 22 16
 Cicconi 23 10
 Valbonesi 23 10
-DeFilippis 23 17
+DeCataldo 23 17
 Fusini 23 17
 Tarani 23 17
 Antosh 24 3
@@ -194,11 +194,11 @@ Capanna 25 9
 Frasca 25 13
 Harroud 26 2
 Palma 26 17
-DiPaolo 27 0
+DiMenna 27 0
 Brambilla 27 7
 Fabbrizi 29 8
 Tranquilli 29 12
-DiTuoro 29 16
+DiStefano 29 16
 Luzietti 30 0
 esclusioni
 1 per 4 clienti
@@ -224,10 +224,10 @@ Amato Cataldi
 Amato Chaibi
 Amato Costantino
 Amato Cutillo
-Amato DeBacco
-Amato DeSantis
-Amato DelAguila
-Amato Dorascenzi
+Amato DalLago
+Amato DeRosa
+Amato DeSterlich
+Amato Donnhauser
 Amato Fiore
 Amato Gatto
 Amato Ianne
@@ -254,14 +254,14 @@ Angiuli Cecere
 Angiuli Ciampaglia
 Angiuli Coppola
 Angiuli Costantino
-Angiuli DeAngelis
-Angiuli DeFilippis
-Angiuli DeSantis
+Angiuli D'Ottavio
+Angiuli DeCataldo
+Angiuli DeRosa
+Angiuli DeSimoni
 Angiuli DeSterlich
-Angiuli DelAguila
-Angiuli DiPaolo
-Angiuli DiTuoro
-Angiuli Dorascenzi
+Angiuli DiMenna
+Angiuli DiStefano
+Angiuli Donnhauser
 Angiuli Fabbrizi
 Angiuli Fasano
 Angiuli Ferrero
@@ -328,15 +328,15 @@ Antosh Coppola
 Antosh Costa
 Antosh Costantino
 Antosh Cutillo
-Antosh DeAngelis
-Antosh DeFilippis
-Antosh DeSantis
+Antosh D'Ottavio
+Antosh DeCataldo
+Antosh DeRosa
+Antosh DeSimoni
 Antosh DeSterlich
-Antosh DelAguila
-Antosh DiPaolo
-Antosh DiRuzza
-Antosh DiTuoro
-Antosh Dorascenzi
+Antosh DiMenna
+Antosh DiRenna
+Antosh DiStefano
+Antosh Donnhauser
 Antosh Fabbrizi
 Antosh Fasano
 Antosh Ferretti
@@ -398,12 +398,12 @@ Attendoli Ciampaglia
 Attendoli Cicconi
 Attendoli Costa
 Attendoli Costantino
-Attendoli DeAngelis
-Attendoli DeBacco
-Attendoli DeSantis
-Attendoli DelAguila
-Attendoli DiTuoro
-Attendoli Dorascenzi
+Attendoli D'Ottavio
+Attendoli DalLago
+Attendoli DeRosa
+Attendoli DeSterlich
+Attendoli DiStefano
+Attendoli Donnhauser
 Attendoli Fabbrizi
 Attendoli Ferrari
 Attendoli Ferrero
@@ -463,15 +463,15 @@ Bagnato Cicconi
 Bagnato Coppola
 Bagnato Costa
 Bagnato Costantino
-Bagnato DeAngelis
-Bagnato DeBacco
-Bagnato DeFilippis
-Bagnato DeSantis
-Bagnato DelAguila
-Bagnato DiPaolo
-Bagnato DiRuzza
-Bagnato DiTuoro
-Bagnato Dorascenzi
+Bagnato D'Ottavio
+Bagnato DalLago
+Bagnato DeCataldo
+Bagnato DeRosa
+Bagnato DeSterlich
+Bagnato DiMenna
+Bagnato DiRenna
+Bagnato DiStefano
+Bagnato Donnhauser
 Bagnato Fabbrizi
 Bagnato Fasano
 Bagnato Ferrero
@@ -524,14 +524,14 @@ Baiano Cecere
 Baiano Cicconi
 Baiano Coppola
 Baiano Costantino
-Baiano DeAngelis
-Baiano DeBacco
+Baiano D'Ottavio
+Baiano DalLago
+Baiano DeCataldo
 Baiano DeFilippis
-Baiano DeFreitas
+Baiano DeSimoni
 Baiano DeSterlich
-Baiano DelAguila
-Baiano DiPaolo
-Baiano Dorascenzi
+Baiano DiMenna
+Baiano Donnhauser
 Baiano Fasano
 Baiano Ferretti
 Baiano Fiore
@@ -569,11 +569,11 @@ Balloni Ciampaglia
 Balloni Cicconi
 Balloni Coppola
 Balloni Costantino
-Balloni DeFilippis
-Balloni DeSantis
-Balloni DiPaolo
-Balloni DiTuoro
-Balloni Dorascenzi
+Balloni DeCataldo
+Balloni DeRosa
+Balloni DiMenna
+Balloni DiStefano
+Balloni Donnhauser
 Balloni Fabbrizi
 Balloni Ferretti
 Balloni Focaccia
@@ -622,16 +622,16 @@ Bellaneve Coppola
 Bellaneve Costa
 Bellaneve Costantino
 Bellaneve Cutillo
-Bellaneve DeAngelis
-Bellaneve DeBacco
-Bellaneve DeFilippis
-Bellaneve DeSantis
+Bellaneve D'Ottavio
+Bellaneve DalLago
+Bellaneve DeCataldo
+Bellaneve DeRosa
+Bellaneve DeSimoni
 Bellaneve DeSterlich
-Bellaneve DelAguila
-Bellaneve DiPaolo
-Bellaneve DiRuzza
-Bellaneve DiTuoro
-Bellaneve Dorascenzi
+Bellaneve DiMenna
+Bellaneve DiRenna
+Bellaneve DiStefano
+Bellaneve Donnhauser
 Bellaneve Fabbrizi
 Bellaneve Fiore
 Bellaneve Focaccia
@@ -694,14 +694,14 @@ Bellini Cicconi
 Bellini Costa
 Bellini Costantino
 Bellini Cutillo
-Bellini DeAngelis
-Bellini DeBacco
-Bellini DeFilippis
-Bellini DeSantis
+Bellini D'Ottavio
+Bellini DalLago
+Bellini DeCataldo
+Bellini DeRosa
+Bellini DeSimoni
 Bellini DeSterlich
-Bellini DelAguila
-Bellini DiPaolo
-Bellini DiTuoro
+Bellini DiMenna
+Bellini DiStefano
 Bellini Fabbrizi
 Bellini Ferretti
 Bellini Fiore
@@ -764,15 +764,15 @@ Bernardi Cicconi
 Bernardi Costa
 Bernardi Costantino
 Bernardi Cutillo
-Bernardi DeAngelis
-Bernardi DeBacco
+Bernardi D'Ottavio
+Bernardi DalLago
+Bernardi DeCataldo
 Bernardi DeFilippis
-Bernardi DeFreitas
-Bernardi DeSantis
-Bernardi DeSterlich
-Bernardi DiPaolo
-Bernardi DiTuoro
-Bernardi Dorascenzi
+Bernardi DeRosa
+Bernardi DeSimoni
+Bernardi DiMenna
+Bernardi DiStefano
+Bernardi Donnhauser
 Bernardi Fabbrizi
 Bernardi Fasano
 Bernardi Ferrari
@@ -834,14 +834,14 @@ Bonn Coppola
 Bonn Costa
 Bonn Costantino
 Bonn Cutillo
-Bonn DeBacco
-Bonn DeFilippis
-Bonn DeSantis
+Bonn DalLago
+Bonn DeCataldo
+Bonn DeRosa
+Bonn DeSimoni
 Bonn DeSterlich
-Bonn DelAguila
-Bonn DiPaolo
-Bonn DiTuoro
-Bonn Dorascenzi
+Bonn DiMenna
+Bonn DiStefano
+Bonn Donnhauser
 Bonn Fabbrizi
 Bonn Fasano
 Bonn Ferrari
@@ -892,12 +892,12 @@ Bonomo Cicconi
 Bonomo Coppola
 Bonomo Costantino
 Bonomo Cutillo
-Bonomo DeBacco
-Bonomo DeFilippis
+Bonomo DalLago
+Bonomo DeCataldo
+Bonomo DeSimoni
 Bonomo DeSterlich
-Bonomo DelAguila
-Bonomo DiPaolo
-Bonomo DiTuoro
+Bonomo DiMenna
+Bonomo DiStefano
 Bonomo Fabbrizi
 Bonomo Ferrari
 Bonomo Ferrero
@@ -935,13 +935,13 @@ Borgat Ciampaglia
 Borgat Cicconi
 Borgat Costantino
 Borgat Cutillo
-Borgat DeBacco
-Borgat DeFilippis
-Borgat DeSantis
-Borgat DeSterlich
-Borgat DiPaolo
-Borgat DiTuoro
-Borgat Dorascenzi
+Borgat DalLago
+Borgat DeCataldo
+Borgat DeRosa
+Borgat DeSimoni
+Borgat DiMenna
+Borgat DiStefano
+Borgat Donnhauser
 Borgat Fabbrizi
 Borgat Fasano
 Borgat Ferrero
@@ -989,16 +989,16 @@ Botnariu Cicconi
 Botnariu Coppola
 Botnariu Costantino
 Botnariu Cutillo
-Botnariu DeAngelis
-Botnariu DeBacco
-Botnariu DeFilippis
-Botnariu DeSantis
+Botnariu D'Ottavio
+Botnariu DalLago
+Botnariu DeCataldo
+Botnariu DeRosa
+Botnariu DeSimoni
 Botnariu DeSterlich
-Botnariu DelAguila
-Botnariu DiPaolo
-Botnariu DiRuzza
-Botnariu DiTuoro
-Botnariu Dorascenzi
+Botnariu DiMenna
+Botnariu DiRenna
+Botnariu DiStefano
+Botnariu Donnhauser
 Botnariu Fabbrizi
 Botnariu Fasano
 Botnariu Ferretti
@@ -1055,16 +1055,16 @@ Brambilla Cicconi
 Brambilla Coppola
 Brambilla Costantino
 Brambilla Cutillo
-Brambilla DeAngelis
-Brambilla DeBacco
+Brambilla D'Ottavio
+Brambilla DalLago
+Brambilla DeCataldo
 Brambilla DeFilippis
-Brambilla DeFreitas
-Brambilla DeSantis
+Brambilla DeRosa
+Brambilla DeSimoni
 Brambilla DeSterlich
-Brambilla DelAguila
-Brambilla DiPaolo
-Brambilla DiRuzza
-Brambilla DiTuoro
+Brambilla DiMenna
+Brambilla DiRenna
+Brambilla DiStefano
 Brambilla Fabbrizi
 Brambilla Fasano
 Brambilla Fiore
@@ -1115,11 +1115,11 @@ Caligiuri Cecere
 Caligiuri Ciampaglia
 Caligiuri Costa
 Caligiuri Cutillo
-Caligiuri DeAngelis
-Caligiuri DeSantis
-Caligiuri DeSterlich
-Caligiuri DiPaolo
-Caligiuri DiTuoro
+Caligiuri D'Ottavio
+Caligiuri DeRosa
+Caligiuri DeSimoni
+Caligiuri DiMenna
+Caligiuri DiStefano
 Caligiuri Fabbrizi
 Caligiuri Fasano
 Caligiuri Ferrari
@@ -1165,14 +1165,14 @@ Capanna Coppola
 Capanna Costa
 Capanna Costantino
 Capanna Cutillo
-Capanna DeAngelis
-Capanna DeBacco
+Capanna D'Ottavio
+Capanna DalLago
+Capanna DeSimoni
 Capanna DeSterlich
-Capanna DelAguila
-Capanna DiPaolo
-Capanna DiRuzza
-Capanna DiTuoro
-Capanna Dorascenzi
+Capanna DiMenna
+Capanna DiRenna
+Capanna DiStefano
+Capanna Donnhauser
 Capanna Fabbrizi
 Capanna Fiore
 Capanna Focaccia
@@ -1216,11 +1216,11 @@ Capelli Cecere
 Capelli Cicconi
 Capelli Coppola
 Capelli Costantino
-Capelli DeAngelis
-Capelli DeBacco
-Capelli DeSantis
-Capelli DeSterlich
-Capelli DiTuoro
+Capelli D'Ottavio
+Capelli DalLago
+Capelli DeRosa
+Capelli DeSimoni
+Capelli DiStefano
 Capelli Focaccia
 Capelli Frasca
 Capelli Gasmi
@@ -1244,14 +1244,14 @@ Carpi Coppola
 Carpi Costa
 Carpi Costantino
 Carpi Cutillo
-Carpi DeAngelis
-Carpi DeBacco
-Carpi DeFilippis
-Carpi DeSantis
+Carpi D'Ottavio
+Carpi DalLago
+Carpi DeCataldo
+Carpi DeRosa
+Carpi DeSimoni
 Carpi DeSterlich
-Carpi DelAguila
-Carpi DiTuoro
-Carpi Dorascenzi
+Carpi DiStefano
+Carpi Donnhauser
 Carpi Fabbrizi
 Carpi Fasano
 Carpi Ferrero
@@ -1295,12 +1295,12 @@ Carpi Zolea
 Cataldi Cecere
 Cataldi Ciampaglia
 Cataldi Cicconi
-Cataldi DeAngelis
+Cataldi D'Ottavio
+Cataldi DeCataldo
 Cataldi DeFilippis
-Cataldi DeFreitas
-Cataldi DiPaolo
-Cataldi DiRuzza
-Cataldi DiTuoro
+Cataldi DiMenna
+Cataldi DiRenna
+Cataldi DiStefano
 Cataldi Fabbrizi
 Cataldi Fasano
 Cataldi Ferrero
@@ -1338,14 +1338,14 @@ Cecere Cicconi
 Cecere Coppola
 Cecere Costa
 Cecere Costantino
-Cecere DeAngelis
-Cecere DeBacco
-Cecere DeFilippis
-Cecere DeSantis
-Cecere DelAguila
-Cecere DiPaolo
-Cecere DiTuoro
-Cecere Dorascenzi
+Cecere D'Ottavio
+Cecere DalLago
+Cecere DeCataldo
+Cecere DeRosa
+Cecere DeSterlich
+Cecere DiMenna
+Cecere DiStefano
+Cecere Donnhauser
 Cecere Fabbrizi
 Cecere Fasano
 Cecere Ferrero
@@ -1394,13 +1394,13 @@ Cecere Vincenzi
 Cecere Vitale
 Cecere Zolea
 Cecere Zuccherelli
-Chaibi DeBacco
-Chaibi DeFilippis
-Chaibi DelAguila
-Chaibi DiPaolo
-Chaibi DiRuzza
-Chaibi DiTuoro
-Chaibi Dorascenzi
+Chaibi DalLago
+Chaibi DeCataldo
+Chaibi DeSterlich
+Chaibi DiMenna
+Chaibi DiRenna
+Chaibi DiStefano
+Chaibi Donnhauser
 Chaibi Fabbrizi
 Chaibi Focaccia
 Chaibi Gasmi
@@ -1431,13 +1431,13 @@ Chaibi Vitale
 Chaibi Zuccherelli
 Ciampaglia Costa
 Ciampaglia Costantino
-Ciampaglia DeAngelis
-Ciampaglia DeBacco
-Ciampaglia DeFilippis
-Ciampaglia DeSantis
-Ciampaglia DeSterlich
-Ciampaglia DiPaolo
-Ciampaglia DiTuoro
+Ciampaglia D'Ottavio
+Ciampaglia DalLago
+Ciampaglia DeCataldo
+Ciampaglia DeRosa
+Ciampaglia DeSimoni
+Ciampaglia DiMenna
+Ciampaglia DiStefano
 Ciampaglia Fabbrizi
 Ciampaglia Ferrari
 Ciampaglia Ferrero
@@ -1476,16 +1476,16 @@ Ciampaglia Zuccherelli
 Cicconi Coppola
 Cicconi Costantino
 Cicconi Cutillo
-Cicconi DeAngelis
-Cicconi DeBacco
-Cicconi DeFilippis
-Cicconi DeSantis
+Cicconi D'Ottavio
+Cicconi DalLago
+Cicconi DeCataldo
+Cicconi DeRosa
+Cicconi DeSimoni
 Cicconi DeSterlich
-Cicconi DelAguila
-Cicconi DiPaolo
-Cicconi DiRuzza
-Cicconi DiTuoro
-Cicconi Dorascenzi
+Cicconi DiMenna
+Cicconi DiRenna
+Cicconi DiStefano
+Cicconi Donnhauser
 Cicconi Fabbrizi
 Cicconi Fasano
 Cicconi Ferrari
@@ -1539,12 +1539,12 @@ Cicconi Zuccherelli
 Coppola Costa
 Coppola Costantino
 Coppola Cutillo
-Coppola DeAngelis
-Coppola DeBacco
-Coppola DeFilippis
-Coppola DeSantis
-Coppola DeSterlich
-Coppola DiPaolo
+Coppola D'Ottavio
+Coppola DalLago
+Coppola DeCataldo
+Coppola DeRosa
+Coppola DeSimoni
+Coppola DiMenna
 Coppola Fabbrizi
 Coppola Ferrari
 Coppola Ferrero
@@ -1587,11 +1587,11 @@ Coppola Vitale
 Coppola Zolea
 Costa Costantino
 Costa Cutillo
-Costa DeAngelis
-Costa DeSantis
-Costa DeSterlich
-Costa DiPaolo
-Costa DiTuoro
+Costa D'Ottavio
+Costa DeRosa
+Costa DeSimoni
+Costa DiMenna
+Costa DiStefano
 Costa Fabbrizi
 Costa Fasano
 Costa Fiore
@@ -1616,14 +1616,14 @@ Costa Tarani
 Costa Tranquilli
 Costa Vitale
 Costantino Cutillo
-Costantino DeAngelis
-Costantino DeBacco
+Costantino D'Ottavio
+Costantino DalLago
+Costantino DeCataldo
 Costantino DeFilippis
-Costantino DeFreitas
-Costantino DeSantis
-Costantino DeSterlich
-Costantino DiPaolo
-Costantino DiTuoro
+Costantino DeRosa
+Costantino DeSimoni
+Costantino DiMenna
+Costantino DiStefano
 Costantino Fabbrizi
 Costantino Fasano
 Costantino Ferrari
@@ -1667,13 +1667,13 @@ Costantino Vincenzi
 Costantino Vitale
 Costantino Zolea
 Costantino Zuccherelli
-Cutillo DeBacco
-Cutillo DeFreitas
-Cutillo DeSantis
-Cutillo DelAguila
-Cutillo DiPaolo
-Cutillo DiTuoro
-Cutillo Dorascenzi
+Cutillo DalLago
+Cutillo DeFilippis
+Cutillo DeRosa
+Cutillo DeSterlich
+Cutillo DiMenna
+Cutillo DiStefano
+Cutillo Donnhauser
 Cutillo Fabbrizi
 Cutillo Fasano
 Cutillo Ferrero
@@ -1699,459 +1699,459 @@ Cutillo Rotella
 Cutillo Santana
 Cutillo Sarpieri
 Cutillo Vitale
-DeAngelis DeSantis
-DeAngelis DelAguila
-DeAngelis DiPaolo
-DeAngelis DiTuoro
-DeAngelis Dorascenzi
-DeAngelis Fabbrizi
-DeAngelis Fasano
-DeAngelis Ferrari
-DeAngelis Ferretti
-DeAngelis Fiore
-DeAngelis Focaccia
-DeAngelis Frasca
-DeAngelis Fusini
-DeAngelis Gatto
-DeAngelis Grassi
-DeAngelis Guzman
-DeAngelis Hajji
-DeAngelis Huaman
-DeAngelis Iuliano
-DeAngelis Leone
-DeAngelis Luzietti
-DeAngelis Mancini
-DeAngelis Milani
-DeAngelis Moiano
-DeAngelis Montanari
-DeAngelis Palma
-DeAngelis Paradisi
-DeAngelis Pellegrini
-DeAngelis Pepe
-DeAngelis Pracucci
-DeAngelis Rainesi
-DeAngelis Raqabi
-DeAngelis Riccati
-DeAngelis Rizzelli
-DeAngelis Romano
-DeAngelis Rotella
-DeAngelis Santana
-DeAngelis Sarpieri
-DeAngelis Tranquilli
-DeAngelis Valvano
-DeAngelis Villani
-DeAngelis Vincenzi
-DeAngelis Vitale
-DeBacco DeFilippis
-DeBacco DeSantis
-DeBacco DeSterlich
-DeBacco DelAguila
-DeBacco DiPaolo
-DeBacco DiTuoro
-DeBacco Dorascenzi
-DeBacco Fabbrizi
-DeBacco Fasano
-DeBacco Ferrari
-DeBacco Fiore
-DeBacco Focaccia
-DeBacco Frasca
-DeBacco Fusini
-DeBacco Gatto
-DeBacco Guzman
-DeBacco Hajji
-DeBacco Harroud
-DeBacco Huaman
-DeBacco Ianne
-DeBacco Iatalese
-DeBacco Iuliano
-DeBacco Luzietti
-DeBacco Mena
-DeBacco Montanari
-DeBacco Mucci
-DeBacco Nini
-DeBacco Olivelli
-DeBacco Orlando
-DeBacco Palazzari
-DeBacco Palma
-DeBacco Paradisi
-DeBacco Pellegrini
-DeBacco Pepe
-DeBacco Poni
-DeBacco Pracucci
-DeBacco Rainesi
-DeBacco Raqabi
-DeBacco Renzoni
-DeBacco Riccati
-DeBacco Rizzelli
-DeBacco Romano
-DeBacco Rotella
-DeBacco Sala
-DeBacco Sarpieri
-DeBacco Tarani
-DeBacco Tranquilli
-DeBacco Valbonesi
-DeBacco Vincenzi
-DeBacco Vitale
-DeBacco Zolea
-DeBacco Zuccherelli
-DeFilippis DeFreitas
-DeFilippis DeSantis
+D'Ottavio DeRosa
+D'Ottavio DeSterlich
+D'Ottavio DiMenna
+D'Ottavio DiStefano
+D'Ottavio Donnhauser
+D'Ottavio Fabbrizi
+D'Ottavio Fasano
+D'Ottavio Ferrari
+D'Ottavio Ferretti
+D'Ottavio Fiore
+D'Ottavio Focaccia
+D'Ottavio Frasca
+D'Ottavio Fusini
+D'Ottavio Gatto
+D'Ottavio Grassi
+D'Ottavio Guzman
+D'Ottavio Hajji
+D'Ottavio Huaman
+D'Ottavio Iuliano
+D'Ottavio Leone
+D'Ottavio Luzietti
+D'Ottavio Mancini
+D'Ottavio Milani
+D'Ottavio Moiano
+D'Ottavio Montanari
+D'Ottavio Palma
+D'Ottavio Paradisi
+D'Ottavio Pellegrini
+D'Ottavio Pepe
+D'Ottavio Pracucci
+D'Ottavio Rainesi
+D'Ottavio Raqabi
+D'Ottavio Riccati
+D'Ottavio Rizzelli
+D'Ottavio Romano
+D'Ottavio Rotella
+D'Ottavio Santana
+D'Ottavio Sarpieri
+D'Ottavio Tranquilli
+D'Ottavio Valvano
+D'Ottavio Villani
+D'Ottavio Vincenzi
+D'Ottavio Vitale
+DalLago DeCataldo
+DalLago DeRosa
+DalLago DeSimoni
+DalLago DeSterlich
+DalLago DiMenna
+DalLago DiStefano
+DalLago Donnhauser
+DalLago Fabbrizi
+DalLago Fasano
+DalLago Ferrari
+DalLago Fiore
+DalLago Focaccia
+DalLago Frasca
+DalLago Fusini
+DalLago Gatto
+DalLago Guzman
+DalLago Hajji
+DalLago Harroud
+DalLago Huaman
+DalLago Ianne
+DalLago Iatalese
+DalLago Iuliano
+DalLago Luzietti
+DalLago Mena
+DalLago Montanari
+DalLago Mucci
+DalLago Nini
+DalLago Olivelli
+DalLago Orlando
+DalLago Palazzari
+DalLago Palma
+DalLago Paradisi
+DalLago Pellegrini
+DalLago Pepe
+DalLago Poni
+DalLago Pracucci
+DalLago Rainesi
+DalLago Raqabi
+DalLago Renzoni
+DalLago Riccati
+DalLago Rizzelli
+DalLago Romano
+DalLago Rotella
+DalLago Sala
+DalLago Sarpieri
+DalLago Tarani
+DalLago Tranquilli
+DalLago Valbonesi
+DalLago Vincenzi
+DalLago Vitale
+DalLago Zolea
+DalLago Zuccherelli
+DeCataldo DeFilippis
+DeCataldo DeRosa
+DeCataldo DeSimoni
+DeCataldo DeSterlich
+DeCataldo DiMenna
+DeCataldo DiRenna
+DeCataldo DiStefano
+DeCataldo Donnhauser
+DeCataldo Fabbrizi
+DeCataldo Fasano
+DeCataldo Ferretti
+DeCataldo Fiore
+DeCataldo Focaccia
+DeCataldo Frasca
+DeCataldo Fusini
+DeCataldo Guzman
+DeCataldo Hajji
+DeCataldo Harroud
+DeCataldo Huaman
+DeCataldo Ianne
+DeCataldo Iatalese
+DeCataldo Iuliano
+DeCataldo Leone
+DeCataldo Luzietti
+DeCataldo Milani
+DeCataldo Moiano
+DeCataldo Monsorno
+DeCataldo Mucci
+DeCataldo Nini
+DeCataldo Olivelli
+DeCataldo Palma
+DeCataldo Paradisi
+DeCataldo Pellegrini
+DeCataldo Poni
+DeCataldo Pracucci
+DeCataldo Rainesi
+DeCataldo Raqabi
+DeCataldo Rizzelli
+DeCataldo Rotella
+DeCataldo Santana
+DeCataldo Tarani
+DeCataldo Tranquilli
+DeCataldo Valbonesi
+DeCataldo Vincenzi
+DeCataldo Zolea
+DeCataldo Zuccherelli
 DeFilippis DeSterlich
-DeFilippis DelAguila
-DeFilippis DiPaolo
-DeFilippis DiRuzza
-DeFilippis DiTuoro
-DeFilippis Dorascenzi
+DeFilippis DiStefano
+DeFilippis Donnhauser
 DeFilippis Fabbrizi
-DeFilippis Fasano
-DeFilippis Ferretti
-DeFilippis Fiore
-DeFilippis Focaccia
-DeFilippis Frasca
-DeFilippis Fusini
-DeFilippis Guzman
-DeFilippis Hajji
+DeFilippis Ferrari
+DeFilippis Gasmi
+DeFilippis Gatto
 DeFilippis Harroud
-DeFilippis Huaman
 DeFilippis Ianne
-DeFilippis Iatalese
 DeFilippis Iuliano
-DeFilippis Leone
 DeFilippis Luzietti
-DeFilippis Milani
-DeFilippis Moiano
 DeFilippis Monsorno
-DeFilippis Mucci
-DeFilippis Nini
-DeFilippis Olivelli
+DeFilippis Orlando
 DeFilippis Palma
 DeFilippis Paradisi
-DeFilippis Pellegrini
+DeFilippis Pepe
 DeFilippis Poni
 DeFilippis Pracucci
-DeFilippis Rainesi
 DeFilippis Raqabi
-DeFilippis Rizzelli
-DeFilippis Rotella
-DeFilippis Santana
+DeFilippis Renzoni
+DeFilippis Romano
 DeFilippis Tarani
 DeFilippis Tranquilli
-DeFilippis Valbonesi
-DeFilippis Vincenzi
+DeFilippis Vitale
 DeFilippis Zolea
-DeFilippis Zuccherelli
-DeFreitas DelAguila
-DeFreitas DiTuoro
-DeFreitas Dorascenzi
-DeFreitas Fabbrizi
-DeFreitas Ferrari
-DeFreitas Gasmi
-DeFreitas Gatto
-DeFreitas Harroud
-DeFreitas Ianne
-DeFreitas Iuliano
-DeFreitas Luzietti
-DeFreitas Monsorno
-DeFreitas Orlando
-DeFreitas Palma
-DeFreitas Paradisi
-DeFreitas Pepe
-DeFreitas Poni
-DeFreitas Pracucci
-DeFreitas Raqabi
-DeFreitas Renzoni
-DeFreitas Romano
-DeFreitas Tarani
-DeFreitas Tranquilli
-DeFreitas Vitale
-DeFreitas Zolea
-DeSantis DeSterlich
-DeSantis DelAguila
-DeSantis DiPaolo
-DeSantis DiTuoro
-DeSantis Dorascenzi
-DeSantis Fabbrizi
-DeSantis Ferretti
-DeSantis Fiore
-DeSantis Focaccia
-DeSantis Frasca
-DeSantis Fusini
-DeSantis Gatto
-DeSantis Gnani
-DeSantis Guzman
-DeSantis Hajji
-DeSantis Harroud
-DeSantis Iatalese
-DeSantis Iuliano
-DeSantis Leone
-DeSantis Luzietti
-DeSantis Mancini
-DeSantis Milani
-DeSantis Moiano
-DeSantis Monsorno
-DeSantis Mucci
-DeSantis Nini
-DeSantis Orlando
-DeSantis Palma
-DeSantis Paradisi
-DeSantis Pepe
-DeSantis Poni
-DeSantis Pracucci
-DeSantis Rainesi
-DeSantis Raqabi
-DeSantis Renzoni
-DeSantis Riccati
-DeSantis Rizzelli
-DeSantis Rotella
-DeSantis Sala
-DeSantis Sarpieri
-DeSantis Tarani
-DeSantis Tranquilli
-DeSantis Valbonesi
-DeSantis Valvano
-DeSantis Vitale
-DeSantis Zolea
-DeSantis Zuccherelli
-DeSterlich DelAguila
-DeSterlich DiPaolo
-DeSterlich DiRuzza
-DeSterlich DiTuoro
-DeSterlich Dorascenzi
+DeRosa DeSimoni
+DeRosa DeSterlich
+DeRosa DiMenna
+DeRosa DiStefano
+DeRosa Donnhauser
+DeRosa Fabbrizi
+DeRosa Ferretti
+DeRosa Fiore
+DeRosa Focaccia
+DeRosa Frasca
+DeRosa Fusini
+DeRosa Gatto
+DeRosa Gnani
+DeRosa Guzman
+DeRosa Hajji
+DeRosa Harroud
+DeRosa Iatalese
+DeRosa Iuliano
+DeRosa Leone
+DeRosa Luzietti
+DeRosa Mancini
+DeRosa Milani
+DeRosa Moiano
+DeRosa Monsorno
+DeRosa Mucci
+DeRosa Nini
+DeRosa Orlando
+DeRosa Palma
+DeRosa Paradisi
+DeRosa Pepe
+DeRosa Poni
+DeRosa Pracucci
+DeRosa Rainesi
+DeRosa Raqabi
+DeRosa Renzoni
+DeRosa Riccati
+DeRosa Rizzelli
+DeRosa Rotella
+DeRosa Sala
+DeRosa Sarpieri
+DeRosa Tarani
+DeRosa Tranquilli
+DeRosa Valbonesi
+DeRosa Valvano
+DeRosa Vitale
+DeRosa Zolea
+DeRosa Zuccherelli
+DeSimoni DeSterlich
+DeSimoni DiMenna
+DeSimoni DiRenna
+DeSimoni DiStefano
+DeSimoni Donnhauser
+DeSimoni Fabbrizi
+DeSimoni Fasano
+DeSimoni Ferrero
+DeSimoni Ferretti
+DeSimoni Fiore
+DeSimoni Focaccia
+DeSimoni Frasca
+DeSimoni Gatto
+DeSimoni Gnani
+DeSimoni Grassi
+DeSimoni Guzman
+DeSimoni Hajji
+DeSimoni Harroud
+DeSimoni Huaman
+DeSimoni Ianne
+DeSimoni Iatalese
+DeSimoni Luzietti
+DeSimoni Mena
+DeSimoni Moiano
+DeSimoni Monsorno
+DeSimoni Mucci
+DeSimoni Nini
+DeSimoni Olivelli
+DeSimoni Orlando
+DeSimoni Palazzari
+DeSimoni Palma
+DeSimoni Paradisi
+DeSimoni Pellegrini
+DeSimoni Pepe
+DeSimoni Rainesi
+DeSimoni Raqabi
+DeSimoni Riccati
+DeSimoni Rizzelli
+DeSimoni Romano
+DeSimoni Rotella
+DeSimoni Sala
+DeSimoni Santana
+DeSimoni Sarpieri
+DeSimoni Tarani
+DeSimoni Tranquilli
+DeSimoni Valbonesi
+DeSimoni Vitale
+DeSimoni Zuccherelli
+DeSterlich DiMenna
+DeSterlich DiStefano
 DeSterlich Fabbrizi
 DeSterlich Fasano
+DeSterlich Ferrari
 DeSterlich Ferrero
-DeSterlich Ferretti
 DeSterlich Fiore
-DeSterlich Focaccia
 DeSterlich Frasca
+DeSterlich Fusini
 DeSterlich Gatto
-DeSterlich Gnani
 DeSterlich Grassi
 DeSterlich Guzman
 DeSterlich Hajji
 DeSterlich Harroud
 DeSterlich Huaman
-DeSterlich Ianne
 DeSterlich Iatalese
+DeSterlich Iuliano
+DeSterlich Leone
 DeSterlich Luzietti
-DeSterlich Mena
 DeSterlich Moiano
-DeSterlich Monsorno
-DeSterlich Mucci
 DeSterlich Nini
 DeSterlich Olivelli
 DeSterlich Orlando
-DeSterlich Palazzari
 DeSterlich Palma
 DeSterlich Paradisi
 DeSterlich Pellegrini
 DeSterlich Pepe
+DeSterlich Polidori
+DeSterlich Poni
+DeSterlich Pracucci
 DeSterlich Rainesi
 DeSterlich Raqabi
+DeSterlich Renzoni
 DeSterlich Riccati
-DeSterlich Rizzelli
-DeSterlich Romano
 DeSterlich Rotella
-DeSterlich Sala
 DeSterlich Santana
 DeSterlich Sarpieri
 DeSterlich Tarani
 DeSterlich Tranquilli
-DeSterlich Valbonesi
+DeSterlich Valvano
+DeSterlich Villani
 DeSterlich Vitale
+DeSterlich Zolea
 DeSterlich Zuccherelli
-DelAguila DiPaolo
-DelAguila DiTuoro
-DelAguila Fabbrizi
-DelAguila Fasano
-DelAguila Ferrari
-DelAguila Ferrero
-DelAguila Fiore
-DelAguila Frasca
-DelAguila Fusini
-DelAguila Gatto
-DelAguila Grassi
-DelAguila Guzman
-DelAguila Hajji
-DelAguila Harroud
-DelAguila Huaman
-DelAguila Iatalese
-DelAguila Iuliano
-DelAguila Leone
-DelAguila Luzietti
-DelAguila Moiano
-DelAguila Nini
-DelAguila Olivelli
-DelAguila Orlando
-DelAguila Palma
-DelAguila Paradisi
-DelAguila Pellegrini
-DelAguila Pepe
-DelAguila Polidori
-DelAguila Poni
-DelAguila Pracucci
-DelAguila Rainesi
-DelAguila Raqabi
-DelAguila Renzoni
-DelAguila Riccati
-DelAguila Rotella
-DelAguila Santana
-DelAguila Sarpieri
-DelAguila Tarani
-DelAguila Tranquilli
-DelAguila Valvano
-DelAguila Villani
-DelAguila Vitale
-DelAguila Zolea
-DelAguila Zuccherelli
-DiPaolo DiRuzza
-DiPaolo DiTuoro
-DiPaolo Dorascenzi
-DiPaolo Fabbrizi
-DiPaolo Fasano
-DiPaolo Ferrari
-DiPaolo Ferrero
-DiPaolo Ferretti
-DiPaolo Fiore
-DiPaolo Focaccia
-DiPaolo Fusini
-DiPaolo Gatto
-DiPaolo Guzman
-DiPaolo Hajji
-DiPaolo Harroud
-DiPaolo Huaman
-DiPaolo Ianne
-DiPaolo Iatalese
-DiPaolo Iuliano
-DiPaolo Leone
-DiPaolo Luzietti
-DiPaolo Milani
-DiPaolo Moiano
-DiPaolo Monsorno
-DiPaolo Mucci
-DiPaolo Nini
-DiPaolo Orlando
-DiPaolo Palazzari
-DiPaolo Palma
-DiPaolo Paradisi
-DiPaolo Polidori
-DiPaolo Poni
-DiPaolo Pracucci
-DiPaolo Riccati
-DiPaolo Rizzelli
-DiPaolo Romano
-DiPaolo Rotella
-DiPaolo Sarpieri
-DiPaolo Tarani
-DiPaolo Tranquilli
-DiPaolo Valbonesi
-DiPaolo Vitale
-DiPaolo Zolea
-DiRuzza Fabbrizi
-DiRuzza Ferrero
-DiRuzza Guzman
-DiRuzza Hajji
-DiRuzza Huaman
-DiRuzza Iatalese
-DiRuzza Leone
-DiRuzza Luzietti
-DiRuzza Mucci
-DiRuzza Nini
-DiRuzza Paradisi
-DiRuzza Pellegrini
-DiRuzza Pepe
-DiRuzza Poni
-DiRuzza Riccati
-DiRuzza Santana
-DiRuzza Sarpieri
-DiRuzza Tarani
-DiRuzza Villani
-DiTuoro Dorascenzi
-DiTuoro Fabbrizi
-DiTuoro Ferrero
-DiTuoro Fiore
-DiTuoro Focaccia
-DiTuoro Frasca
-DiTuoro Fusini
-DiTuoro Gasmi
-DiTuoro Gnani
-DiTuoro Guzman
-DiTuoro Harroud
-DiTuoro Huaman
-DiTuoro Ianne
-DiTuoro Iatalese
-DiTuoro Iuliano
-DiTuoro Leone
-DiTuoro Luzietti
-DiTuoro Mena
-DiTuoro Milani
-DiTuoro Moiano
-DiTuoro Monsorno
-DiTuoro Montanari
-DiTuoro Nini
-DiTuoro Olivelli
-DiTuoro Orlando
-DiTuoro Palazzari
-DiTuoro Palma
-DiTuoro Paradisi
-DiTuoro Pepe
-DiTuoro Pracucci
-DiTuoro Rainesi
-DiTuoro Renzoni
-DiTuoro Riccati
-DiTuoro Rizzelli
-DiTuoro Romano
-DiTuoro Rotella
-DiTuoro Sala
-DiTuoro Tarani
-DiTuoro Tranquilli
-DiTuoro Valbonesi
-DiTuoro Valvano
-DiTuoro Villani
-DiTuoro Vincenzi
-DiTuoro Vitale
-DiTuoro Zuccherelli
-Dorascenzi Fabbrizi
-Dorascenzi Ferrari
-Dorascenzi Ferrero
-Dorascenzi Ferretti
-Dorascenzi Focaccia
-Dorascenzi Frasca
-Dorascenzi Fusini
-Dorascenzi Gatto
-Dorascenzi Gnani
-Dorascenzi Grassi
-Dorascenzi Guzman
-Dorascenzi Hajji
-Dorascenzi Harroud
-Dorascenzi Huaman
-Dorascenzi Ianne
-Dorascenzi Iatalese
-Dorascenzi Leone
-Dorascenzi Luzietti
-Dorascenzi Mancini
-Dorascenzi Milani
-Dorascenzi Monsorno
-Dorascenzi Montanari
-Dorascenzi Nini
-Dorascenzi Olivelli
-Dorascenzi Palazzari
-Dorascenzi Palma
-Dorascenzi Paradisi
-Dorascenzi Pellegrini
-Dorascenzi Pepe
-Dorascenzi Polidori
-Dorascenzi Pracucci
-Dorascenzi Riccati
-Dorascenzi Rizzelli
-Dorascenzi Sarpieri
-Dorascenzi Tarani
-Dorascenzi Tranquilli
-Dorascenzi Valbonesi
-Dorascenzi Valvano
-Dorascenzi Villani
-Dorascenzi Zolea
-Dorascenzi Zuccherelli
+DiMenna DiRenna
+DiMenna DiStefano
+DiMenna Donnhauser
+DiMenna Fabbrizi
+DiMenna Fasano
+DiMenna Ferrari
+DiMenna Ferrero
+DiMenna Ferretti
+DiMenna Fiore
+DiMenna Focaccia
+DiMenna Fusini
+DiMenna Gatto
+DiMenna Guzman
+DiMenna Hajji
+DiMenna Harroud
+DiMenna Huaman
+DiMenna Ianne
+DiMenna Iatalese
+DiMenna Iuliano
+DiMenna Leone
+DiMenna Luzietti
+DiMenna Milani
+DiMenna Moiano
+DiMenna Monsorno
+DiMenna Mucci
+DiMenna Nini
+DiMenna Orlando
+DiMenna Palazzari
+DiMenna Palma
+DiMenna Paradisi
+DiMenna Polidori
+DiMenna Poni
+DiMenna Pracucci
+DiMenna Riccati
+DiMenna Rizzelli
+DiMenna Romano
+DiMenna Rotella
+DiMenna Sarpieri
+DiMenna Tarani
+DiMenna Tranquilli
+DiMenna Valbonesi
+DiMenna Vitale
+DiMenna Zolea
+DiRenna Fabbrizi
+DiRenna Ferrero
+DiRenna Guzman
+DiRenna Hajji
+DiRenna Huaman
+DiRenna Iatalese
+DiRenna Leone
+DiRenna Luzietti
+DiRenna Mucci
+DiRenna Nini
+DiRenna Paradisi
+DiRenna Pellegrini
+DiRenna Pepe
+DiRenna Poni
+DiRenna Riccati
+DiRenna Santana
+DiRenna Sarpieri
+DiRenna Tarani
+DiRenna Villani
+DiStefano Donnhauser
+DiStefano Fabbrizi
+DiStefano Ferrero
+DiStefano Fiore
+DiStefano Focaccia
+DiStefano Frasca
+DiStefano Fusini
+DiStefano Gasmi
+DiStefano Gnani
+DiStefano Guzman
+DiStefano Harroud
+DiStefano Huaman
+DiStefano Ianne
+DiStefano Iatalese
+DiStefano Iuliano
+DiStefano Leone
+DiStefano Luzietti
+DiStefano Mena
+DiStefano Milani
+DiStefano Moiano
+DiStefano Monsorno
+DiStefano Montanari
+DiStefano Nini
+DiStefano Olivelli
+DiStefano Orlando
+DiStefano Palazzari
+DiStefano Palma
+DiStefano Paradisi
+DiStefano Pepe
+DiStefano Pracucci
+DiStefano Rainesi
+DiStefano Renzoni
+DiStefano Riccati
+DiStefano Rizzelli
+DiStefano Romano
+DiStefano Rotella
+DiStefano Sala
+DiStefano Tarani
+DiStefano Tranquilli
+DiStefano Valbonesi
+DiStefano Valvano
+DiStefano Villani
+DiStefano Vincenzi
+DiStefano Vitale
+DiStefano Zuccherelli
+Donnhauser Fabbrizi
+Donnhauser Ferrari
+Donnhauser Ferrero
+Donnhauser Ferretti
+Donnhauser Focaccia
+Donnhauser Frasca
+Donnhauser Fusini
+Donnhauser Gatto
+Donnhauser Gnani
+Donnhauser Grassi
+Donnhauser Guzman
+Donnhauser Hajji
+Donnhauser Harroud
+Donnhauser Huaman
+Donnhauser Ianne
+Donnhauser Iatalese
+Donnhauser Leone
+Donnhauser Luzietti
+Donnhauser Mancini
+Donnhauser Milani
+Donnhauser Monsorno
+Donnhauser Montanari
+Donnhauser Nini
+Donnhauser Olivelli
+Donnhauser Palazzari
+Donnhauser Palma
+Donnhauser Paradisi
+Donnhauser Pellegrini
+Donnhauser Pepe
+Donnhauser Polidori
+Donnhauser Pracucci
+Donnhauser Riccati
+Donnhauser Rizzelli
+Donnhauser Sarpieri
+Donnhauser Tarani
+Donnhauser Tranquilli
+Donnhauser Valbonesi
+Donnhauser Valvano
+Donnhauser Villani
+Donnhauser Zolea
+Donnhauser Zuccherelli
 Fabbrizi Fasano
 Fabbrizi Ferrero
 Fabbrizi Focaccia
@@ -3104,24 +3104,24 @@ Villani Zuccherelli
 Vincenzi Vitale
 Vincenzi Zuccherelli
 almeno 17 pizze
-Antosh Bellaneve Bellini Bernardi Botnariu Cecere Cicconi Costantino DeSantis DiPaolo Fabbrizi Harroud Luzietti Milani Paradisi Sarpieri Tranquilli 
+Antosh Bellaneve Bellini Bernardi Botnariu Cecere Cicconi Costantino DeRosa DiMenna Fabbrizi Harroud Luzietti Milani Paradisi Sarpieri Tranquilli 
 97 pizze
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Gasmi Marra Nini Palmieri 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Iatalese 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DeAngelis 
+D'Ottavio 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Mena 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DiRuzza 
+DiRenna 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Ianne 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Monsorno 
 Acciughe Aglio Ananas Asparagi Banane Basilico Bresaola Brie Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DeFreitas 
+DeFilippis 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi_Champignon Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Fresca Radicchio Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Cataldi 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini_Gialli Pomodoro Porchetta Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
@@ -3189,7 +3189,7 @@ Rainesi
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Crema_di_Zucca Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta_Salata Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Poni 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Burrata Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Origano Pancetta Panna Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-Dorascenzi 
+Donnhauser 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Palazzari 
 Acciughe Aglio Ananas Asparagi Bacon Banane Bresaola Brie Broccoli Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Gorgonzola Insalata Jalapenos Lupini Maionese Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_di_Bufala Noci Olio_Tartufato Olive_Verdi Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
@@ -3197,7 +3197,7 @@ Botnariu
 Aglio Ananas Asparagi Bacon Banane Basilico Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiori_di_Zucca Fontina Friarielli Frutti_di_Mare Funghi Funghi_Champignon Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Romano 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Carciofi Carciofini Cavolo_Nero Cipolla Cipolla_Rossa Crema_di_Zucca Curry Emmenthal Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi_Champignon Funghi_Freschi Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Porchetta Porcini Porro Praga Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Pomodoro 
-DeSterlich 
+DeSimoni 
 Acciughe Aglio Ananas Asparagi Banane Basilico Bresaola Brie Broccoli Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Patate_Fritte Patate_al_Forno Pate'_Di_Olive Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Rosmarino Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Raqabi 
 Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
@@ -3207,7 +3207,7 @@ Caligiuri
 Acciughe Aglio Ananas Bacon Banane Basilico Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Curry Emmenthal Feta Fiordilatte Fontina Fragola Friarielli Frutti_di_Mare Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Grana Grigliata Jalapenos Lupini Mais Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porro Praga Prezzemolo Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salmone Salsa_Bernese Salsa_Cocktail 
 Fusini 
 Acciughe Aglio Ananas Bacon Banane Basilico Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grigliata Insalata Lupini Maionese Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DeSantis 
+DeRosa 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca Crescenza Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Insalata Jalapenos Lupini Maionese Mais Mascarpone Melanzane Melanzane_sott'olio Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Pate'_Di_Olive Pecorino Peperoncino Peperoni Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porro Praga Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Ferrero 
 Acciughe Aglio Ananas Bacon Banane Basilico Bresaola Brie Burrata Caciocavallo Capperi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Gorgonzola Grana Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Prezzemolo Prosciutto_Cotto Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
@@ -3217,9 +3217,9 @@ Carpi
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mela Melanzane Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Porcini Porro Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Bernardi 
 Acciughe Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Fagioli Feta Fiordilatte Fontina Fragola Frutti_di_Mare Funghi Funghi_Champignon Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grigliata Insalata Jalapenos Lupini Maionese Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mozzarella Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Pate'_Di_Olive Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DeFilippis 
+DeCataldo 
 Acciughe Aglio Ananas Asparagi Bacon Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate_Fritte Patate_al_Forno Pate'_Di_Olive Peperoncino Peperoni Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DelAguila 
+DeSterlich 
 Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella_Vegana Mozzarella_di_Bufala Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Peperoncino Peperoni Peperoni_al_Forno Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Cocktail Salsa_Pomodoro 
 Cicconi 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Caciocavallo Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Fagioli Feta Fiori_di_Zucca Fontina Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Grana Insalata Jalapenos Lupini Mais Mascarpone Mela Melanzane Melanzane_sott'olio Mozzarella Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Pancetta Pancetta_Affumicata Panna Patate_Fritte Patate_al_Forno Pecorino Peperoncino Peperoni Peperoni_al_Forno Pesto Pesto_di_Pistacchio Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rucola Salame Salame_Piccante Salsa_Bernese Salsa_Pomodoro 
@@ -3275,13 +3275,13 @@ Coppola
 Acciughe Ananas Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Carciofi Carciofini Cavolo_Nero Champignon Cipolla Crescenza Curry Emmenthal Fagioli Fiordilatte Fiori_di_Zucca Fragola Friarielli Frutti_di_Mare Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grigliata Insalata Jalapenos Maionese Mascarpone Mela Melanzane Melanzane_sott'olio Mozzarella Mozzarella_Vegana Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Panna Patate Patate_Fritte Patate_al_Forno Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Pomodoro 
 Guzman 
 Acciughe Aglio Asparagi Bacon Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Cavolo_Nero Cipolla Cipolla_Rossa Crescenza Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Gamberetti Grana Grigliata Jalapenos Lupini Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Prezzemolo Prosciutto_Cotto Prosciutto_di_Praga Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Salame Salmone Salsa_Cocktail Salsa_Pomodoro 
-DiTuoro 
+DiStefano 
 Acciughe Aglio Asparagi Bacon Banane Basilico Brie Broccoli Burrata Capperi Carciofini Cavolo_Nero Champignon Cipolla Crescenza Curry Emmenthal Fagioli Feta Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Lupini Maionese Mais Mascarpone Mela Melanzane Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_nere Pancetta Pancetta_Affumicata Panna Patate Patate_al_Forno Pate'_Di_Olive Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porcini Porro Prezzemolo Prosciutto_Cotto Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese 
 Tranquilli 
 Acciughe Aglio Asparagi Bacon Banane Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Frutti_di_Mare Funghi Funghi_Champignon Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grigliata Insalata Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pomodorini Pomodorini_Gialli Pomodoro Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Provola_Affumicata Provola_Fresca Radicchio Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Bellaneve 
 Acciughe Aglio Asparagi Bacon Banane Bresaola Burrata Caciocavallo Carciofi Carciofini Cavolo_Nero Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi_Champignon Funghi_Freschi Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rucola Salame Salame_Piccante Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DeBacco 
+DalLago 
 Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Capperi Carciofini Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiori_di_Zucca Fontina Fragola Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mais Mascarpone Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_di_Bufala Noci Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Provola_Fresca Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
 Tarani 
 Aglio Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Carciofi Carciofini Champignon Cipolla Cipolla_Rossa Crema_di_Zucca Crescenza Curry Emmenthal Fagioli Feta Fiori_di_Zucca Fontina Friarielli Funghi Funghi_Freschi Glassa_di_Aceto_Balsamico Gorgonzola Grana Grigliata Insalata Jalapenos Lupini Maionese Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Pere Pesto Pesto_di_Pistacchio Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porcini Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Pomodoro 
@@ -3299,4 +3299,4 @@ Leone
 Acciughe Bacon Banane Basilico Bresaola Brie Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crescenza Curry Emmenthal Fagioli Feta Fiordilatte Fiori_di_Zucca Fontina Fragola Friarielli Frutti_di_Mare Funghi Funghi_Champignon Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Insalata Jalapenos Lupini Maionese Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Peperoni_al_Forno Pere Pesto Pesto_di_Pistacchio Piselli Pomodoro Porchetta Porcini Porro Praga Prezzemolo Prosciutto_Crudo Prosciutto_di_Praga Provola_Affumicata Provola_Fresca Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame_Piccante Salmone Salsa_Cocktail Salsa_Pomodoro 
 Bellini 
 Ananas Asparagi Bacon Banane Basilico Brie Caciocavallo Capperi Carciofi Carciofini Champignon Cipolla_Rossa Crema_di_Zucca Crescenza Fagioli Fiordilatte Fiori_di_Zucca Fontina Fragola Frutti_di_Mare Funghi Funghi_Freschi Gamberetti Glassa_di_Aceto_Balsamico Gorgonzola Grana Insalata Jalapenos Lupini Mais Mascarpone Mela Melanzane Melanzane_sott'olio Misto_Funghi Mortadella Mozzarella Mozzarella_Vegana Mozzarella_di_Bufala Noci Olio_Piccante Olio_Tartufato Olive_Verdi Olive_nere Origano Pancetta Pancetta_Affumicata Panna Patate Patate_Fritte Patate_al_Forno Pate'_Di_Olive Pecorino Peperoncino Peperoni Pere Pesto Pistacchi Pomodorini Pomodorini_Gialli Pomodoro Porchetta Porro Praga Prezzemolo Prosciutto_Cotto Prosciutto_Crudo Provola_Affumicata Radicchio Ricotta Ricotta_Salata Roast_Beef Rosmarino Rucola Salame Salame_Piccante Salmone Salsa_Bernese Salsa_Cocktail Salsa_Pomodoro 
-DiPaolo 
+DiMenna 

@@ -11,9 +11,19 @@ typedef struct _matrice matrice;
 
 void inizializzaMatrice(matrice *m, int numberOfRows, int rowLength);
 
-void inserimentoRigaMatrice(int *payload, matrice *m);
+int numeroRigheMatrice(matrice m);
+
+int numeroColonneMatrice(matrice m);
+
+riga *recuperaMatrice(matrice *m);
+
+void inserimentoRigaMatrice(riga payload, matrice *m);
 
 void inserimentoElementoMatrice(matrice *m, int riga, int colonna, int payload);
+
+int leggiValoreMatrice(matrice m, int riga, int colonna);
+
+void aggiungiElementoMatrice(matrice *m, int riga, int colonna, int payload);
 
 int numeroColonneNonVuote(matrice m, riga *elenco);
 
@@ -24,6 +34,8 @@ void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, i
 void copiaColonnaInRiga(riga *dest, riga *origin, int minRow, int n, int col);
 
 int confrontaRigaColonna(riga r1, riga *r2, int minRow, int n, int col);
+
+void aggiuntaColonnaMatrice(matrice *m);
 
 void stampaMatrice(matrice m);
 

@@ -17,6 +17,12 @@ void inserimentoElementoTabella(char *elemento, tabella *t);
 
 int trovaIndiceDaContenutoTabella(char *elemento, tabella *t);
 
+char *leggiValoreTabella(tabella t, int index);
+
+int leggiLunghezza(tabella t);
+
 void stampaTabella(tabella t);
+
+void cancellaTabella(tabella *t);
 
 #endif

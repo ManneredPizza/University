@@ -79,23 +79,23 @@ D'Alessandro
 6 Broccoli Carciofini Jalapenos Crema_di_Zucca Acciughe Emmenthal
 1 Crescenza
 5 Grana Funghi_Champignon Frutti_di_Mare Lupini Aglio
-DeBacco
+DalLago
 0
 1 Mascarpone
 9 Broccoli Frutti_di_Mare Funghi_Freschi Bacon Maionese Melanzane Gamberetti Fiori_di_Zucca Gorgonzola
-Delgado
+DelAguila
 5 Brie Burrata Mortadella Banane Caciocavallo
 5 Friarielli Carciofini Curry Funghi_Freschi Mascarpone
 10 Misto_Funghi Champignon Melanzane Capperi Lupini Cavolo_Nero Carciofi Emmenthal Insalata Fiordilatte
-DiMaio
+DiLena
 2 Fontina Banane
 3 Carciofini Funghi Asparagi
 2 Crescenza Jalapenos
-DiPasquale
+DiPaolo
 3 Mela Funghi_Freschi Caciocavallo
 9 Basilico Gorgonzola Mais Carciofi Misto_Funghi Gamberetti Capperi Friarielli Broccoli
 3 Ananas Fontina Grigliata
-Donatantonio
+Domenicali
 3 Funghi_Freschi Mais Mascarpone
 5 Crescenza Fragola Broccoli Lupini Gamberetti
 2 Fiordilatte Aglio

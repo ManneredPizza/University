@@ -54,10 +54,32 @@ int trovaIndiceDaContenutoTabella(char *elemento, tabella *t) {
     return -1;
 }
 
+char *leggiValoreTabella(tabella t, int index) {
+    if(index > t.length) {
+        fprintf(stdout, "Indice oltre il limite%d\n", ROW_LENGTH);
+        exit(EXIT_FAILURE);
+    }
+
+    return t.V[index];
+}
+
+int leggiLunghezza(tabella t) {
+    return t.length;
+}
+
 void stampaTabella(tabella t) {
 	int i;
 
 	for(i=0; i<t.length; i++) {
 		fprintf(stdout, "%s\t", t.V[i]);
 	}
+}
+
+void cancellaTabella(tabella *t) {
+    int i;
+    if(t==NULL) return;
+
+    for(i=0; i<t->length; i++) free(t->V[i]);
+    
+    free(t->V);
 }

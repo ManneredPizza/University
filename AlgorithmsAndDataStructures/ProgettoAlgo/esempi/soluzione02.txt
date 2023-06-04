@@ -25,17 +25,17 @@ Angelicchio 2 5
 Bellini 3 2
 Dotti 4 0
 Bagnaia 5 0
-DiTuoro 5 4
+DiStefano 5 4
 Fiumi 6 1
 Veneziano 6 3
-DiBenimeo 6 4
+Delgado 6 4
 Brambilla 6 5
 Castagna 6 5
 Tarnogrodzki 7 3
 Nini 7 4
 Martys 7 5
 Castelli 8 0
-DePeppe 8 0
+DeLuca 8 0
 Gealapu 8 2
 Perrone 8 2
 Vinciguerra 8 2
@@ -49,7 +49,7 @@ Pasolini 9 4
 Riboloni 9 4
 Milenov 10 0
 Sanges 10 0
-DiLena 10 1
+DiCarlo 10 1
 Chesti 10 3
 Nicastro 10 5
 Renzulli 11 2
@@ -74,8 +74,8 @@ esclusioni
 520 coppie incompatibili
 Angelicchio Castagna
 Angelicchio Castelli
-Angelicchio DiBenimeo
-Angelicchio DiLena
+Angelicchio Delgado
+Angelicchio DiCarlo
 Angelicchio Fico
 Angelicchio Fusini
 Angelicchio Giurgola
@@ -93,7 +93,7 @@ Angelicchio Veneziano
 Bagnaia Brambilla
 Bagnaia Castagna
 Bagnaia Castelli
-Bagnaia DiBenimeo
+Bagnaia Delgado
 Bagnaia Fico
 Bagnaia Fusini
 Bagnaia Leone
@@ -111,7 +111,7 @@ Bellini Bernardo
 Bellini Castagna
 Bellini Castelli
 Bellini Chesti
-Bellini DiLena
+Bellini DiCarlo
 Bellini Dotti
 Bellini Fico
 Bellini Gealapu
@@ -128,10 +128,10 @@ Bernardo Brambilla
 Bernardo Castagna
 Bernardo Castelli
 Bernardo Chesti
-Bernardo DePeppe
-Bernardo DiBenimeo
-Bernardo DiLena
-Bernardo DiTuoro
+Bernardo DeLuca
+Bernardo Delgado
+Bernardo DiCarlo
+Bernardo DiStefano
 Bernardo Fico
 Bernardo Fusini
 Bernardo Gealapu
@@ -157,7 +157,7 @@ Bernardo Valbonesi
 Bernardo Veneziano
 Bernardo Vinciguerra
 Brambilla Chesti
-Brambilla DiLena
+Brambilla DiCarlo
 Brambilla Dotti
 Brambilla Fico
 Brambilla Fusini
@@ -182,8 +182,8 @@ Brambilla Valbonesi
 Brambilla Vinciguerra
 Castagna Castelli
 Castagna Chesti
-Castagna DiLena
-Castagna DiTuoro
+Castagna DiCarlo
+Castagna DiStefano
 Castagna Dotti
 Castagna Fico
 Castagna Fiumi
@@ -209,9 +209,9 @@ Castagna Veneziano
 Castagna Vinciguerra
 Castagna Wilmer
 Castelli Chesti
-Castelli DePeppe
-Castelli DiBenimeo
-Castelli DiTuoro
+Castelli DeLuca
+Castelli Delgado
+Castelli DiStefano
 Castelli Fico
 Castelli Fiumi
 Castelli Fusini
@@ -236,10 +236,10 @@ Castelli Valbonesi
 Castelli Veneziano
 Castelli Vinciguerra
 Castelli Wilmer
-Chesti DePeppe
-Chesti DiBenimeo
-Chesti DiLena
-Chesti DiTuoro
+Chesti DeLuca
+Chesti Delgado
+Chesti DiCarlo
+Chesti DiStefano
 Chesti Fico
 Chesti Fiumi
 Chesti Fusini
@@ -263,71 +263,71 @@ Chesti Valbonesi
 Chesti Veneziano
 Chesti Vinciguerra
 Chesti Wilmer
-DePeppe DiLena
-DePeppe Fico
-DePeppe Fusini
-DePeppe Gealapu
-DePeppe Leone
-DePeppe Milenov
-DePeppe Nicastro
-DePeppe Perrone
-DePeppe Pompili
-DePeppe Rizzelli
-DePeppe Rudel
-DePeppe Speziale
-DePeppe Valbonesi
-DePeppe Veneziano
-DePeppe Wilmer
-DiBenimeo Dotti
-DiBenimeo Fico
-DiBenimeo Fusini
-DiBenimeo Gealapu
-DiBenimeo Leone
-DiBenimeo Milenov
-DiBenimeo Nicastro
-DiBenimeo Perrone
-DiBenimeo Pompili
-DiBenimeo Renzulli
-DiBenimeo Riboloni
-DiBenimeo Rudel
-DiBenimeo Sanges
-DiBenimeo Speziale
-DiBenimeo Valbonesi
-DiBenimeo Veneziano
-DiBenimeo Vinciguerra
-DiLena DiTuoro
-DiLena Dotti
-DiLena Fico
-DiLena Fusini
-DiLena Gealapu
-DiLena Giurgola
-DiLena Leone
-DiLena Martys
-DiLena Mucci
-DiLena Nicastro
-DiLena Nini
-DiLena Pasolini
-DiLena Perrone
-DiLena Pompili
-DiLena Renzulli
-DiLena Riboloni
-DiLena Sanges
-DiLena Speziale
-DiLena Tarnogrodzki
-DiLena Valbonesi
-DiLena Veneziano
-DiLena Vinciguerra
-DiTuoro Fico
-DiTuoro Fusini
-DiTuoro Leone
-DiTuoro Martys
-DiTuoro Nicastro
-DiTuoro Perrone
-DiTuoro Riboloni
-DiTuoro Rizzelli
-DiTuoro Speziale
-DiTuoro Veneziano
-DiTuoro Wilmer
+DeLuca DiCarlo
+DeLuca Fico
+DeLuca Fusini
+DeLuca Gealapu
+DeLuca Leone
+DeLuca Milenov
+DeLuca Nicastro
+DeLuca Perrone
+DeLuca Pompili
+DeLuca Rizzelli
+DeLuca Rudel
+DeLuca Speziale
+DeLuca Valbonesi
+DeLuca Veneziano
+DeLuca Wilmer
+Delgado Dotti
+Delgado Fico
+Delgado Fusini
+Delgado Gealapu
+Delgado Leone
+Delgado Milenov
+Delgado Nicastro
+Delgado Perrone
+Delgado Pompili
+Delgado Renzulli
+Delgado Riboloni
+Delgado Rudel
+Delgado Sanges
+Delgado Speziale
+Delgado Valbonesi
+Delgado Veneziano
+Delgado Vinciguerra
+DiCarlo DiStefano
+DiCarlo Dotti
+DiCarlo Fico
+DiCarlo Fusini
+DiCarlo Gealapu
+DiCarlo Giurgola
+DiCarlo Leone
+DiCarlo Martys
+DiCarlo Mucci
+DiCarlo Nicastro
+DiCarlo Nini
+DiCarlo Pasolini
+DiCarlo Perrone
+DiCarlo Pompili
+DiCarlo Renzulli
+DiCarlo Riboloni
+DiCarlo Sanges
+DiCarlo Speziale
+DiCarlo Tarnogrodzki
+DiCarlo Valbonesi
+DiCarlo Veneziano
+DiCarlo Vinciguerra
+DiStefano Fico
+DiStefano Fusini
+DiStefano Leone
+DiStefano Martys
+DiStefano Nicastro
+DiStefano Perrone
+DiStefano Riboloni
+DiStefano Rizzelli
+DiStefano Speziale
+DiStefano Veneziano
+DiStefano Wilmer
 Dotti Fico
 Dotti Fusini
 Dotti Gealapu
@@ -614,11 +614,11 @@ Castelli
 Acciughe Ananas Asparagi Bacon Banane Basilico Bresaola Brie Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca 
 Dotti 
 Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Carciofi Carciofini Cipolla Crema_di_Zucca 
-DiBenimeo 
+Delgado 
 Ananas Asparagi Banane Basilico Bresaola Brie Burrata Caciocavallo Carciofi Carciofini Champignon Cipolla 
 Milenov 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Brie Caciocavallo Capperi Carciofi Carciofini Champignon Cipolla Crema_di_Zucca 
-DiTuoro 
+DiStefano 
 Acciughe Aglio Ananas Bacon Banane Basilico Bresaola Brie Caciocavallo Capperi Carciofini Cavolo_Nero Champignon Crema_di_Zucca 
 Valbonesi 
 Acciughe Aglio Ananas Asparagi Bacon Banane Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca 
@@ -640,7 +640,7 @@ Mucci
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Burrata Carciofi Carciofini Cipolla Cipolla_Rossa 
 Wilmer 
 Aglio Ananas Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Cavolo_Nero Champignon 
-DiLena 
+DiCarlo 
 Acciughe Aglio Bacon Basilico Bresaola Burrata Caciocavallo Capperi Carciofini Champignon Cipolla_Rossa 
 Pasolini 
 Acciughe Asparagi Bacon Banane Bresaola Brie Broccoli Burrata Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa 
@@ -652,7 +652,7 @@ Rudel
 Acciughe Aglio Ananas Banane Brie Broccoli Burrata Capperi Carciofi Carciofini Cipolla_Rossa 
 Fico 
 Acciughe Aglio Ananas Asparagi Banane Basilico Brie Broccoli Capperi Cavolo_Nero Cipolla Crema_di_Zucca 
-DePeppe 
+DeLuca 
 Aglio Ananas Bresaola Brie Broccoli Burrata Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa 
 Seri 
 Ananas Bacon Banane Basilico Caciocavallo Carciofi Carciofini Cavolo_Nero Champignon Cipolla Crema_di_Zucca 

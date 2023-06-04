@@ -23,7 +23,7 @@ Acciughe 5 2 3
 Capanna 1 1
 Gentili 1 2
 Capone 1 5
-DeCataldo 1 5
+DeAngelis 1 5
 Chaibi 2 0
 Bushulli 3 3
 Terracciano 3 3
@@ -52,7 +52,7 @@ Bianco Caligiuri
 Bianco Caporilli
 Bianco Chaibi
 Bianco Cozzolino
-Bianco DeCataldo
+Bianco DeAngelis
 Bianco Ferrante
 Bianco Forcina
 Bianco Guerra
@@ -96,7 +96,7 @@ Caporilli Guerra
 Caporilli Guida
 Casadei Chaibi
 Casadei Cozzolino
-Casadei DeCataldo
+Casadei DeAngelis
 Casadei Ferrante
 Casadei Forcina
 Casadei Guida
@@ -110,8 +110,8 @@ Cozzolino Guida
 Cozzolino Harasymiuk
 Cozzolino Moretti
 Cozzolino Terracciano
-DeCataldo Guerra
-DeCataldo Guida
+DeAngelis Guerra
+DeAngelis Guida
 Ferrante Forcina
 Ferrante Gentili
 Ferrante Guida
@@ -130,7 +130,7 @@ almeno 6 pizze
 Cangini Casadei Cozzolino Ferrante Guida Harasymiuk 
 17 pizze
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Capanna DeCataldo Gentili 
+Capanna DeAngelis Gentili 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca 
 Chaibi Ferrante 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 

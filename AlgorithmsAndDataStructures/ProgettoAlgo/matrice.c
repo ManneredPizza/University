@@ -23,14 +23,34 @@ void inizializzaMatrice(matrice *m, int numberOfRows, int rowLength) {
     m->numberOfRows = numberOfRows-1;
 }
 
-void inserimentoRigaMatrice(int *payload, matrice *m) {
+int numeroRigheMatrice(matrice m) {
+	return m.numberOfRows;
+}
+
+int numeroColonneMatrice(matrice m) {
+	return m.rowLength;
+}
+
+riga *recuperaMatrice(matrice *m) {
+	return m->mat;
+}
+
+void inserimentoRigaMatrice(riga payload, matrice *m) {
 	int i;
 
-	for(i=0; i<m->rowLength; i++) {
-		/* possibile errore se il payload è più corto di m->rowLength */
-		/* errore escluso da fatto che il payload lo creo io della lunghezza corretta */
-		m->mat[m->numberOfRows][i] = payload[i];
+	if(payload != NULL) {
+		for(i=0; i<m->rowLength; i++) {
+			/* possibile errore se il payload è più corto di m->rowLength */
+			/* errore escluso da fatto che il payload lo creo io della lunghezza corretta */
+			m->mat[m->numberOfRows][i] = payload[i];
+		}
 	}
+	else {
+		for(i=0; i<m->rowLength; i++) {
+			m->mat[m->numberOfRows][i] = 0;
+		}
+	}
+
 	m->numberOfRows = m->numberOfRows+1;
 	m->mat = (riga*)realloc(m->mat, sizeof(riga)*(m->numberOfRows+1));
 	if(m->mat == NULL) {
@@ -54,6 +74,30 @@ void inserimentoElementoMatrice(matrice *m, int riga, int colonna, int payload) 
 		exit(EXIT_FAILURE);
 	}
 	m->mat[riga][colonna] = payload;
+}
+
+int leggiValoreMatrice(matrice m, int riga, int colonna) {
+	if(riga < 0 || riga > m.numberOfRows) {
+		fprintf(stderr, "Numero riga non valido\n");
+		exit(EXIT_FAILURE);
+	}
+	if(colonna < 0 || colonna > m.rowLength) {
+		fprintf(stderr, "Numero colonna non valido\n");
+		exit(EXIT_FAILURE);
+	}
+	return m.mat[riga][colonna];
+}
+
+void aggiungiElementoMatrice(matrice *m, int riga, int colonna, int payload) {
+	if(riga < 0 || riga > m->numberOfRows) {
+		fprintf(stderr, "Numero riga non valido\n");
+		exit(EXIT_FAILURE);
+	}
+	if(colonna < 0 || colonna > m->rowLength) {
+		fprintf(stderr, "Numero colonna non valido\n");
+		exit(EXIT_FAILURE);
+	}
+	m->mat[riga][colonna] += payload;
 }
 
 int numeroColonneNonVuote(matrice m, riga *elenco) {
@@ -147,6 +191,20 @@ int confrontaRigaColonna(riga r1, riga *r2, int n, int minRow, int col) {
 	return 1;
 }
 
+void aggiuntaColonnaMatrice(matrice *m) {
+	int i;
+
+	m->rowLength++;
+	for(i=0; i<m->numberOfRows; i++) {
+		m->mat[i] = (riga)realloc(m->mat[i], (m->rowLength)*sizeof(int));
+		if(m->mat[i] == NULL) {
+	        fprintf(stderr, "Impossibile allocare memoria\n");
+	        exit(EXIT_FAILURE);
+	    }
+		m->mat[i][m->rowLength] = 0;
+	}
+}
+
 void stampaMatrice(matrice m) {
 	int i,j;
 
@@ -160,9 +218,12 @@ void stampaMatrice(matrice m) {
 }
 
 void calcellaMatrice(matrice *m) {
+	int i;
 	if(m == NULL) {
 		return;
 	}
-	free(m);
+	for(i=0; i<=m->numberOfRows; i++) free(m->mat[i]);
+
+	free(m->mat);
 }
 

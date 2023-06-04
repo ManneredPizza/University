@@ -111,47 +111,47 @@ Cutillo
 4 Cipolla Prosciutto_Cotto Gorgonzola Burrata
 6 Provola_Affumicata Salmone Carciofini Pomodorini_Gialli Patate Fontina
 5 Fiordilatte Pesto Carciofi Pecorino Pesto_di_Pistacchio
-DeAngelis
+D'Ottavio
 8 Bresaola Peperoncino Mascarpone Fragola Noci Crema_di_Zucca Burrata Melanzane
 6 Champignon Fontina Fagioli Praga Olive_nere Melanzane_sott'olio
 1 Prosciutto_di_Praga
-DeBacco
+DalLago
 7 Salsa_Bernese Pesto_di_Pistacchio Fiordilatte Panna Mozzarella_Vegana Radicchio Pomodoro
 9 Bacon Olive_Verdi Glassa_di_Aceto_Balsamico Carciofi Gorgonzola Salsa_Pomodoro Patate_Fritte Curry Porro
 14 Champignon Basilico Lupini Brie Olio_Tartufato Funghi Rosmarino Jalapenos Peperoni Broccoli Capperi Gamberetti Salmone Ananas
-DeFilippis
+DeCataldo
 10 Pere Funghi Salmone Gamberetti Maionese Frutti_di_Mare Melanzane_sott'olio Caciocavallo Salsa_Bernese Rucola
 17 Piselli Banane Salsa_Cocktail Curry Crema_di_Zucca Origano Melanzane Salsa_Pomodoro Peperoni Pancetta Mozzarella Prosciutto_Cotto Panna Peperoncino Capperi Ricotta Cipolla
 13 Emmenthal Grana Aglio Patate_al_Forno Mortadella Pomodoro Mais Fiori_di_Zucca Roast_Beef Pecorino Friarielli Funghi_Freschi Mozzarella_Vegana
-DeFreitas
+DeFilippis
 2 Fiordilatte Roast_Beef
 1 Banane
 3 Bacon Broccoli Porchetta
-DeSantis
+DeRosa
 8 Pecorino Funghi_Champignon Pomodorini Emmenthal Prosciutto_di_Praga Maionese Salsa_Cocktail Olive_Verdi
 0
 12 Olio_Tartufato Asparagi Salmone Pesto_di_Pistacchio Feta Jalapenos Bresaola Grana Porro Mais Champignon Frutti_di_Mare
-DeSterlich
+DeSimoni
 7 Porro Cipolla Grigliata Mortadella Prosciutto_Crudo Brie Patate
 20 Piselli Crema_di_Zucca Glassa_di_Aceto_Balsamico Pecorino Prosciutto_di_Praga Pere Misto_Funghi Pancetta Peperoni_al_Forno Prosciutto_Cotto Lupini Melanzane Olio_Piccante Banane Burrata Pomodorini Gorgonzola Mascarpone Frutti_di_Mare Mais
 13 Crescenza Prezzemolo Champignon Capperi Salsa_Cocktail Fagioli Ricotta Pate'_Di_Olive Funghi Radicchio Gamberetti Pesto Pomodoro
-DelAguila
+DeSterlich
 10 Panna Jalapenos Salsa_Bernese Mortadella Friarielli Mais Champignon Carciofi Basilico Prezzemolo
 3 Funghi_Freschi Prosciutto_Cotto Insalata
 7 Roast_Beef Patate Mascarpone Peperoni_al_Forno Fontina Pecorino Banane
-DiPaolo
+DiMenna
 7 Porro Capperi Salsa_Bernese Patate_al_Forno Patate_Fritte Olive_nere Cipolla_Rossa
 0
 20 Broccoli Cipolla Funghi_Champignon Provola_Fresca Feta Aglio Peperoni_al_Forno Porcini Grigliata Friarielli Prosciutto_di_Praga Pesto_di_Pistacchio Piselli Maionese Bresaola Burrata Acciughe Cavolo_Nero Emmenthal Curry
-DiRuzza
+DiRenna
 3 Olio_Piccante Friarielli Mortadella
 9 Pesto Salsa_Cocktail Gorgonzola Cipolla_Rossa Prosciutto_di_Praga Noci Pomodorini_Gialli Pere Mozzarella
 2 Patate Peperoni
-DiTuoro
+DiStefano
 10 Prosciutto_di_Praga Peperoni_al_Forno Salsa_Pomodoro Porchetta Mais Pomodoro Porro Fagioli Noci Pesto
 16 Grana Olive_nere Salame Acciughe Peperoni Radicchio Pate'_Di_Olive Piselli Ricotta Melanzane_sott'olio Olio_Piccante Broccoli Pancetta Porcini Misto_Funghi Pomodorini_Gialli
 19 Gorgonzola Champignon Banane Salsa_Bernese Provola_Affumicata Praga Pistacchi Funghi_Freschi Glassa_di_Aceto_Balsamico Prosciutto_Crudo Insalata Salame_Piccante Carciofini Ananas Maionese Crema_di_Zucca Rucola Patate Curry
-Dorascenzi
+Donnhauser
 6 Prosciutto_di_Praga Capperi Porchetta Porcini Curry Pomodoro
 20 Salsa_Bernese Burrata Pere Piselli Rucola Prezzemolo Melanzane_sott'olio Mozzarella_di_Bufala Acciughe Maionese Peperoni_al_Forno Radicchio Pomodorini_Gialli Gamberetti Frutti_di_Mare Peperoni Carciofi Ricotta Emmenthal Gorgonzola
 10 Cipolla Rosmarino Olive_nere Grigliata Funghi_Champignon Patate Broccoli Peperoncino Pancetta_Affumicata Caciocavallo

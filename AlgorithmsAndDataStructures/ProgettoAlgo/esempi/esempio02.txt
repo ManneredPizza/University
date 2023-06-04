@@ -31,19 +31,19 @@ Chesti
 3 Champignon Bresaola Cipolla_Rossa
 3 Asparagi Crema_di_Zucca Cavolo_Nero
 7 Burrata Cipolla Broccoli Carciofini Carciofi Bacon Ananas
-DePeppe
+DeLuca
 0
 0
 8 Caciocavallo Cipolla_Rossa Bresaola Burrata Carciofini Carciofi Champignon Bacon
-DiBenimeo
+Delgado
 1 Aglio
 4 Basilico Caciocavallo Broccoli Carciofi
 5 Acciughe Champignon Capperi Cavolo_Nero Cipolla_Rossa
-DiLena
+DiCarlo
 3 Burrata Brie Bresaola
 1 Capperi
 7 Asparagi Crema_di_Zucca Carciofini Bacon Acciughe Cipolla Cipolla_Rossa
-DiTuoro
+DiStefano
 0
 4 Carciofini Cipolla Caciocavallo Ananas
 5 Bresaola Broccoli Cavolo_Nero Burrata Cipolla_Rossa

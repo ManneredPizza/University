@@ -43,15 +43,15 @@ D'Achille
 5 Gamberetti Glassa_di_Aceto_Balsamico Aglio Gorgonzola Broccoli
 1 Fiordilatte
 0
-DeLaCruz
+DeFlorio
 1 Grigliata
 9 Gorgonzola Curry Fontina Fiori_di_Zucca Crema_di_Zucca Caciocavallo Fagioli Mortadella Banane
 6 Jalapenos Mais Brie Cipolla_Rossa Lupini Cipolla
-Delgado
+DelAguila
 8 Friarielli Funghi_Champignon Banane Carciofini Glassa_di_Aceto_Balsamico Misto_Funghi Grigliata Cavolo_Nero
 1 Burrata
 6 Aglio Capperi Jalapenos Mais Asparagi Broccoli
-DiSanto
+DiRuzza
 5 Grigliata Funghi Mela Crema_di_Zucca Mais
 6 Fragola Cipolla_Rossa Broccoli Bresaola Fagioli Basilico
 9 Grana Funghi_Champignon Cavolo_Nero Mascarpone Melanzane Aglio Burrata Banane Acciughe
