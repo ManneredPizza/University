@@ -517,7 +517,9 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
     fprintf(stdout, "\n");
 }
 
-
+void calcoloStimaNumerPizza() {
+    
+}
 
 
 
