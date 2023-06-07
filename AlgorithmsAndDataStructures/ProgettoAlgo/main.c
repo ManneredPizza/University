@@ -457,6 +457,7 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
     int indiceIncompatibileAccertato, indiceIncompatibileDaControllare;
     int greedyContinua;
     int incompatibileConPrecedenti;
+    int indiceNuovoIncompatibile;
 
     totaleClienti = leggiGrandezzaMatriceSimmetrica(incompatibili);
 
@@ -497,12 +498,13 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
 
         if(greedyContinua == 1) {
             /* ordino per incompatibilità e poi per lessicografico */
-            ordinaClassifica(&classificaIncompatibili, totaleClienti, clienti, 2);
+            indiceNuovoIncompatibile = indiceMassimoRispettoARigaMatrice(classificaIncompatibili, 1, clienti);
+            
             /* creo la matrice 1-dim (vettore) che contiene i clienti incompatibili a coppie */
             if(clientiEffettivi == 0) inizializzaMatrice(&incompatibiliACoppie, 1, 1);
             else aggiuntaColonnaMatrice(&incompatibiliACoppie); /* se no aggiungo una colonna */
             /* metto il cliente più incompatibile */
-            inserimentoElementoMatrice(&incompatibiliACoppie, 0, clientiEffettivi, leggiValoreMatrice(classificaIncompatibili, 0, totaleClienti-1));
+            inserimentoElementoMatrice(&incompatibiliACoppie, 0, clientiEffettivi, leggiValoreMatrice(classificaIncompatibili, 0, indiceNuovoIncompatibile));
             clientiEffettivi++;
         }
     }
@@ -518,7 +520,7 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
 }
 
 void calcoloStimaNumerPizza() {
-    
+
 }
 
 

@@ -205,6 +205,31 @@ void aggiuntaColonnaMatrice(matrice *m) {
 	}
 }
 
+int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
+	int i,max,maxIndex;
+
+	if(row < 0 || row > m.numberOfRows) {
+		fprintf(stderr, "Numero riga non valido\n");
+		exit(EXIT_FAILURE);
+	}
+
+	max = m.mat[row][0];
+	maxIndex = 0;
+	for(i=1; i<=m.rowLength; i++) {
+		if(max < m.mat[row][i]) {
+			max = m.mat[row][i];
+			maxIndex = i;
+		}
+		else if(max == m.mat[row][i]) {
+			if(strcmp(leggiValoreTabella(nome, maxIndex), leggiValoreTabella(nome, i)) < 0) {
+				maxIndex = i;
+			}
+		}
+	}
+
+	return maxIndex;
+}
+
 void stampaMatrice(matrice m) {
 	int i,j;
 

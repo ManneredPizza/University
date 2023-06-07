@@ -1,6 +1,8 @@
 #ifndef __MATRICE_H
 #define __MATRICE_H
 
+#include "tabella.h"
+
 typedef int* riga;
 struct _matrice {
 	riga *mat;
@@ -36,6 +38,8 @@ void copiaColonnaInRiga(riga *dest, riga *origin, int minRow, int n, int col);
 int confrontaRigaColonna(riga r1, riga *r2, int minRow, int n, int col);
 
 void aggiuntaColonnaMatrice(matrice *m);
+
+int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome);
 
 void stampaMatrice(matrice m);
 
