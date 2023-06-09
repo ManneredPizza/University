@@ -35,7 +35,7 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
 void aggiornaListaClientiSoddisfatti(matrice *clientiSoddisfatti, int *numeroClientiSoddisfatti, matrice preferenze, int ingrediente);
 void modificaPreferenzeIngrediente(matrice *preferenze, int ingrediente);
 void creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, matrice *clientiSoddisfatti);
-void calcoloStimaNumeroPizza(matrice preferenze, tabella ingredienti, tabella clienti);
+void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clienti);
 
 int main(int argc, char *argv[]) {
     char nomeFileIngredienti[ROW_LENGTH];
@@ -58,13 +58,13 @@ int main(int argc, char *argv[]) {
     letturaClientiDaFile(nomeFileClienti, &clienti, &ingredienti, &preferenze);
 
     /* Ordine ingredienti per popolarita */
-    calcolaOrdinePopolarita(preferenze, ingredienti);
+    /* calcolaOrdinePopolarita(preferenze, ingredienti); */
 
     /* Ordine esigenza clienti */
-    calcolaOrdineEsigenza(preferenze, clienti);
+    /* calcolaOrdineEsigenza(preferenze, clienti); */ 
 
     /* Numero ingredienti esclusi per un dato numero di clienti */
-    ingredientiEsclusiPerNumeroClienti(preferenze);
+    /* ingredientiEsclusiPerNumeroClienti(preferenze); */
 
     /* Coppie incompatibili */
     calcoloCoppieIncompatibili(&incompatibili, preferenze, clienti);
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
     calcoloStimaInfNumeroPizza(incompatibili, clienti);
 
     /* Calcolo pizze menu */
-    calcoloStimaNumeroPizza(preferenze, ingredienti, clienti);
+    /*calcoloStimaMenuPizza(preferenze, ingredienti, clienti);*/
 
     return EXIT_SUCCESS;
 }
@@ -410,14 +410,15 @@ void calcoloCoppieIncompatibili(matriceSimmetrica *incompatibili, matrice prefer
     int i,j,k;
     int numeroColonnePreferenze;
     int preferenzaEspressaCli1, preferenzaEspressaCli2;
+    matrice coppieIncompatibili;
 
     numeroClienti = numeroRigheMatrice(preferenze);
     inizializzaMatriceSimmetrica(incompatibili, numeroClienti);
 
     numeroColonnePreferenze = numeroColonneMatrice(preferenze);
 
-    /* lascio spazio per il numero di copie incompatibili */
-    fprintf(stdout, "\n");
+    /* creo una matrice da due colonne dove ogni riga è una coppia incompatibile */
+    inizializzaMatrice(&coppieIncompatibili, 1, 2);
 
     for(i = 0; i < numeroClienti; i++) {
         for(j = i; j < numeroClienti; j++) {
@@ -425,18 +426,22 @@ void calcoloCoppieIncompatibili(matriceSimmetrica *incompatibili, matrice prefer
                 preferenzaEspressaCli1 = leggiValoreMatrice(preferenze, i, k);
                 preferenzaEspressaCli2 = leggiValoreMatrice(preferenze, j, k);
                 if((preferenzaEspressaCli1 == ESCLUSO && preferenzaEspressaCli2 == RICHIESTO) || (preferenzaEspressaCli1 == RICHIESTO && preferenzaEspressaCli2 == ESCLUSO)) {
-                    numIncompatibili++;
                     inserisciValoreMatriceSimmetrica(incompatibili, i, j, 1);
-                    fprintf(stdout, "%s %s\n", leggiValoreTabella(clienti, i), leggiValoreTabella(clienti, j));
+                    if(numIncompatibili > 0) aggiungiRigaVuotaMatrice(&coppieIncompatibili);
+                    inserimentoElementoMatrice(&coppieIncompatibili, numIncompatibili, 0, i);
+                    inserimentoElementoMatrice(&coppieIncompatibili, numIncompatibili, 1, j);
+                    numIncompatibili++;
                     break;
                 }
             }
         }
     }
 
-    fprintf(stdout, "\033[%dA", numIncompatibili+1);
     fprintf(stdout, "%d coppie incompatibili\n", numIncompatibili);
-    fprintf(stdout, "\033[%dB", numIncompatibili);
+
+    for(i=0; i<numIncompatibili; i++) {
+        fprintf(stdout, "%s %s\n", leggiValoreTabella(clienti, leggiValoreMatrice(coppieIncompatibili, i, 0)), leggiValoreTabella(clienti, leggiValoreMatrice(coppieIncompatibili, i, 1)));
+    }
 }
 
 void calcoloNumeroIncompatibiliPerCliente(matrice *classificaIncompatibili, matriceSimmetrica incompatibili, int numeroClienti) {
@@ -470,7 +475,8 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
     inizializzaMatrice(&classificaIncompatibili, 2, totaleClienti);
     calcoloNumeroIncompatibiliPerCliente(&classificaIncompatibili, incompatibili, totaleClienti);    
 
-
+    stampaMatrice(classificaIncompatibili);
+    return;
     clientiEffettivi = 0;
     do {
         greedyContinua = 0;    
@@ -652,7 +658,7 @@ void creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, ma
     fprintf(stdout, "\n");
 }
 
-void calcoloStimaNumeroPizza(matrice preferenze, tabella ingredienti, tabella clienti) {
+void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clienti) {
     int i,j;
     matrice clientiSoddisfatti;
     int numeroClienti, numeroClientiSoddisfattiCiclo, numeroClientiSoddisfattiTotale;
@@ -700,13 +706,6 @@ void calcoloStimaNumeroPizza(matrice preferenze, tabella ingredienti, tabella cl
         
         cancellaMatrice(&clientiSoddisfatti);
     }
-
-    /* sposto il cursore nel buco lasciato */
-    fprintf(stdout, "\033[%dA", 2*numeroPizze+1);
-    /* stampo numero di pizze nello spazio lasciato */
-    fprintf(stdout, "%d pizze\n", numeroPizze);
-    /* sposto il cursore alla fine */
-    fprintf(stdout, "\033[%dB", 2*numeroPizze);
 
     cancellaMatrice(&preferenzeCopia);
     
