@@ -17,7 +17,11 @@ int numeroRigheMatrice(matrice m);
 
 int numeroColonneMatrice(matrice m);
 
+void modificaNumeroColonneMatrice(matrice *m, int quantita);
+
 riga *recuperaMatrice(matrice *m);
+
+void aggiungiRigaVuotaMatrice(matrice *m);
 
 void inserimentoRigaMatrice(riga payload, matrice *m);
 
@@ -41,8 +45,16 @@ void aggiuntaColonnaMatrice(matrice *m);
 
 int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome);
 
+int indiceMinimoRispettoARigaMatrice(matrice m, int row, tabella nome);
+
+int indiceDatoContenutoERigaMatrice(matrice m, int row, int needle);
+
+void togliElementoMatrice(matrice *m, int index);
+
+void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze);
+
 void stampaMatrice(matrice m);
 
-void calcellaMatrice(matrice *m);
+void cancellaMatrice(matrice *m);
 
 #endif

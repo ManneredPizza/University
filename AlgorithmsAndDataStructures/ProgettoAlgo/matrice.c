@@ -20,7 +20,7 @@ void inizializzaMatrice(matrice *m, int numberOfRows, int rowLength) {
 	    }
 	}
     m->rowLength = rowLength;
-    m->numberOfRows = numberOfRows-1;
+    m->numberOfRows = numberOfRows;
 }
 
 int numeroRigheMatrice(matrice m) {
@@ -31,27 +31,15 @@ int numeroColonneMatrice(matrice m) {
 	return m.rowLength;
 }
 
+void modificaNumeroColonneMatrice(matrice *m, int quantita) {
+	m->rowLength = quantita;
+}
+
 riga *recuperaMatrice(matrice *m) {
 	return m->mat;
 }
 
-void inserimentoRigaMatrice(riga payload, matrice *m) {
-	int i;
-
-	if(payload != NULL) {
-		for(i=0; i<m->rowLength; i++) {
-			/* possibile errore se il payload è più corto di m->rowLength */
-			/* errore escluso da fatto che il payload lo creo io della lunghezza corretta */
-			m->mat[m->numberOfRows][i] = payload[i];
-		}
-	}
-	else {
-		for(i=0; i<m->rowLength; i++) {
-			m->mat[m->numberOfRows][i] = 0;
-		}
-	}
-
-	m->numberOfRows = m->numberOfRows+1;
+void aggiungiRigaVuotaMatrice(matrice *m) {
 	m->mat = (riga*)realloc(m->mat, sizeof(riga)*(m->numberOfRows+1));
 	if(m->mat == NULL) {
         fprintf(stderr, "Impossibile allocare memoria\n");
@@ -62,6 +50,25 @@ void inserimentoRigaMatrice(riga payload, matrice *m) {
         fprintf(stderr, "Impossibile allocare memoria\n");
         exit(EXIT_FAILURE);
     }
+
+	m->numberOfRows = m->numberOfRows+1;
+}
+
+void inserimentoRigaMatrice(riga payload, matrice *m) {
+	int i;
+
+	if(payload != NULL) {
+		for(i=0; i<m->rowLength; i++) {
+			/* possibile errore se il payload è più corto di m->rowLength */
+			/* errore escluso da fatto che il payload lo creo io della lunghezza corretta */
+			m->mat[m->numberOfRows-1][i] = payload[i];
+		}
+	}
+	else {
+		for(i=0; i<m->rowLength; i++) {
+			m->mat[m->numberOfRows-1][i] = 0;
+		}
+	}
 }
 
 void inserimentoElementoMatrice(matrice *m, int riga, int colonna, int payload) {
@@ -141,7 +148,7 @@ void invertiColonneMatrice(matrice *m, int l, int max) {
 		exit(EXIT_FAILURE);
 	}
 
-	for(i=0; i<=m->numberOfRows; i++) {
+	for(i=0; i<m->numberOfRows; i++) {
 		temp = m->mat[i][l];
 		m->mat[i][l] = m->mat[i][max];
 		m->mat[i][max] = temp;
@@ -158,7 +165,7 @@ void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, i
 		fprintf(stderr, "Numero righe delle matrici non uguale\n");
 		exit(EXIT_FAILURE);
 	}
-	if(highOrigin <= lowOrigin || lowOrigin < 0 || highOrigin < 0 || lowOrigin > mOrigin.rowLength || highOrigin > mOrigin.rowLength) {
+	if(highOrigin < lowOrigin || lowOrigin < 0 || highOrigin < 0 || lowOrigin > mOrigin.rowLength || highOrigin > mOrigin.rowLength) {
 		fprintf(stderr, "Errore in lowOrigin o highOrigin\n");
 		exit(EXIT_FAILURE);
 	}
@@ -167,7 +174,7 @@ void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, i
 		exit(EXIT_FAILURE);
 	}
 
-	for(i=0; i<=mOrigin.numberOfRows; i++) {
+	for(i=0; i<mOrigin.numberOfRows; i++) {
 		for(j=0; j<(highOrigin-lowOrigin); j++) {
 			mDest->mat[i][lowDest+j] = mOrigin.mat[i][lowOrigin+j];
 		}
@@ -215,7 +222,7 @@ int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 
 	max = m.mat[row][0];
 	maxIndex = 0;
-	for(i=1; i<=m.rowLength; i++) {
+	for(i=1; i<m.rowLength; i++) {
 		if(max < m.mat[row][i]) {
 			max = m.mat[row][i];
 			maxIndex = i;
@@ -230,10 +237,80 @@ int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 	return maxIndex;
 }
 
+int indiceMinimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
+	int i,min,minIndex;
+
+	if(row < 0 || row > m.numberOfRows) {
+		fprintf(stderr, "Numero riga non valido\n");
+		exit(EXIT_FAILURE);
+	}
+
+	min = m.mat[row][0];
+	minIndex = 0;
+	for(i=1; i<m.rowLength; i++) {
+		if(min > m.mat[row][i]) {
+			min = m.mat[row][i];
+			minIndex = i;
+		}
+		else if(min == m.mat[row][i]) {
+			if(strcmp(leggiValoreTabella(nome, minIndex), leggiValoreTabella(nome, i)) > 0) {
+				minIndex = i;
+			}
+		}
+	}
+
+	return minIndex;
+}
+
+int indiceDatoContenutoERigaMatrice(matrice m, int row, int needle) {
+	/* Trova la prima ricorrenza del needle */
+	int i;
+
+	if(row < 0 || row > m.numberOfRows) {
+		fprintf(stderr, "Numero riga invalido\n");
+		exit(EXIT_FAILURE);
+	}
+
+	for(i=0; i<m.rowLength; i++) {
+		if(m.mat[row][i] == needle) return i;
+	}
+	return -1;
+}
+
+void togliElementoMatrice(matrice *m, int index) {
+	int i,j;
+
+	for(j=0; j<m->numberOfRows; j++) {
+		for(i=index+1; i<m->rowLength; i++) {
+			m->mat[j][i-1] = m->mat[j][i];
+		}
+	}
+	m->rowLength--;
+}
+
+void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze) {
+	int i,j;
+
+	if(preferenzeCopia->numberOfRows != preferenze.numberOfRows) {
+		fprintf(stderr, "Impossibile fare copia della matrice per ineguaglianza di numero righe\n");
+		exit(EXIT_FAILURE);
+	}
+	if(preferenzeCopia->rowLength != preferenze.rowLength) {
+		fprintf(stderr, "Impossibile fare copia della matrice per ineguaglianza di numero colonne\n");
+		exit(EXIT_FAILURE);
+	}
+
+	for(i=0; i<preferenze.numberOfRows; i++) {
+		for(j=0; j<preferenze.rowLength; j++) {
+			preferenzeCopia->mat[i][j] = preferenze.mat[i][j];
+		}
+	}
+}
+
 void stampaMatrice(matrice m) {
 	int i,j;
 
-	for(i=0; i<=m.numberOfRows; i++) {
+	for(i=0; i<m.numberOfRows; i++) {
 		for(j=0; j<m.rowLength; j++) {
 			fprintf(stdout, "%d\t", m.mat[i][j]);
 		}
@@ -242,12 +319,12 @@ void stampaMatrice(matrice m) {
 	fprintf(stdout, "\n");
 }
 
-void calcellaMatrice(matrice *m) {
+void cancellaMatrice(matrice *m) {
 	int i;
 	if(m == NULL) {
 		return;
 	}
-	for(i=0; i<=m->numberOfRows; i++) free(m->mat[i]);
+	for(i=0; i<m->numberOfRows; i++) free(m->mat[i]);
 
 	free(m->mat);
 }

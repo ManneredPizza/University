@@ -61,6 +61,7 @@ void stampaMatriceSimmetrica(matriceSimmetrica m) {
 		}
 		fprintf(stdout, "\n");
 	}
+	fprintf(stdout, "\n");
 }
 
 void cancellaMatriceSimmetrica(matriceSimmetrica *m) {
