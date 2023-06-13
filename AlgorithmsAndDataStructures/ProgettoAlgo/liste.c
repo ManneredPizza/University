@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "liste.h"
 
-void createLista(lista l) {
-	l = (lista)malloc(sizeof(nodo));
+void createLista(pizza l) {
+	l = (pizza)malloc(sizeof(nodo));
 
 	if(l==NULL) {
-		fprintf(stderr, "Impossibile allocare la lista\n");
+		fprintf(stderr, "Impossibile allocare la pizza\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -15,7 +15,16 @@ void createLista(lista l) {
 	l->pre = l;
 }
 
-int recuperaLunghezzaLista(lista l) {
+void creaMenuLista(menu m, int lunghezzaMaxMenu) {
+	m = (menu)malloc(lunghezzaMaxMenu*sizeof(pizza));
+
+	if(m==NULL) {
+		fprintf(stderr, "Impossibile allocare il menu\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+int recuperaLunghezzaLista(pizza l) {
 	int i=0;
 
 	do {
@@ -26,9 +35,9 @@ int recuperaLunghezzaLista(lista l) {
 	return i;
 }
 
-void inserisciElementoLista(lista l, int distanza, int payload) {
+void inserisciElementoLista(pizza l, int distanza, int payload) {
 	int i=0;
-	lista indiceMovente;
+	pizza indiceMovente;
 
 	if(distanza < 0) {
 		fprintf(stderr, "La distanza deve essere almeno 0\n");
@@ -38,7 +47,7 @@ void inserisciElementoLista(lista l, int distanza, int payload) {
 	indiceMovente = l;
 	while(i!=distanza) {
 		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della lista\n");
+			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -47,10 +56,10 @@ void inserisciElementoLista(lista l, int distanza, int payload) {
 	indiceMovente->data = payload;
 }
 
-int leggiElementoLista(lista l, int distanza) {
+int leggiElementoLista(pizza l, int distanza) {
 	int i=0;
 	int data;
-	lista indiceMovente;
+	pizza indiceMovente;
 
 	if(distanza < 0) {
 		fprintf(stderr, "La distanza deve essere almeno 0\n");
@@ -60,7 +69,7 @@ int leggiElementoLista(lista l, int distanza) {
 	indiceMovente = l;
 	while(i!=distanza) {
 		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della lista\n");
+			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -71,10 +80,10 @@ int leggiElementoLista(lista l, int distanza) {
 	return data;
 }
 
-void inserisciNodoLista(lista l, int distanza, int payload) {
+void inserisciNodoLista(pizza l, int distanza, int payload) {
 	int i=0;
-	lista indiceMovente;
-	/* vero che nodo* è lista ma rende più chiaro */
+	pizza indiceMovente;
+	/* vero che nodo* è pizza ma rende più chiaro */
 	nodo* nodoDaInserire;
 
 	if(distanza < 0) {
@@ -85,7 +94,7 @@ void inserisciNodoLista(lista l, int distanza, int payload) {
 	indiceMovente = l;
 	while(i!=distanza) {
 		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della lista\n");
+			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -96,17 +105,17 @@ void inserisciNodoLista(lista l, int distanza, int payload) {
 
 	/* nuovo nodo viene da indiceMovente */
 	nodoDaInserire->pre = indiceMovente;
-	/* nuovo nodo va dove andava indiceMoventen */
+	/* nuovo nodo va dove andava indiceMovente */
 	nodoDaInserire->next = indiceMovente->next;
-	/* indice movente va a nuvo nodo*/
+	/* indice movente va a nuvo nodo */
 	indiceMovente->next = nodoDaInserire;
-	/* quello che era dopo indiceMovente ora ha come pre il nuovo nodo */
+	/* quello che era dopo indiceMovente ora ha come pre il nuovo ingrediente */
 	nodoDaInserire->next->pre = nodoDaInserire;
 }
 
-void cancellaNodoLista(lista l, int distanza) {
+void cancellaNodoLista(pizza l, int distanza) {
 	int i=0;
-	lista indiceMovente;
+	pizza indiceMovente;
 
 	if(distanza < 0) {
 		fprintf(stderr, "La distanza deve essere almeno 0\n");
@@ -116,7 +125,7 @@ void cancellaNodoLista(lista l, int distanza) {
 	indiceMovente = l;
 	while(i!=distanza) {
 		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della lista\n");
+			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -128,8 +137,8 @@ void cancellaNodoLista(lista l, int distanza) {
 	free(indiceMovente);
 }
 
-void inserisciNodoFondoLista(lista l, int payload) {
-	nodo *nuovoNodo;
+void inserisciNodoFondoLista(pizza l, int payload) {
+	ingrediente nuovoNodo;
 
 	nuovoNodo = (nodo*)malloc(sizeof(nodo));
 
@@ -144,8 +153,8 @@ void inserisciNodoFondoLista(lista l, int payload) {
 	/* il precedente del primo sarà l'ultimo */
 }
 
-void stampaLista(lista l) {
-	lista indiceMovente;
+void stampaLista(pizza l) {
+	pizza indiceMovente;
 
 	indiceMovente = l;
 	do {

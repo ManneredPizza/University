@@ -2,28 +2,32 @@
 #define __LISTE_H
 
 typedef struct _nodo nodo;
-typedef nodo *lista;
+typedef nodo *pizza;
+typedef nodo *ingrediente;
 struct _nodo {
     int data;
-    lista next;
-    lista pre;
+    ingrediente next;
+    ingrediente pre;
 };
+typedef pizza *menu;
 
-void createLista(lista l);
+void createLista(pizza l);
 
-int recuperaLunghezzaLista(lista l);
+void creaMenuLista(menu m, int lunghezzaMaxMenu);
 
-void inserisciElementoLista(lista l, int distanza, int payload);
+int recuperaLunghezzaLista(pizza l);
 
-int leggiElementoLista(lista l, int distanza);
+void inserisciElementoLista(pizza l, int distanza, int payload);
+
+int leggiElementoLista(pizza l, int distanza);
 
 /* li inserice sempre DOPO l'elemento di indice distanza */
-void inserisciNodoLista(lista l, int distanza, int payload);
+void inserisciNodoLista(pizza l, int distanza, int payload);
 
-void cancellaNodoLista(lista l, int distanza);
+void cancellaNodoLista(pizza l, int distanza);
 
-void inserisciNodoFondoLista(lista l, int payload);
+void inserisciNodoFondoLista(pizza l, int payload);
 
-void stampaLista(lista l);
+void stampaLista(pizza l);
 
 #endif
