@@ -128,7 +128,7 @@ Harasymiuk Strazzanti
 Strazzanti Terracciano
 almeno 6 pizze
 Cangini Casadei Cozzolino Ferrante Guida Harasymiuk 
-
+17 pizze
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
 Capanna DeAngelis Gentili 
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla_Rossa Crema_di_Zucca 
@@ -141,25 +141,3 @@ Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burr
 Terracciano 
 Acciughe Aglio Ananas Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
 Bianco 
-Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Capperi Carciofi Carciofini Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Forcina 
-Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Capone 
-Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Moretti 
-Ananas Asparagi Bacon Banane Bresaola Brie Broccoli Burrata Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Caporilli 
-Aglio Ananas Bacon Banane Basilico Bresaola Brie Broccoli Caciocavallo Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Guerra 
-Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Brie Burrata Caciocavallo Capperi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Caligiuri 
-Acciughe Aglio Ananas Asparagi Banane Bresaola Brie Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Cangini 
-Acciughe Ananas Asparagi Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Bushulli 
-Acciughe Ananas Bacon Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Casadei 
-Aglio Ananas Banane Basilico Bresaola Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Guida 
-Ananas Asparagi Bacon Banane Bresaola Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
-Cozzolino 

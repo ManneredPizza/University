@@ -184,6 +184,10 @@ void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, i
 void copiaColonnaInRiga(riga *dest, riga *origin, int n, int minRow, int col) {
 	int i;
 	*dest = (riga)malloc((n)*sizeof(int));
+	if(dest == NULL) {
+		fprintf(stderr, "Non posso copiare su matrice nulla\n");
+		exit(EXIT_FAILURE);
+	}
 	/* servirebbe controllo lunghezza origin */
 	for(i=0; i<n; i++)
 		(*dest)[i] = origin[i+minRow][col];
@@ -228,7 +232,7 @@ int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 			maxIndex = i;
 		}
 		else if(max == m.mat[row][i]) {
-			if(strcmp(leggiValoreTabella(nome, maxIndex), leggiValoreTabella(nome, i)) < 0) {
+			if(strcmp(leggiValoreTabella(nome, maxIndex), leggiValoreTabella(nome, i)) > 0) {
 				maxIndex = i;
 			}
 		}
