@@ -311,6 +311,20 @@ void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze) {
 	}
 }
 
+void listaInMatrice(pizza pizzaInCostruzione, matrice *ingredientiPizza, int numeroIngredienti) {
+	ingrediente indiceMovente;
+	int i=0;
+
+	inizializzaMatrice(ingredientiPizza, 1, numeroIngredienti);
+	indiceMovente = pizzaInCostruzione;
+	do {
+		ingredientiPizza->mat[0][i] = indiceMovente->data;
+		i++;
+		indiceMovente = indiceMovente->next;
+	}
+	while(indiceMovente != pizzaInCostruzione);
+}
+
 void stampaMatrice(matrice m) {
 	int i,j;
 

@@ -594,7 +594,7 @@ Veneziano Wilmer
 Vinciguerra Wilmer
 almeno 15 pizze
 Bernardo Chesti Fico Fusini Leone Milenov Nicastro Perrone Riboloni Rizzelli Rudel Speziale Valbonesi Veneziano Vinciguerra 
-
+40 pizze
 Acciughe Aglio Ananas Asparagi Bacon Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Champignon Cipolla Cipolla_Rossa Crema_di_Zucca 
 Lattanzi 
 Acciughe Aglio Ananas Asparagi Banane Basilico Bresaola Brie Broccoli Burrata Caciocavallo Capperi Carciofi Carciofini Cavolo_Nero Cipolla Cipolla_Rossa Crema_di_Zucca 

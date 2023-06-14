@@ -2,6 +2,7 @@
 #define __MATRICE_H
 
 #include "tabella.h"
+#include "liste.h"
 
 typedef int* riga;
 struct _matrice {
@@ -52,6 +53,8 @@ int indiceDatoContenutoERigaMatrice(matrice m, int row, int needle);
 void togliElementoMatrice(matrice *m, int index);
 
 void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze);
+
+void listaInMatrice(pizza pizzaInCostruzione, matrice *ingredientiPizza, int numeroIngredienti);
 
 void stampaMatrice(matrice m);
 

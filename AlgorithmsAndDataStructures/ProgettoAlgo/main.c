@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "tabella.h"
+#include "liste.h"
 #include "matrice.h"
 #include "heapsort.h"
 #include "matriceSimmetrica.h"
-#include "liste.h"
 
 #define NUMERO_PREFERENZE 3
 #define ESCLUSO -2
@@ -33,9 +33,9 @@ void calcoloCoppieIncompatibili(matriceSimmetrica *incompatibili, matrice prefer
 void calcoloNumeroIncompatibiliPerCliente(matrice *classificaIncompatibili, matriceSimmetrica incompatibili, int numeroClienti);
 void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti);
 /* funzioni relative al menu */
-void aggiornaListaClientiSoddisfatti(matrice *clientiSoddisfatti, int *numeroClientiSoddisfatti, matrice preferenze, int ingrediente);
+ingrediente aggiornaListaClientiSoddisfatti(pizza clientiSoddisfatti, int *numeroClientiSoddisfatti, matrice preferenze, int ingrediente);
 void modificaPreferenzeIngrediente(matrice *preferenze, int ingrediente);
-void creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, matrice *clientiSoddisfatti);
+pizza creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, pizza pizzaInCostruzione, pizza clientiSoddisfatti);
 void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clienti);
 
 int main(int argc, char *argv[]) {
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     calcolaOrdinePopolarita(preferenze, ingredienti);
 
     /* Ordine esigenza clienti */
-    calcolaOrdineEsigenza(preferenze, clienti); 
+    calcolaOrdineEsigenza(preferenze, clienti);
 
     /* Numero ingredienti esclusi per un dato numero di clienti */
     ingredientiEsclusiPerNumeroClienti(preferenze);
@@ -535,14 +535,14 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
     fprintf(stdout, "\n");
 }
 
-void aggiornaListaClientiSoddisfatti(matrice *clientiSoddisfatti, int *numeroClientiSoddisfatti, matrice preferenze, int ingrediente) {
+ingrediente aggiornaListaClientiSoddisfatti(pizza clientiSoddisfatti, int *numeroClientiSoddisfatti, matrice preferenze, int ingredienteIndex) {
     int i;
     int numeroClienti, numeroIngredienti;
-    int indiceClienteInsoddisfatto;
+    ingrediente indiceClienteInsoddisfatto;
 
     numeroIngredienti = numeroColonneMatrice(preferenze);
 
-    if(ingrediente < 0 || ingrediente >= numeroIngredienti) {
+    if(ingredienteIndex < 0 || ingredienteIndex >= numeroIngredienti) {
         fprintf(stderr, "Errore indice ingrediente\n");
         exit(EXIT_FAILURE);
     }
@@ -551,16 +551,23 @@ void aggiornaListaClientiSoddisfatti(matrice *clientiSoddisfatti, int *numeroCli
 
     for(i=0; i<numeroClienti; i++) {
         /* se l'ingrediente aggiunto la esclude */
-        if(leggiValoreMatrice(preferenze, i, ingrediente) == ESCLUSO) {
+        if(leggiValoreMatrice(preferenze, i, ingredienteIndex) == ESCLUSO) {
             /* trovo il suo indice nella matrice clientiSoddisfatti */
-            indiceClienteInsoddisfatto = indiceDatoContenutoERigaMatrice(*clientiSoddisfatti, 0, i);
+
+            if((*numeroClientiSoddisfatti) == 0) return clientiSoddisfatti;
+
+            indiceClienteInsoddisfatto = indiceDatoContenutoInLista(clientiSoddisfatti, i);
             /* elimino il cliente dalla matrice */
-            if(indiceClienteInsoddisfatto != -1) {
-                togliElementoMatrice(clientiSoddisfatti, indiceClienteInsoddisfatto);
+            if(indiceClienteInsoddisfatto != NULL) {
+                /* se il cliente da togliere è il primo, sposto il puntatore al primo della lista al suo successivo */
+                if(indiceClienteInsoddisfatto == clientiSoddisfatti) clientiSoddisfatti = nextIngredienteLista(clientiSoddisfatti);
+                eliminaElementoLista(indiceClienteInsoddisfatto);
                 (*numeroClientiSoddisfatti)--;
             }
         }
     }
+
+    return clientiSoddisfatti;
 }
 
 void modificaPreferenzeIngrediente(matrice *preferenze, int ingrediente) {
@@ -589,14 +596,12 @@ void modificaPreferenzeIngrediente(matrice *preferenze, int ingrediente) {
     }
 }  
 
-void creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, matrice *clientiSoddisfatti) {
-    int i;
+pizza creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, pizza pizzaInCostruzione, pizza clientiSoddisfatti) {
     int minClassificaIngredienti;
     int numeroClienti, numeroClientiSoddisfatti, numeroClientiSoddisfattiTemp;
     int numeroIngredienti, numeroIngredientiPizza;
     matrice classificaIngredientiPerEsclusioni;
-    matrice ingredientiPizza;
-    matrice clientiSoddisfattiTemp;
+    pizza clientiSoddisfattiTemp;
 
     numeroIngredienti = numeroColonneMatrice(preferenze);
     numeroIngredientiPizza = 0;
@@ -613,24 +618,24 @@ void creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, ma
     while(leggiValoreMatrice(classificaIngredientiPerEsclusioni, 1, minClassificaIngredienti) != numeroClienti) {
         /* tolgo gli insoddisfatti dall'ingrediente aggiunto */
         numeroClientiSoddisfattiTemp = numeroClientiSoddisfatti;
-        inizializzaMatrice(&clientiSoddisfattiTemp, numeroRigheMatrice(*clientiSoddisfatti), numeroColonneMatrice(*clientiSoddisfatti));
-        creaCopiaMatrice(&clientiSoddisfattiTemp, *clientiSoddisfatti);
 
-        /*fprintf(stdout, "%d\n\n", minClassificaIngredienti);*/
+        clientiSoddisfattiTemp = creaLista(0);
+        creaCopiaLista(clientiSoddisfattiTemp, clientiSoddisfatti);
 
-        aggiornaListaClientiSoddisfatti(clientiSoddisfatti, &numeroClientiSoddisfatti, preferenze, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
+        clientiSoddisfatti = aggiornaListaClientiSoddisfatti(clientiSoddisfatti, &numeroClientiSoddisfatti, preferenze, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
+
         if(numeroClientiSoddisfatti == 0) {
             /* l'aggiunto dell'ultimo ingrediente manda a zero i clienti */
             /* torno indietro con la lista dei clienti e con il numero */
             numeroClientiSoddisfatti = numeroClientiSoddisfattiTemp;
-            modificaNumeroColonneMatrice(clientiSoddisfatti, numeroClientiSoddisfattiTemp);
-            creaCopiaMatrice(clientiSoddisfatti, clientiSoddisfattiTemp);
+            clientiSoddisfatti = creaLista(0);
+            creaCopiaLista(clientiSoddisfatti, clientiSoddisfattiTemp);
             break;
         }
 
-        if(numeroIngredientiPizza == 0) inizializzaMatrice(&ingredientiPizza, 1, numeroIngredienti);
-        /* metto il l'ingrediente meno escluso */
-        inserimentoElementoMatrice(&ingredientiPizza, 0, numeroIngredientiPizza, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
+        if(numeroIngredientiPizza == 0) inserisciElementoLista(pizzaInCostruzione, 0, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
+        /* metto l'ingrediente meno escluso */
+        else inserisciNodoFondoLista(pizzaInCostruzione, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
         numeroIngredientiPizza++;
 
         /* modifico le preferenze per non far ricontare gli esclusi dall'ingrediente aggiunto */
@@ -643,35 +648,25 @@ void creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, ma
         /* trovo il minimo */
         minClassificaIngredienti = indiceMinimoRispettoARigaMatrice(classificaIngredientiPerEsclusioni, 1, ingredienti);
 
-        cancellaMatrice(&clientiSoddisfattiTemp);
+        cancellaLista(clientiSoddisfattiTemp);
         /* fine ciclo pizza */
     }
 
-    ordinaClassifica(&ingredientiPizza, numeroIngredientiPizza, ingredienti, 1);
-
-    for(i=0; i<numeroIngredientiPizza; i++)
-        fprintf(stdout, "%s ", leggiValoreTabella(ingredienti, leggiValoreMatrice(ingredientiPizza, 0, i)));
-
-    fprintf(stdout, "\n");
-
-    ordinaClassifica(clientiSoddisfatti, numeroClientiSoddisfatti, clienti, 1);
-
-    for(i=0; i<numeroClientiSoddisfatti; i++)
-        fprintf(stdout, "%s ", leggiValoreTabella(clienti, leggiValoreMatrice(*clientiSoddisfatti, 0, i)));
-
-    fprintf(stdout, "\n");
-
     cancellaMatrice(&classificaIngredientiPerEsclusioni);
+
+    return clientiSoddisfatti;
 }
 
 void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clienti) {
     int i,j;
-    matrice clientiSoddisfatti;
     int numeroClienti, numeroClientiSoddisfattiCiclo, numeroClientiSoddisfattiTotale;
     int numeroIngredienti;
     matrice preferenzeCopia;
     int numeroPizze;
     menu menuPizze;
+    menu clientiSoddisfattiPerPizza;
+    ingrediente lettoreClientiDaTogliere;
+    matrice pizza, clientiSoddisfatti;
 
     numeroClienti = numeroRigheMatrice(preferenze);
     numeroIngredienti = numeroColonneMatrice(preferenze);
@@ -681,44 +676,64 @@ void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clie
     /* inizio ciclo menu */
 
     numeroPizze = 0;
-
-    /* mi lascio lo spazio per inserire il numero di pizze */
-    fprintf(stdout, "\n");
+    /* al più c'è una pizza per cliente */
+    creaMenuLista(&menuPizze, numeroClienti);
+    creaMenuLista(&clientiSoddisfattiPerPizza, numeroClienti);
 
     inizializzaMatrice(&preferenzeCopia, numeroRigheMatrice(preferenze), numeroColonneMatrice(preferenze));
     
     while(numeroClientiSoddisfattiTotale != numeroClienti) {
         numeroClientiSoddisfattiCiclo = numeroClienti;
 
-        inizializzaMatrice(&clientiSoddisfatti, 1, numeroClienti);
-        for(i=0; i<numeroClienti; i++) {
-            inserimentoElementoMatrice(&clientiSoddisfatti, 0, i, i);
+        nuovaPizzaInMenu(&clientiSoddisfattiPerPizza, numeroPizze);
+        /* parto da 1 perché 0 l'ho inserito nell'inizializzazione */
+        for(i=1; i<numeroClienti; i++) {
+            inserisciNodoFondoLista(leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze), i);
         }
 
         creaCopiaMatrice(&preferenzeCopia, preferenze);
 
-        creazionePizza(preferenzeCopia, ingredienti, clienti, &clientiSoddisfatti);
-        numeroClientiSoddisfattiCiclo = numeroColonneMatrice(clientiSoddisfatti); 
+        nuovaPizzaInMenu(&menuPizze, numeroPizze);
+
+        cambiaPizza(&clientiSoddisfattiPerPizza, numeroPizze, creazionePizza(preferenzeCopia, ingredienti, clienti, leggiPizzaDaMenu(&menuPizze, numeroPizze), leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze)));
+        numeroClientiSoddisfattiCiclo = recuperaLunghezzaLista(leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze));
 
         /* ricalcolo classifica ingredienti */
+        lettoreClientiDaTogliere = leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze);
         for(i=0; i<numeroClientiSoddisfattiCiclo; i++) {
             numeroClientiSoddisfattiTotale++;
             for(j=0; j<numeroIngredienti; j++) {
                 /* i clienti già soddisfatti escluderanno tutto così da non pesare più sulle prossime pizze */
-                inserimentoElementoMatrice(&preferenze, leggiValoreMatrice(clientiSoddisfatti, 0, i), j, ESCLUSO);
+                inserimentoElementoMatrice(&preferenze, leggiElementoLista(lettoreClientiDaTogliere, 0), j, ESCLUSO);
             }
+            lettoreClientiDaTogliere = nextIngredienteLista(lettoreClientiDaTogliere);
         }
 
         numeroPizze++;
+    }
 
-        /* fprintf(stdout, "Numero clienti soddisfatti = %d \t Numero pizze fatte = %d\n", numeroClientiSoddisfattiTotale, numeroPizze); */
+    fprintf(stdout, "%d pizze\n", numeroPizze);
+    for(i=0; i<numeroPizze; i++) {
+        numeroIngredienti = recuperaLunghezzaLista(leggiPizzaDaMenu(&menuPizze, i));
+        listaInMatrice(leggiPizzaDaMenu(&menuPizze, i), &pizza, numeroIngredienti);
+        ordinaClassifica(&pizza, numeroIngredienti, ingredienti, 1);
+        for(j=0; j<numeroIngredienti; j++)
+            fprintf(stdout, "%s ", leggiValoreTabella(ingredienti, leggiValoreMatrice(pizza, 0, j)));
+        fprintf(stdout, "\n");
+
+        numeroClientiSoddisfattiCiclo = recuperaLunghezzaLista(leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, i));
+        listaInMatrice(leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, i), &clientiSoddisfatti, numeroClientiSoddisfattiCiclo);
+        ordinaClassifica(&clientiSoddisfatti, numeroClientiSoddisfattiCiclo, clienti, 1);
+        for(j=0; j<numeroClientiSoddisfattiCiclo; j++)
+            fprintf(stdout, "%s ", leggiValoreTabella(clienti, leggiValoreMatrice(clientiSoddisfatti, 0, j)));
+        fprintf(stdout, "\n");
+        
     }
 
     cancellaMatrice(&preferenzeCopia);
 
     /* fine ciclo menu */
 }
-
 
 
 
