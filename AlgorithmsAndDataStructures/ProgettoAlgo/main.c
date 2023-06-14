@@ -297,6 +297,8 @@ void calcolaOrdinePopolarita(matrice preferenze, tabella ingredienti) {
         }
         fprintf(stdout, "\n");
     }
+
+    cancellaMatrice(&classifica);
 }
 
 void inizializzaClassificaEsigenza(matrice *classifica, int numeroClienti, matrice preferenze) {
@@ -352,6 +354,8 @@ void calcolaOrdineEsigenza(matrice preferenze, tabella clienti) {
         }
         fprintf(stdout, "\n");
     }
+
+    cancellaMatrice(&classifica);
 }
 
 void inizializzaClassificaIngrEsclusi(matrice *classifica, int numeroIngredienti, matrice preferenze) {
@@ -408,6 +412,8 @@ void ingredientiEsclusiPerNumeroClienti(matrice preferenze) {
     }
     /* se esce e non ha ancora stampato l'ultimo chunck, lo stampo */
     if(counter != 0) fprintf(stdout, "%d per %d clienti\n", counter, numeroInConfronto);
+
+    cancellaMatrice(&classificaIngredientiPerEsclusioni);
 }
 
 void calcoloCoppieIncompatibili(matriceSimmetrica *incompatibili, matrice preferenze, tabella clienti) {
@@ -448,6 +454,8 @@ void calcoloCoppieIncompatibili(matriceSimmetrica *incompatibili, matrice prefer
     for(i=0; i<numIncompatibili; i++) {
         fprintf(stdout, "%s %s\n", leggiValoreTabella(clienti, leggiValoreMatrice(coppieIncompatibili, i, 0)), leggiValoreTabella(clienti, leggiValoreMatrice(coppieIncompatibili, i, 1)));
     }
+
+    cancellaMatrice(&coppieIncompatibili);
 }
 
 void calcoloNumeroIncompatibiliPerCliente(matrice *classificaIncompatibili, matriceSimmetrica incompatibili, int numeroClienti) {
@@ -466,7 +474,9 @@ void calcoloNumeroIncompatibiliPerCliente(matrice *classificaIncompatibili, matr
 
 void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti) {
     matrice classificaIncompatibili;
-    matrice incompatibiliACoppie;
+    pizza incompatibiliACoppie;
+    ingrediente indiceMovente;
+    matrice incompatibiliACoppieMatrice;
     int i,j;
     int totaleClienti, clientiEffettivi;
     int indiceIncompatibileAccertato, indiceIncompatibileDaControllare;
@@ -486,13 +496,15 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
         greedyContinua = 0;    
         /* aggiungo una riga vuota a classificaIncompatibili la compilo con numeri < 0 dove non mi serve e positivi dove mi serve */
         if(clientiEffettivi != 0) {
+            indiceMovente = incompatibiliACoppie;
             for(i=0; i<totaleClienti; i++) {
                 /* prendo tutti i clienti nell'ordine della classifica già fatta */
                 indiceIncompatibileDaControllare = leggiValoreMatrice(classificaIncompatibili,0,i);
                 /* controllo con tutti i precedentemente messi in lista e vedo se è incompatibile con tutti */
                 incompatibileConPrecedenti = 1;
                 for(j=0; j<clientiEffettivi; j++) {
-                    indiceIncompatibileAccertato = leggiValoreMatrice(incompatibiliACoppie, 0, j);
+                    indiceIncompatibileAccertato = leggiElementoLista(indiceMovente, 0);
+                    indiceMovente = nextIngredienteLista(indiceMovente);
                     if(leggiValoreMatriceSimmetrica(incompatibili,indiceIncompatibileAccertato,indiceIncompatibileDaControllare) == 0) {
                         incompatibileConPrecedenti = 0;
                     }
@@ -514,25 +526,26 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
             /* ordino per incompatibilità e poi per lessicografico */
             indiceNuovoIncompatibile = indiceMassimoRispettoARigaMatrice(classificaIncompatibili, 1, clienti);
             
-            /* creo la matrice 1-dim (vettore) che contiene i clienti incompatibili a coppie */
-            if(clientiEffettivi == 0) inizializzaMatrice(&incompatibiliACoppie, 1, 1);
-            else aggiuntaColonnaMatrice(&incompatibiliACoppie); /* se no aggiungo una colonna */
-            /* metto il cliente più incompatibile */
-            inserimentoElementoMatrice(&incompatibiliACoppie, 0, clientiEffettivi, leggiValoreMatrice(classificaIncompatibili, 0, indiceNuovoIncompatibile));
+            if(clientiEffettivi == 0) incompatibiliACoppie = creaLista(leggiValoreMatrice(classificaIncompatibili, 0, indiceNuovoIncompatibile));
+            else inserisciNodoFondoLista(incompatibiliACoppie, leggiValoreMatrice(classificaIncompatibili, 0, indiceNuovoIncompatibile)); /* se no aggiungo una colonna */
+            
             clientiEffettivi++;
-
-            ordinaClassifica(&incompatibiliACoppie, clientiEffettivi, clienti, 1);
         }
     }
     while(greedyContinua == 1);
 
     /* ordine degli incompatibili a coppie tramite lessicografico */
-    ordinaClassifica(&incompatibiliACoppie, clientiEffettivi, clienti, 1);
+    listaInMatrice(incompatibiliACoppie, &incompatibiliACoppieMatrice, clientiEffettivi);
+    ordinaClassifica(&incompatibiliACoppieMatrice, clientiEffettivi, clienti, 1);
 
     fprintf(stdout, "almeno %d pizze\n", clientiEffettivi);
     for(i=0; i<clientiEffettivi; i++)
-        fprintf(stdout, "%s ", leggiValoreTabella(clienti, leggiValoreMatrice(incompatibiliACoppie, 0, i)));
+        fprintf(stdout, "%s ", leggiValoreTabella(clienti, leggiValoreMatrice(incompatibiliACoppieMatrice, 0, i)));
     fprintf(stdout, "\n");
+
+    cancellaLista(incompatibiliACoppie);
+    cancellaMatrice(&incompatibiliACoppieMatrice);
+    cancellaMatrice(&classificaIncompatibili);
 }
 
 ingrediente aggiornaListaClientiSoddisfatti(pizza clientiSoddisfatti, int *numeroClientiSoddisfatti, matrice preferenze, int ingredienteIndex) {
@@ -641,7 +654,6 @@ pizza creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, p
         /* modifico le preferenze per non far ricontare gli esclusi dall'ingrediente aggiunto */
         modificaPreferenzeIngrediente(&preferenze, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
 
-        /*stampaMatrice(preferenze);*/
         /* ricalcolo classifica ingredienti */
         inizializzaClassificaIngrEsclusi(&classificaIngredientiPerEsclusioni, numeroIngredienti, preferenze);
 
@@ -728,20 +740,15 @@ void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clie
             fprintf(stdout, "%s ", leggiValoreTabella(clienti, leggiValoreMatrice(clientiSoddisfatti, 0, j)));
         fprintf(stdout, "\n");
         
+        cancellaLista(leggiPizzaDaMenu(&menuPizze, i));
+        cancellaMatrice(&pizza);
+        cancellaLista(leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, i));
+        cancellaMatrice(&clientiSoddisfatti);
     }
 
     cancellaMatrice(&preferenzeCopia);
+    cancellaMenu(&menuPizze);
+    cancellaMenu(&clientiSoddisfattiPerPizza);
 
     /* fine ciclo menu */
 }
-
-
-
-
-
-
-
-
-
-
-

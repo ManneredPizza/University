@@ -31,10 +31,6 @@ int numeroColonneMatrice(matrice m) {
 	return m.rowLength;
 }
 
-void modificaNumeroColonneMatrice(matrice *m, int quantita) {
-	m->rowLength = quantita;
-}
-
 riga *recuperaMatrice(matrice *m) {
 	return m->mat;
 }
@@ -264,32 +260,6 @@ int indiceMinimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 	}
 
 	return minIndex;
-}
-
-int indiceDatoContenutoERigaMatrice(matrice m, int row, int needle) {
-	/* Trova la prima ricorrenza del needle */
-	int i;
-
-	if(row < 0 || row > m.numberOfRows) {
-		fprintf(stderr, "Numero riga invalido\n");
-		exit(EXIT_FAILURE);
-	}
-
-	for(i=0; i<m.rowLength; i++) {
-		if(m.mat[row][i] == needle) return i;
-	}
-	return -1;
-}
-
-void togliElementoMatrice(matrice *m, int index) {
-	int i,j;
-
-	for(j=0; j<m->numberOfRows; j++) {
-		for(i=index+1; i<m->rowLength; i++) {
-			m->mat[j][i-1] = m->mat[j][i];
-		}
-	}
-	m->rowLength--;
 }
 
 void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze) {

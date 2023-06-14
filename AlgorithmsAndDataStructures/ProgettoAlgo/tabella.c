@@ -67,14 +67,6 @@ int leggiLunghezza(tabella t) {
     return t.length;
 }
 
-void stampaTabella(tabella t) {
-	int i;
-
-	for(i=0; i<t.length; i++) {
-		fprintf(stdout, "%s\t", t.V[i]);
-	}
-}
-
 void cancellaTabella(tabella *t) {
     int i;
     if(t==NULL) return;

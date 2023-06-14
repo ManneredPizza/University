@@ -35,11 +35,6 @@ void inserisciElementoLista(pizza l, int distanza, int payload);
 
 int leggiElementoLista(pizza l, int distanza);
 
-/* li inserice sempre DOPO l'elemento di indice distanza */
-void inserisciNodoLista(pizza l, int distanza, int payload);
-
-void cancellaNodoLista(pizza l, int distanza);
-
 void eliminaElementoLista(ingrediente del);
 
 void inserisciNodoFondoLista(pizza l, int payload);
@@ -48,10 +43,8 @@ void creaCopiaLista(pizza copyTo, pizza copyFrom);
 
 ingrediente indiceDatoContenutoInLista(pizza l, int needle);
 
-void stampaNomiLista(pizza l, tabella nome);
-
-void stampaLista(pizza l);
-
 void cancellaLista(pizza l);
+
+void cancellaMenu(menu *m);
 
 #endif

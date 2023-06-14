@@ -15,8 +15,6 @@ int leggiValoreMatriceSimmetrica(matriceSimmetrica m, int row, int col);
 
 int leggiGrandezzaMatriceSimmetrica(matriceSimmetrica m);
 
-void stampaMatriceSimmetrica(matriceSimmetrica m);
-
 void cancellaMatriceSimmetrica(matriceSimmetrica *m);
 
 #endif

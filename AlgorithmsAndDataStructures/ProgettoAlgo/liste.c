@@ -129,65 +129,6 @@ int leggiElementoLista(pizza l, int distanza) {
 	return data;
 }
 
-void inserisciNodoLista(pizza l, int distanza, int payload) {
-	int i=0;
-	ingrediente indiceMovente;
-	/* vero che nodo* è pizza ma rende più chiaro */
-	ingrediente nodoDaInserire;
-
-	if(distanza < 0) {
-		fprintf(stderr, "La distanza deve essere almeno 0\n");
-		exit(EXIT_FAILURE);
-	}
-
-	indiceMovente = l;
-	while(i!=distanza) {
-		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
-			exit(EXIT_FAILURE);
-		}
-		i++;
-		indiceMovente = indiceMovente->next;
-	}
-
-	nodoDaInserire = (nodo*)malloc(sizeof(nodo));
-	nodoDaInserire->data = payload;
-
-	/* nuovo nodo viene da indiceMovente */
-	nodoDaInserire->pre = indiceMovente;
-	/* nuovo nodo va dove andava indiceMovente */
-	nodoDaInserire->next = indiceMovente->next;
-	/* indice movente va a nuvo nodo */
-	indiceMovente->next = nodoDaInserire;
-	/* quello che era dopo indiceMovente ora ha come pre il nuovo ingrediente */
-	nodoDaInserire->next->pre = nodoDaInserire;
-}
-
-void cancellaNodoLista(pizza l, int distanza) {
-	int i=0;
-	ingrediente indiceMovente;
-
-	if(distanza < 0) {
-		fprintf(stderr, "La distanza deve essere almeno 0\n");
-		exit(EXIT_FAILURE);
-	}
-
-	indiceMovente = l;
-	while(i!=distanza) {
-		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
-			exit(EXIT_FAILURE);
-		}
-		i++;
-		indiceMovente = indiceMovente->next;
-	}
-
-	indiceMovente->pre->next = indiceMovente->next;
-	indiceMovente->next->pre = indiceMovente->pre;
-
-	free(indiceMovente);
-}
-
 void eliminaElementoLista(ingrediente del) {
 	if(del == NULL) {
 		return;
@@ -239,32 +180,6 @@ ingrediente indiceDatoContenutoInLista(pizza l, int needle) {
 	return indiceMovente;
 }
 
-void stampaNomiLista(pizza l, tabella nome) {
-	ingrediente indiceMovente;
-
-	indiceMovente = l;
-	do {
-        fprintf(stdout, "%s ", leggiValoreTabella(nome, indiceMovente->data));
-		indiceMovente = indiceMovente->next;
-	}
-	while(indiceMovente != l);
-
-	fprintf(stdout, "\n");
-}
-
-void stampaLista(pizza l) {
-	ingrediente indiceMovente;
-
-	indiceMovente = l;
-	do {
-		fprintf(stdout, "%d -> ", indiceMovente->data);
-		indiceMovente = indiceMovente->next;
-	}
-	while(indiceMovente != l);
-
-	fprintf(stdout, "\n");
-}
-
 void cancellaLista(pizza l) {
 	ingrediente indiceMovente;
 
@@ -275,4 +190,8 @@ void cancellaLista(pizza l) {
 	}
 
 	free(indiceMovente);
+}
+
+void cancellaMenu(menu *m) {
+	free(m->listaPizze);
 }

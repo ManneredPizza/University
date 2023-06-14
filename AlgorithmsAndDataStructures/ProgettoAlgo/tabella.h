@@ -21,8 +21,6 @@ char *leggiValoreTabella(tabella t, int index);
 
 int leggiLunghezza(tabella t);
 
-void stampaTabella(tabella t);
-
 void cancellaTabella(tabella *t);
 
 #endif

@@ -52,18 +52,6 @@ int leggiGrandezzaMatriceSimmetrica(matriceSimmetrica m) {
 	return m.size;
 }
 
-void stampaMatriceSimmetrica(matriceSimmetrica m) {
-	int i,j;
-
-	for(i=0; i<m.size; i++) {
-		for(j=0; j<=i; j++) {
-			fprintf(stdout, "%d\t", m.data[i*(i+1)/2+j]);
-		}
-		fprintf(stdout, "\n");
-	}
-	fprintf(stdout, "\n");
-}
-
 void cancellaMatriceSimmetrica(matriceSimmetrica *m) {
     free(m->data);
 }
