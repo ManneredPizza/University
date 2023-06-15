@@ -82,51 +82,22 @@ ingrediente nextIngredienteLista(ingrediente l) {
 	return l->next;
 }
 
-void inserisciElementoLista(pizza l, int distanza, int payload) {
-	int i=0;
-	ingrediente indiceMovente;
-
-	if(distanza < 0) {
-		fprintf(stderr, "La distanza deve essere almeno 0\n");
+void inserisciElementoLista(pizza l, int payload) {
+	if(l==NULL) {
+		fprintf(stderr, "Il puntatore alla pizza non può essere nullo\n");
 		exit(EXIT_FAILURE);
 	}
 
-	indiceMovente = l;
-	while(i!=distanza) {
-		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
-			exit(EXIT_FAILURE);
-		}
-		i++;
-		indiceMovente = indiceMovente->next;
-	}
-
-	indiceMovente->data = payload;
+	l->data = payload;
 }
 
-int leggiElementoLista(pizza l, int distanza) {
-	int i=0;
-	int data;
-	ingrediente indiceMovente;
-
-	if(distanza < 0) {
-		fprintf(stderr, "La distanza deve essere almeno 0\n");
+int leggiElementoLista(pizza l) {
+	if(l==NULL) {
+		fprintf(stderr, "Il puntatore alla pizza non può essere nullo\n");
 		exit(EXIT_FAILURE);
 	}
 
-	indiceMovente = l;
-	while(i!=distanza) {
-		if(indiceMovente->next == l) {
-			fprintf(stderr, "Distanza maggiore della lunghezza della pizza\n");
-			exit(EXIT_FAILURE);
-		}
-		i++;
-		indiceMovente = indiceMovente->next;
-	}
-
-	data = indiceMovente->data;
-
-	return data;
+	return l->data;
 }
 
 void eliminaElementoLista(ingrediente del) {

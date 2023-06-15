@@ -31,9 +31,9 @@ int recuperaLunghezzaLista(pizza l);
 
 ingrediente nextIngredienteLista(ingrediente l);
 
-void inserisciElementoLista(pizza l, int distanza, int payload);
+void inserisciElementoLista(pizza l, int payload);
 
-int leggiElementoLista(pizza l, int distanza);
+int leggiElementoLista(pizza l);
 
 void eliminaElementoLista(ingrediente del);
 

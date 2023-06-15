@@ -503,7 +503,7 @@ void calcoloStimaInfNumeroPizza(matriceSimmetrica incompatibili, tabella clienti
                 /* controllo con tutti i precedentemente messi in lista e vedo se è incompatibile con tutti */
                 incompatibileConPrecedenti = 1;
                 for(j=0; j<clientiEffettivi; j++) {
-                    indiceIncompatibileAccertato = leggiElementoLista(indiceMovente, 0);
+                    indiceIncompatibileAccertato = leggiElementoLista(indiceMovente);
                     indiceMovente = nextIngredienteLista(indiceMovente);
                     if(leggiValoreMatriceSimmetrica(incompatibili,indiceIncompatibileAccertato,indiceIncompatibileDaControllare) == 0) {
                         incompatibileConPrecedenti = 0;
@@ -646,7 +646,7 @@ pizza creazionePizza(matrice preferenze, tabella ingredienti, tabella clienti, p
             break;
         }
 
-        if(numeroIngredientiPizza == 0) inserisciElementoLista(pizzaInCostruzione, 0, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
+        if(numeroIngredientiPizza == 0) inserisciElementoLista(pizzaInCostruzione, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
         /* metto l'ingrediente meno escluso */
         else inserisciNodoFondoLista(pizzaInCostruzione, leggiValoreMatrice(classificaIngredientiPerEsclusioni, 0, minClassificaIngredienti));
         numeroIngredientiPizza++;
@@ -716,7 +716,7 @@ void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clie
             numeroClientiSoddisfattiTotale++;
             for(j=0; j<numeroIngredienti; j++) {
                 /* i clienti già soddisfatti escluderanno tutto così da non pesare più sulle prossime pizze */
-                inserimentoElementoMatrice(&preferenze, leggiElementoLista(lettoreClientiDaTogliere, 0), j, ESCLUSO);
+                inserimentoElementoMatrice(&preferenze, leggiElementoLista(lettoreClientiDaTogliere), j, ESCLUSO);
             }
             lettoreClientiDaTogliere = nextIngredienteLista(lettoreClientiDaTogliere);
         }
