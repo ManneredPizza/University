@@ -3,6 +3,7 @@
 #include "matrice.h"
 #include "matriceSimmetrica.h"
 
+/* istanzia un vettore di lunghezza size(size+1)/2 inizializzando tutte le entrate a 0 */
 void inizializzaMatriceSimmetrica(matriceSimmetrica *m, int size) {
 	m->size = size;
     m->data = (riga)calloc((size * (size + 1)) / 2, sizeof(int));
@@ -12,6 +13,7 @@ void inizializzaMatriceSimmetrica(matriceSimmetrica *m, int size) {
     }
 }
 
+/* data row e col inserisce il valore nella matrice */
 void inserisciValoreMatriceSimmetrica(matriceSimmetrica *m, int row, int col, int valore) {
 	int index;
 
@@ -30,6 +32,7 @@ void inserisciValoreMatriceSimmetrica(matriceSimmetrica *m, int row, int col, in
     }
 }
 
+/* data row e col legge il valore della matrice */
 int leggiValoreMatriceSimmetrica(matriceSimmetrica m, int row, int col) {
 	int index;
 
@@ -48,10 +51,12 @@ int leggiValoreMatriceSimmetrica(matriceSimmetrica m, int row, int col) {
     }
 }
 
+/* ritorna la dimensione di un lato della matrice simmetrica */
 int leggiGrandezzaMatriceSimmetrica(matriceSimmetrica m) {
 	return m.size;
 }
 
+/* dealloca lo spazio della matrice */
 void cancellaMatriceSimmetrica(matriceSimmetrica *m) {
     free(m->data);
 }

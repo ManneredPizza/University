@@ -3,6 +3,7 @@
 #include <string.h>
 #include "tabella.h"
 
+/* alloca lo spazio per un vettore con una stringa lunga (LUNGHEZZA_ELEMENTO + 1) */
 void inizializzaTabella(tabella *t) {
 	t->V = (char **)malloc(sizeof(char*));
     if(t->V == NULL) {
@@ -18,7 +19,8 @@ void inizializzaTabella(tabella *t) {
 	t->length = 0;
 }
 
-
+/* rialloca la tabella allungandola di 1 char* e poi alloca lo spazio per una stringa di (LUNGHEZZA_ELEMENTO + 1) caratteri
+   inserisce poi l'elemento nello spazio appena allocato */
 void inserimentoElementoTabella(char *elemento, tabella *t) {
     if(sprintf(t->V[t->length], "%s", elemento) > 0) {
         if(t->length == t->maxLength-1) {
@@ -43,6 +45,7 @@ void inserimentoElementoTabella(char *elemento, tabella *t) {
     }
 }
 
+/* cicla la tabella finché non trova la la stringa elemento, ritorna l'indice dove la trova se no trona -1 */
 int trovaIndiceDaContenutoTabella(char *elemento, tabella *t) {
     int i;
 
@@ -54,6 +57,7 @@ int trovaIndiceDaContenutoTabella(char *elemento, tabella *t) {
     return -1;
 }
 
+/* dato un indice ritorna la stringa contenuta nella tabella in quell'indice */
 char *leggiValoreTabella(tabella t, int index) {
     if(index > t.length) {
         fprintf(stdout, "Indice oltre il limite%d\n", ROW_LENGTH);
@@ -63,10 +67,12 @@ char *leggiValoreTabella(tabella t, int index) {
     return t.V[index];
 }
 
+/* ritorna la lunghezza della tabella */
 int leggiLunghezza(tabella t) {
     return t.length;
 }
 
+/* cicla la tabella liberando lo spazio delle diverse stringhe e poi dealloca la tabella */
 void cancellaTabella(tabella *t) {
     int i;
     if(t==NULL) return;

@@ -50,8 +50,6 @@ void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze);
 
 void listaInMatrice(pizza pizzaInCostruzione, matrice *ingredientiPizza, int numeroIngredienti);
 
-void stampaMatrice(matrice m);
-
 void cancellaMatrice(matrice *m);
 
 #endif

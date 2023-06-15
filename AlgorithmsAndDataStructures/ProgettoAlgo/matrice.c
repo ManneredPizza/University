@@ -3,6 +3,7 @@
 #include <string.h>
 #include "matrice.h"
 
+/* alloca lo spazio per salvarsi numberOfRows puntatori ad int e per ognuno di essi alloca lo spazio per un vettore di lunghezza rowLength */
 void inizializzaMatrice(matrice *m, int numberOfRows, int rowLength) {
 	int i;
 
@@ -23,18 +24,22 @@ void inizializzaMatrice(matrice *m, int numberOfRows, int rowLength) {
     m->numberOfRows = numberOfRows;
 }
 
+/* restituisce il numero righe */
 int numeroRigheMatrice(matrice m) {
 	return m.numberOfRows;
 }
 
+/* restituisce il numero di colonne */
 int numeroColonneMatrice(matrice m) {
 	return m.rowLength;
 }
 
+/* restituisce il puntatore all'effettiva matrice nella struttura dati */
 riga *recuperaMatrice(matrice *m) {
 	return m->mat;
 }
 
+/* realloca lo la matrice per aggiungere una riga e poi alloca lo spazio di una riga che mette in coda a quelle già presenti */
 void aggiungiRigaVuotaMatrice(matrice *m) {
 	m->mat = (riga*)realloc(m->mat, sizeof(riga)*(m->numberOfRows+1));
 	if(m->mat == NULL) {
@@ -50,6 +55,7 @@ void aggiungiRigaVuotaMatrice(matrice *m) {
 	m->numberOfRows = m->numberOfRows+1;
 }
 
+/* dato un vettore inserisce nell'ultima riga il vettore payload */
 void inserimentoRigaMatrice(riga payload, matrice *m) {
 	int i;
 
@@ -67,6 +73,7 @@ void inserimentoRigaMatrice(riga payload, matrice *m) {
 	}
 }
 
+/* data la posizione riga e colonna inserisce payload nella matrice in quel punto */
 void inserimentoElementoMatrice(matrice *m, int riga, int colonna, int payload) {
 	if(riga < 0 || riga > m->numberOfRows) {
 		fprintf(stderr, "Numero riga non valido\n");
@@ -79,6 +86,7 @@ void inserimentoElementoMatrice(matrice *m, int riga, int colonna, int payload) 
 	m->mat[riga][colonna] = payload;
 }
 
+/* data riga e colonna restituisce il valore della matrice nel punto */
 int leggiValoreMatrice(matrice m, int riga, int colonna) {
 	if(riga < 0 || riga > m.numberOfRows) {
 		fprintf(stderr, "Numero riga non valido\n");
@@ -91,6 +99,7 @@ int leggiValoreMatrice(matrice m, int riga, int colonna) {
 	return m.mat[riga][colonna];
 }
 
+/* data riga e colonna aggiunge payload al valore già presente nella matrice in quel punto */
 void aggiungiElementoMatrice(matrice *m, int riga, int colonna, int payload) {
 	if(riga < 0 || riga > m->numberOfRows) {
 		fprintf(stderr, "Numero riga non valido\n");
@@ -103,11 +112,13 @@ void aggiungiElementoMatrice(matrice *m, int riga, int colonna, int payload) {
 	m->mat[riga][colonna] += payload;
 }
 
+/* scorrendo la matrice per ogni riga controlla ogni colonna, conta quante righe
+   hanno almeno un elemnto diverso da zero e salva gli indici delle righe */
 int numeroColonneNonVuote(matrice m, riga *elenco) {
 	int i,j;
 	int numeroColonne=0;
 
-	*elenco = (riga)malloc(sizeof(int));
+	*elenco = (riga)calloc(m.numberOfRows, sizeof(int));
 	if(*elenco == NULL) {
         fprintf(stderr, "Impossibile allocare memoria\n");
         exit(EXIT_FAILURE);
@@ -118,11 +129,6 @@ int numeroColonneNonVuote(matrice m, riga *elenco) {
 			if(m.mat[j][i] != 0) {
 				(*elenco)[numeroColonne] = i;
 				numeroColonne = numeroColonne + 1;
-				*elenco = (riga)realloc(*elenco, (numeroColonne+1)*sizeof(int));
-				if(*elenco == NULL) {
-			        fprintf(stderr, "Impossibile allocare memoria\n");
-			        exit(EXIT_FAILURE);
-			    }
 				break;
 			}
 		}
@@ -131,6 +137,7 @@ int numeroColonneNonVuote(matrice m, riga *elenco) {
 	return numeroColonne;
 }
 
+/* dati indici colonne inverte tutte le righe di quelle due colonne */
 void invertiColonneMatrice(matrice *m, int l, int max) {
 	int i;
 	int temp;
@@ -140,7 +147,7 @@ void invertiColonneMatrice(matrice *m, int l, int max) {
 		exit(EXIT_FAILURE);
 	}
 	if(l < 0 || l >= m->rowLength || max < 0 || max >= m->rowLength) {
-		fprintf(stderr, "Indici righe fuori dai limiti\n");
+		fprintf(stderr, "Indici colonne fuori dai limiti\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -151,6 +158,7 @@ void invertiColonneMatrice(matrice *m, int l, int max) {
 	}
 }
 
+/* copia in una matrice mDest l'intervallo della matrice mOrigin dato da lowOrigin e highOrigin partendo da lowDest */
 void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, int lowOrigin, int highOrigin) {
 	int i,j;
 	if(mDest == NULL) {
@@ -177,6 +185,8 @@ void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, i
 	}
 }
 
+/* data una matrice origin (riga* è come int**) la lunghezza n, la riga di partenza e la colonna
+   copia il contenuto in una riga dest allocata al momento */
 void copiaColonnaInRiga(riga *dest, riga *origin, int n, int minRow, int col) {
 	int i;
 	*dest = (riga)malloc((n)*sizeof(int));
@@ -189,6 +199,9 @@ void copiaColonnaInRiga(riga *dest, riga *origin, int n, int minRow, int col) {
 		(*dest)[i] = origin[i+minRow][col];
 }
 
+/* data una riga ed una matrice, definita lunghezza, riga di partenza e colonna
+   confronta il contenuto della riga r1 con quello della colonna col 
+   ritorna 0 se trova anche solo un'entrata errata se no 1*/
 int confrontaRigaColonna(riga r1, riga *r2, int n, int minRow, int col) {
 	int i;
 	/* servirebbe un controllo su r1 e r2 */
@@ -198,6 +211,7 @@ int confrontaRigaColonna(riga r1, riga *r2, int n, int minRow, int col) {
 	return 1;
 }
 
+/* data la matrice realloca lo spazio delle colonne per ogni riga, mettendo 0 nella nuova colonna */
 void aggiuntaColonnaMatrice(matrice *m) {
 	int i;
 
@@ -212,6 +226,8 @@ void aggiuntaColonnaMatrice(matrice *m) {
 	}
 }
 
+/* data una matrice, una riga ed una tabella restituisce il massimo valore di una di una riga
+   in caso di parità confronta sempre il maggiore come lessicografico nelle tabelle */
 int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 	int i,max,maxIndex;
 
@@ -237,6 +253,8 @@ int indiceMassimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 	return maxIndex;
 }
 
+/* data una matrice, una riga ed una tabella restituisce il valore minimo della riga
+   in caso di parità controlla l'ordine lessicografico */
 int indiceMinimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 	int i,min,minIndex;
 
@@ -262,6 +280,7 @@ int indiceMinimoRispettoARigaMatrice(matrice m, int row, tabella nome) {
 	return minIndex;
 }
 
+/* data una matrice ed un puntatore ad un altra già allocata, copia il contenuto */
 void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze) {
 	int i,j;
 
@@ -281,6 +300,8 @@ void creaCopiaMatrice(matrice *preferenzeCopia, matrice preferenze) {
 	}
 }
 
+/* data una lista, un puntatore a matrice e la lunghezza della lista, alloca lo spazio per una matrice 1 dimensionale (vettore)
+   copia poi il contenuto della lista nella matrice*/
 void listaInMatrice(pizza pizzaInCostruzione, matrice *ingredientiPizza, int numeroIngredienti) {
 	ingrediente indiceMovente;
 	int i=0;
@@ -295,18 +316,7 @@ void listaInMatrice(pizza pizzaInCostruzione, matrice *ingredientiPizza, int num
 	while(indiceMovente != pizzaInCostruzione);
 }
 
-void stampaMatrice(matrice m) {
-	int i,j;
-
-	for(i=0; i<m.numberOfRows; i++) {
-		for(j=0; j<m.rowLength; j++) {
-			fprintf(stdout, "%d\t", m.mat[i][j]);
-		}
-		fprintf(stdout, "\n");
-	}
-	fprintf(stdout, "\n");
-}
-
+/* cicla per ogni riga e le dealloca tutte poi dealloca la matrice */
 void cancellaMatrice(matrice *m) {
 	int i;
 	if(m == NULL) {

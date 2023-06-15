@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "liste.h"
 
+/* alloca lo spazio per un nodo dando come valore il payload */
 pizza creaLista(int payload) {
 	pizza l;
 
@@ -19,6 +20,7 @@ pizza creaLista(int payload) {
 	return l;
 }
 
+/* crea un vettore di pizze (puntatori a nodi) di lunghezza lunghezzaMaxMenu */
 void creaMenuLista(menu *m, int lunghezzaMaxMenu) {
 	m->listaPizze = (pizza*)malloc(lunghezzaMaxMenu*sizeof(pizza));
 	m->lunghezzaMaxMenu = lunghezzaMaxMenu;
@@ -29,6 +31,7 @@ void creaMenuLista(menu *m, int lunghezzaMaxMenu) {
 	}
 }
 
+/* alloca lo spazio per una nuova pizza nella posizione index del vettore menu */
 void nuovaPizzaInMenu(menu *m, int index) {
 	if(index >= m->lunghezzaMaxMenu) {
 		fprintf(stderr, "Indice superiore alla lunghezza massima del menu\n");
@@ -47,6 +50,7 @@ void nuovaPizzaInMenu(menu *m, int index) {
 	m->listaPizze[index]->pre = m->listaPizze[index];
 }
 
+/* data la posizione index restituisce il puntatore alla pizza nel menu */
 pizza leggiPizzaDaMenu(menu *m, int index)  {
 	if(index >= m->lunghezzaMaxMenu) {
 		fprintf(stderr, "Indice superiore alla lunghezza massima del menu\n");
@@ -56,6 +60,7 @@ pizza leggiPizzaDaMenu(menu *m, int index)  {
 	return m->listaPizze[index];
 }
 
+/* data la posizione permette di cambiare il puntatore presente nell'indice index del vettore menu */
 void cambiaPizza(menu *m, int index, pizza p) {
 	if(index >= m->lunghezzaMaxMenu) {
 		fprintf(stderr, "Indice superiore alla lunghezza massima del menu\n");
@@ -65,6 +70,8 @@ void cambiaPizza(menu *m, int index, pizza p) {
 	m->listaPizze[index] = p;
 }
 
+/* scorre tutta la lista fino a che il nodo successivo è il primo della lista
+   incrementa un counter ogni volta e restituisce il numero di elementi nella lista */
 int recuperaLunghezzaLista(pizza l) {
 	int i=1;
 	ingrediente indiceMovente;
@@ -78,11 +85,13 @@ int recuperaLunghezzaLista(pizza l) {
 	return i;
 }
 
+/* restitusce il puntatore all'ingrediente successivo */
 ingrediente nextIngredienteLista(ingrediente l) {
 	return l->next;
 }
 
-void inserisciElementoLista(pizza l, int payload) {
+/* inserisce un valore intero dato un puntatore ad un ingrediente */
+void inserisciElementoLista(ingrediente l, int payload) {
 	if(l==NULL) {
 		fprintf(stderr, "Il puntatore alla pizza non può essere nullo\n");
 		exit(EXIT_FAILURE);
@@ -91,7 +100,8 @@ void inserisciElementoLista(pizza l, int payload) {
 	l->data = payload;
 }
 
-int leggiElementoLista(pizza l) {
+/* restituisce l'intero dato il puntatore ad un ingrediente */
+int leggiElementoLista(ingrediente l) {
 	if(l==NULL) {
 		fprintf(stderr, "Il puntatore alla pizza non può essere nullo\n");
 		exit(EXIT_FAILURE);
@@ -100,6 +110,7 @@ int leggiElementoLista(pizza l) {
 	return l->data;
 }
 
+/* lega il blocco precedente con il successivo nella lista e cancella il blocco puntato da del */
 void eliminaElementoLista(ingrediente del) {
 	if(del == NULL) {
 		return;
@@ -110,6 +121,7 @@ void eliminaElementoLista(ingrediente del) {
 	free(del);
 }
 
+/* crea un nodo con contenuto payload e lo posiziona tra l'ultimo ed il primo della lista */
 void inserisciNodoFondoLista(pizza l, int payload) {
 	ingrediente nuovoNodo;
 
@@ -127,6 +139,7 @@ void inserisciNodoFondoLista(pizza l, int payload) {
 	l->pre = nuovoNodo;
 }
 
+/* dati due puntatori a liste scorre copyFrom e ad ogni blocco ne genera una copia in fondo a copyTo */
 void creaCopiaLista(pizza copyTo, pizza copyFrom) {
 	ingrediente indiceMoventeCopyFrom;
 
@@ -140,6 +153,7 @@ void creaCopiaLista(pizza copyTo, pizza copyFrom) {
 	}
 }
 
+/* scorre la lista finché non trova needle se ritorna a quello di partenza senza trovarlo ritorna NULL */
 ingrediente indiceDatoContenutoInLista(pizza l, int needle) {
 	ingrediente indiceMovente;
 
@@ -151,6 +165,7 @@ ingrediente indiceDatoContenutoInLista(pizza l, int needle) {
 	return indiceMovente;
 }
 
+/* scorre la lista deallocando la memoria di ogni blocco */
 void cancellaLista(pizza l) {
 	ingrediente indiceMovente;
 
@@ -163,6 +178,7 @@ void cancellaLista(pizza l) {
 	free(indiceMovente);
 }
 
+/* dealloca la memoria del vettore di puntatori pizza */
 void cancellaMenu(menu *m) {
 	free(m->listaPizze);
 }
