@@ -5,7 +5,7 @@
 #include "tabella.h"
 #include "heapsort.h"
 
-/* Aggiorna l'heap V di lunghezza n correggendo l'eventuale errore in posizione i */
+/* Aggiorna l'heap di lunghezza n correggendo l'eventuale errore in posizione i */
 void aggiornaheap(matrice *m, int n, int i, int rigaConfronto) {
   int s, d;
   int iMax;
@@ -26,7 +26,7 @@ void aggiornaheap(matrice *m, int n, int i, int rigaConfronto) {
   }
 }
 
-/* Trasforma il vettore di interi V di lunghezza n in un max-heap */
+/* Trasforma il vettore di interi (riga dsella matrice) di lunghezza n in un max-heap */
 void creaheap(matrice *m, int n, int rigaConfronto) {
   int i;
 
@@ -35,7 +35,8 @@ void creaheap(matrice *m, int n, int rigaConfronto) {
 }
 
 
-/* Ordina il vettore V di interi di lunghezza n con l'algoritmo HeapSort */
+/* Ordina una matrice effettuando un HeapSort su una riga predefinita ed obbligando tutte
+   le altre righe a scambiare le stesse colonne che vengono scambiate in rigaConfronto */
 void heapSortCustom(matrice *m, int n, int rigaConfronto) {
   int j;
 
@@ -46,6 +47,7 @@ void heapSortCustom(matrice *m, int n, int rigaConfronto) {
   }
 }
 
+/* Come sopra ma con confronto lessicografico */
 void aggiornaheapLex(matrice *m, int n, int i, tabella nomi) {
   int s, d;
   int iMax;
@@ -70,7 +72,7 @@ void creaheapLex(matrice *m, int n, tabella nomi) {
     aggiornaheapLex(m,n,i,nomi);
 }
 
-/* stesso algoritmo di cui sopra ma il confronto avviene lessicografico su nomi con indice 1 riga matrice */
+/* stesso algoritmo di cui sopra ma il confronto avviene lessicografico su nomi con indice prima riga matrice */
 void heapSortCustomLex(matrice *m, int n, tabella nomi) {
   int j;
 
