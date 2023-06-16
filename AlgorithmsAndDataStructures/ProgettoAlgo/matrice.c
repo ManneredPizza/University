@@ -185,7 +185,7 @@ void copiaColonnePorzioneMatrice(matrice *mDest, int lowDest, matrice mOrigin, i
 	}
 }
 
-/* data una matrice origin (riga* è come int**) la lunghezza n, la riga di partenza e la colonna
+/* data una matrice origin (riga* è come int**), la lunghezza n, la riga di partenza e la colonna
    copia il contenuto in una riga dest allocata al momento */
 void copiaColonnaInRiga(riga *dest, riga *origin, int n, int minRow, int col) {
 	int i;
