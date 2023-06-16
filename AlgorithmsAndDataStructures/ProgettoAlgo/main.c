@@ -695,7 +695,6 @@ void calcoloStimaMenuPizza(matrice preferenze, tabella ingredienti, tabella clie
         cambiaPizza(&clientiSoddisfattiPerPizza, numeroPizze, creazionePizza(preferenzeCopia, ingredienti, clienti, leggiPizzaDaMenu(&menuPizze, numeroPizze), leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze)));
         numeroClientiSoddisfattiCiclo = recuperaLunghezzaLista(leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze));
 
-        /* ricalcolo classifica ingredienti */
         lettoreClientiDaTogliere = leggiPizzaDaMenu(&clientiSoddisfattiPerPizza, numeroPizze);
         for(i=0; i<numeroClientiSoddisfattiCiclo; i++) {
             numeroClientiSoddisfattiTotale++;
