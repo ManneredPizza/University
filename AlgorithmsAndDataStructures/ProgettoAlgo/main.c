@@ -121,9 +121,9 @@ void letturaClientiDaFile(char *nomeFileClienti, tabella *clienti, tabella *ingr
     FILE *file;
     int numeroClienti;
     int i,j,k;
-    char cliente[LUNGHEZZA_ELEMENTO];
+    char cliente[LUNGHEZZA_ELEMENTO + 1];
     int numeroPreferenzeEspresse;
-    char *preferenza;
+    char preferenza[LUNGHEZZA_ELEMENTO + 1];
     int indicePreferenza;
     int *elencoPreferenze;
     int listaPreferenzePossibili[NUMERO_PREFERENZE];
@@ -137,12 +137,6 @@ void letturaClientiDaFile(char *nomeFileClienti, tabella *clienti, tabella *ingr
     listaPreferenzePossibili[0] = RICHIESTO;
     listaPreferenzePossibili[1] = GRADITO;
     listaPreferenzePossibili[2] = ESCLUSO;
-
-    preferenza = (char*)malloc(NUMERO_PREFERENZE * sizeof(char));
-    if(preferenza == NULL) {
-        fprintf(stderr, "Impossibile allocare memoria\n");
-        exit(EXIT_FAILURE);
-    }
 
     file = fopen(nomeFileClienti, "r");
     if(file == NULL) {
@@ -177,7 +171,6 @@ void letturaClientiDaFile(char *nomeFileClienti, tabella *clienti, tabella *ingr
     }
 
     free(elencoPreferenze);
-    free(preferenza);
     fclose(file);
 }
 
