@@ -33,6 +33,7 @@ y_correct = []
 y_guess = []
 fig, axs = plt.subplots(2, 2, figsize=(8, 8))
 axs = axs.ravel()
+l = 1e-6
 
 for t in range(3):
     # sample dataset
@@ -46,7 +47,7 @@ for t in range(3):
         for j in range(i+1):
             K[i,j] = k(x1[i,:], x1[j,:])
             K[j,i] = K[i,j]
-    a = np.dot(np.linalg.inv(K+n*np.identity(n)),y1)
+    a = np.dot(np.linalg.inv(K+l*n*np.identity(n)),y1)
 
     # construct f_m
     theta_m = []
@@ -57,7 +58,7 @@ for t in range(3):
         for i in range(n):
             PhiTemp.append(phi(m,w[-1],x1[i,:]).T)
         Phi = np.array(PhiTemp)
-        a = np.dot(np.linalg.inv(np.dot(Phi,Phi.T)+n*np.identity(n)),y1)
+        a = np.dot(np.linalg.inv(np.dot(Phi,Phi.T)+l*n*np.identity(n)),y1)
         theta_m.append(np.dot(Phi.T,a))
 
 
@@ -66,7 +67,7 @@ for t in range(3):
     y_correct = f(x[:,0])[t]
     y_guess = f_infty(a, x1, x)
     axs[t].plot(x[:,0], y_correct, label='Original')
-    axs[t].plot(x[:,0], y_guess, label='Infty KRR')
+    # axs[t].plot(x[:,0], y_guess, label='Infty KRR')
     y_guess_m = []
     for i in range(len(ms)):
         y_guess_m.append(np.dot(theta_m[i].T, phi(ms[i],w[i],x)))
