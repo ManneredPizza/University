@@ -2,3 +2,4 @@
 *.exe
 .*
 *.mat
+.DS_Store
