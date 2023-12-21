@@ -1,0 +1,11 @@
+6 case
+Optimal value of IP is between  3  and  3
+Total time SDP:  0.07722783088684082
+Optimal IP value  3
+Total time IP:  0.060965776443481445
+
+150 case
+Optimal value of IP is between  17  and  17
+Total time SDP:  56.19373297691345
+Optimal IP value  17
+Total time IP:  402.842796087265

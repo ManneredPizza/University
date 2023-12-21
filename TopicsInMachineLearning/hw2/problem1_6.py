@@ -16,12 +16,14 @@ def phi2(u, d):
 
 ds = [5, 100, 1000]
 
+np.random.seed(27)
+
 mu = 0
 stdDev = np.sqrt(0.25)
 nSample = 50
 
 
-fig, axs = plt.subplots(2,3)
+fig, axs = plt.subplots(2,3,figsize=(16,9))
 
 for d in ds:
     wStar = np.zeros((d,1))
@@ -35,27 +37,32 @@ for d in ds:
 
     z = np.random.normal(mu, stdDev, (nSample,1))
     
-    fStar = (wStar.T@x.T).T
+    fStar = x@wStar
     y = fStar + z
     
-    wHat = x.T@np.linalg.inv(x@x.T)@y
-    fHat = (wHat.T@x.T).T
+    if d==5:
+        wHat = np.linalg.inv(x.T@x)@x.T@y
+    else:
+        wHat = x.T@np.linalg.inv(x@x.T)@y
+    u_plot = np.linspace(0,1,1000)
+    x_plot = np.array([phi1(u,d) for u in u_plot])
+    fHat = x_plot@wHat
     
     Sigma1 = (0.5)*np.identity(d)
     Sigma2 = Sigma1.copy()
     for i in range(d):
         Sigma2[i,i] *= 1/((i+1)**2)
     
-    bias = np.sqrt(((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar).T@Sigma1@((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar))
-    variance = (stdDev**2)*np.trace(np.linalg.inv(x@x.T)@x@Sigma1@x.T@np.linalg.inv(x@x.T))
+    #bias = np.sqrt(((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar).T@Sigma1@((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar))
+    #variance = (stdDev**2)*np.trace(np.linalg.inv(x@x.T)@x@Sigma1@x.T@np.linalg.inv(x@x.T))
 
-    axs[0,ds.index(d)].set_title("Phi1, d={0}, bias={1:e}, variance={2:e}".format(d, bias[0][0], variance))
+    #axs[0,ds.index(d)].set_title("d={0}, bias={1:.3e}, variance={2:.3e}".format(d, bias[0][0], variance))
+    axs[0,ds.index(d)].set_title("phi1, d={0}".format(d))
     for i in range(nSample):
         axs[0,ds.index(d)].plot(u[i], y[i], marker='o', markersize=5, color='red')
     axs[0,ds.index(d)].plot(u[np.argsort(u)], fStar[np.argsort(u)], label='Regression')
-    axs[0,ds.index(d)].plot(u[np.argsort(u)], fHat[np.argsort(u)], label='ERM')
+    axs[0,ds.index(d)].plot(u_plot[np.argsort(u_plot)], fHat[np.argsort(u_plot)], label='ERM')
     axs[0,ds.index(d)].legend()
-
     
     u = np.random.uniform(0,1,nSample)
     x = []
@@ -65,19 +72,26 @@ for d in ds:
 
     z = np.random.normal(mu, stdDev, (nSample,1))
     
-    fStar = (wStar.T@x.T).T
+    fStar = x@wStar
     y = fStar + z
     
-    wHat = x.T@np.linalg.inv(x@x.T)@y
-    fHat = (wHat.T@x.T).T
+    if d==5:
+        wHat = np.linalg.inv(x.T@x)@x.T@y
+    else:
+        wHat = x.T@np.linalg.inv(x@x.T)@y
+    u_plot = np.linspace(0,1,1000)
+    x_plot = np.array([phi2(u,d) for u in u_plot])
+    fHat = x_plot@wHat
 
-    bias = np.sqrt(((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar).T@Sigma2@((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar))
-    variance = (stdDev**2)*np.trace(np.linalg.inv(x@x.T)@x@Sigma2@x.T@np.linalg.inv(x@x.T))
+    #bias = np.sqrt(((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar).T@Sigma2@((x.T@np.linalg.inv(x@x.T)@x-np.identity(d))@wStar))
+    #variance = (stdDev**2)*np.trace(np.linalg.inv(x@x.T)@x@Sigma2@x.T@np.linalg.inv(x@x.T))
 
-    axs[1,ds.index(d)].set_title("Phi1, d={0}, bias={1:e}, variance={2:e}".format(d, bias[0][0], variance))
+    #axs[1,ds.index(d)].set_title("d={0}, bias={1:.3e}, variance={2:.3e}".format(d, bias[0][0], variance))
+    axs[1,ds.index(d)].set_title("phi2, d={0}".format(d))
     for i in range(nSample):
         axs[1,ds.index(d)].plot(u[i], y[i], marker='o', markersize=5, color='red')
     axs[1,ds.index(d)].plot(u[np.argsort(u)], fStar[np.argsort(u)], label='Regression')
-    axs[1,ds.index(d)].plot(u[np.argsort(u)], fHat[np.argsort(u)], label='ERM')
+    axs[1,ds.index(d)].plot(u_plot[np.argsort(u_plot)], fHat[np.argsort(u_plot)], label='ERM')
     axs[1,ds.index(d)].legend()
+
 plt.show()
